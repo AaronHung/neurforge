@@ -37,15 +37,17 @@ interface SideBarProps {
 
 // ── Config categorisation ──────────────────────────────────────────────────
 
+// MFG: the three NeurForge industrial scenario agents
 const MFG_KEYWORDS = ['sensor_sage', 'industrial_qa', 'case_detective'];
-const MULTI_KEYWORDS = ['orchestra', 'orchestrator'];
+// Multi-Agent: example configs (flask icon before), orchestrators, generated
+const MULTI_PATTERNS = ['examples/', 'orchestra', 'generated/'];
 
 type ConfigCategory = 'manufacturing' | 'multi' | 'single';
 
 function getCategory(config: string): ConfigCategory {
   const key = config.toLowerCase();
   if (MFG_KEYWORDS.some(k => key.includes(k))) return 'manufacturing';
-  if (MULTI_KEYWORDS.some(k => key.includes(k))) return 'multi';
+  if (MULTI_PATTERNS.some(k => key.includes(k))) return 'multi';
   return 'single';
 }
 
