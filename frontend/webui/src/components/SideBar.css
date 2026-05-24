@@ -22,8 +22,8 @@
 
   --sb-width:           260px;
   --sb-radius:          7px;
-  --sb-label-size:      10.5px;
-  --sb-item-size:       13px;
+  --sb-label-size:      12px;
+  --sb-item-size:       15px;
 }
 
 /* ── Layout ─────────────────────────────────────────── */
@@ -221,7 +221,7 @@
 }
 
 .sb-current-path {
-  font-size: 11px;
+  font-size: 13px;
   color: var(--sb-text-dim);
   white-space: nowrap;
   overflow: hidden;
@@ -237,7 +237,7 @@
 }
 
 .sb-subagents-label {
-  font-size: 10px;
+  font-size: 12px;
   font-weight: 600;
   letter-spacing: 0.05em;
   text-transform: uppercase;
@@ -246,7 +246,7 @@
 }
 
 .sb-subagent-row {
-  font-size: 11px;
+  font-size: 13px;
   color: var(--sb-text);
   padding: 2px 0;
   white-space: nowrap;
@@ -297,7 +297,7 @@
   border: none;
   background: transparent;
   outline: none;
-  font-size: 12px;
+  font-size: 14px;
   color: var(--sb-text-strong);
   font-family: inherit;
 }
@@ -332,7 +332,7 @@
   border: none;
   color: var(--sb-text-dim);
   cursor: pointer;
-  font-size: 11px;
+  font-size: 13px;
   font-family: inherit;
   padding: 3px 6px;
   border-radius: 5px;
@@ -368,7 +368,7 @@
 /* ── Config category badge ─────────────────────────── */
 
 .sb-badge {
-  font-size: 9.5px;
+  font-size: 11.5px;
   padding: 1px 6px;
   border-radius: 4px;
   font-weight: 600;
@@ -419,7 +419,7 @@
 
 .sb-empty {
   padding: 6px 10px;
-  font-size: 12px;
+  font-size: 14px;
   color: var(--sb-text-dim);
   font-style: italic;
 }
@@ -439,7 +439,7 @@
   border: 1px solid #3a3a45;
   padding: 4px 9px;
   border-radius: 6px;
-  font-size: 11px;
+  font-size: 13px;
   white-space: nowrap;
   z-index: 10000;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
