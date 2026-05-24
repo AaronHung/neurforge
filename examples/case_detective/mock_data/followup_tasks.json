@@ -1,0 +1,67 @@
+[
+  {
+    "task_id": "TASK-2026-0518-01",
+    "case_id": "CASE-2026-0518",
+    "customer_id": "C-10001",
+    "created_date": "2026-05-18",
+    "due_date": "2026-05-22",
+    "status": "overdue",
+    "task_type": "billing_review",
+    "description": "查核帳務系統是否仍存在超量計費 bug（CASE-2025-0831 已修正但客戶再次申訴），確認修正狀態並回電客戶",
+    "assigned_to": "帳務處理組",
+    "priority": "high",
+    "notes": "客戶曾於 2025/09 申訴同一問題，若再次確認系統錯誤需主動聯繫道歉並提供額外補償"
+  },
+  {
+    "task_id": "TASK-2026-0401-01",
+    "case_id": "CASE-2026-0401",
+    "customer_id": "C-10007",
+    "created_date": "2026-04-02",
+    "due_date": "2026-04-08",
+    "status": "in_progress",
+    "task_type": "discount_adjustment",
+    "description": "確認業務代表承諾的 6 個月每月 NT$100 折扣是否已輸入系統，補扣 3 月及 4 月共 NT$200",
+    "assigned_to": "客服一組",
+    "priority": "medium",
+    "notes": "已聯繫業務代表確認確有承諾，系統輸入疏失，折扣將於下月帳單補扣"
+  },
+  {
+    "task_id": "TASK-2026-0318-01",
+    "case_id": "CASE-2026-0318",
+    "customer_id": "C-10006",
+    "created_date": "2026-03-20",
+    "due_date": "2026-04-03",
+    "status": "pending_approval",
+    "task_type": "sla_compensation",
+    "description": "計算 2026/02 SLA 違約補償金額（依合約第 12 條），擬補償 NT$35,000，需總監批准後開立支票",
+    "assigned_to": "企業客服主管",
+    "priority": "critical",
+    "notes": "C-10006（黃俊傑）為 VIP 企業客戶，建議主管親自致電說明並道歉"
+  },
+  {
+    "task_id": "TASK-2026-0502-01",
+    "case_id": "CASE-2026-0502",
+    "customer_id": "C-10009",
+    "created_date": "2026-05-02",
+    "due_date": "2026-05-16",
+    "status": "in_progress",
+    "task_type": "site_inspection",
+    "description": "安排技術人員到府確認新址（三重區重新路）線路狀況，判斷是否為施工影響或室內配線問題",
+    "assigned_to": "技術維修三組",
+    "priority": "high",
+    "notes": "已查詢施工資料，CONS-2026-SJ-005 工程影響範圍涵蓋客戶地址，到府時需告知客戶施工期程"
+  },
+  {
+    "task_id": "TASK-2025-1102-01",
+    "case_id": "CASE-2025-1102",
+    "customer_id": "C-10002",
+    "created_date": "2025-11-10",
+    "due_date": "2025-11-24",
+    "status": "overdue",
+    "task_type": "network_investigation",
+    "description": "調查 C-10002（林志豪）台北大安區 1Gbps 方案速度長期不足（200-250 Mbps）的根本原因，提供解決方案",
+    "assigned_to": "網路技術二組",
+    "priority": "high",
+    "notes": "客戶已提供多次測速截圖，問題持續超過 3 週，需儘速處理避免升級投訴"
+  }
+]
