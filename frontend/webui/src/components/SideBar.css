@@ -1,19 +1,28 @@
 /* ─── NeurForge Sidebar — Linear-inspired dark theme ─── */
 
 :root {
-  --sb-bg:              #111114;
-  --sb-border:          #26262a;
-  --sb-surface:         #18181c;
-  --sb-hover:           #202026;
-  --sb-text:            #8b8b99;
-  --sb-text-strong:     #e4e4f0;
-  --sb-text-dim:        #55555f;
-  --sb-accent:          #7c7cf8;
-  --sb-accent-dim:      rgba(124, 124, 248, 0.12);
-  --sb-accent-border:   rgba(124, 124, 248, 0.4);
-  --sb-width:           256px;
+  --sb-bg:              #0f0f12;
+  --sb-border:          #22222a;
+  --sb-surface:         #16161c;
+  --sb-hover:           #1c1c24;
+  --sb-text:            #b0b0c4;   /* raised: clearly readable body text   */
+  --sb-text-strong:     #eaeaf4;
+  --sb-text-dim:        #6a6a80;   /* raised from #55555f — section titles  */
+  --sb-accent:          #a78bfa;   /* single-agent violet as global accent  */
+  --sb-accent-dim:      rgba(167, 139, 250, 0.12);
+  --sb-accent-border:   rgba(167, 139, 250, 0.35);
+
+  /* ── Category accent palette ── */
+  --cat-mfg:            #22d3ee;   /* cyan-400   — Smart Manufacturing      */
+  --cat-mfg-dim:        rgba(34, 211, 238, 0.10);
+  --cat-multi:          #f59e0b;   /* amber-400  — Multi-Agent              */
+  --cat-multi-dim:      rgba(245, 158, 11, 0.10);
+  --cat-single:         #a78bfa;   /* violet-400 — Single Agent             */
+  --cat-single-dim:     rgba(167, 139, 250, 0.10);
+
+  --sb-width:           260px;
   --sb-radius:          7px;
-  --sb-label-size:      10px;
+  --sb-label-size:      10.5px;
   --sb-item-size:       13px;
 }
 
@@ -90,20 +99,22 @@
 .sb-category-label {
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: 7px;
   padding: 14px 8px 5px;
   font-size: var(--sb-label-size);
   font-weight: 600;
   letter-spacing: 0.07em;
   text-transform: uppercase;
-  color: var(--sb-text-dim);
+  color: var(--sb-text-dim);   /* fallback for generic labels */
   user-select: none;
 }
 
-.sb-category-label svg {
-  flex-shrink: 0;
-  opacity: 0.6;
-}
+.sb-category-label svg { flex-shrink: 0; }
+
+/* Per-category label colours — icon + text both tinted */
+.sb-category-label.cat-mfg   { color: var(--cat-mfg);   }
+.sb-category-label.cat-multi  { color: var(--cat-multi);  }
+.sb-category-label.cat-single { color: var(--cat-single); }
 
 /* ── New Chat button ────────────────────────────────── */
 
@@ -354,17 +365,35 @@
 /* ── Config category badge ─────────────────────────── */
 
 .sb-badge {
-  font-size: 10px;
-  padding: 1px 5px;
+  font-size: 9.5px;
+  padding: 1px 6px;
   border-radius: 4px;
-  font-weight: 500;
-  letter-spacing: 0.02em;
+  font-weight: 600;
+  letter-spacing: 0.04em;
   flex-shrink: 0;
+  border: 1px solid transparent;
 }
 
-.sb-badge-mfg   { background: rgba(52, 211, 153, 0.12); color: #34d399; }
-.sb-badge-multi { background: rgba(251, 191, 36, 0.12);  color: #fbbf24; }
-.sb-badge-single{ background: rgba(124, 124, 248, 0.12); color: var(--sb-accent); }
+.sb-badge-mfg {
+  background: var(--cat-mfg-dim);
+  color: var(--cat-mfg);
+  border-color: rgba(34, 211, 238, 0.2);
+}
+.sb-badge-multi {
+  background: var(--cat-multi-dim);
+  color: var(--cat-multi);
+  border-color: rgba(245, 158, 11, 0.2);
+}
+.sb-badge-single {
+  background: var(--cat-single-dim);
+  color: var(--cat-single);
+  border-color: rgba(167, 139, 250, 0.2);
+}
+
+/* Active item uses its category accent for the left border */
+.sb-item.active.cat-mfg    { background: var(--cat-mfg-dim);    color: var(--cat-mfg);    border-left-color: var(--cat-mfg);    }
+.sb-item.active.cat-multi   { background: var(--cat-multi-dim);   color: var(--cat-multi);   border-left-color: var(--cat-multi);   }
+.sb-item.active.cat-single  { background: var(--cat-single-dim);  color: var(--cat-single);  border-left-color: var(--cat-single);  }
 
 /* ── Section header row ─────────────────────────────── */
 
@@ -380,7 +409,7 @@
   font-weight: 600;
   letter-spacing: 0.07em;
   text-transform: uppercase;
-  color: var(--sb-text-dim);
+  color: #7a7a96;   /* clearly visible neutral label */
 }
 
 /* ── Empty state ────────────────────────────────────── */

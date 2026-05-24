@@ -49,24 +49,30 @@ function getCategory(config: string): ConfigCategory {
   return 'single';
 }
 
-const CATEGORY_META: Record<ConfigCategory, { label: string; Icon: React.ElementType; badge: string; badgeClass: string }> = {
+const CATEGORY_META: Record<ConfigCategory, { label: string; Icon: React.ElementType; badge: string; badgeClass: string; labelClass: string; itemClass: string }> = {
   manufacturing: {
     label: 'Smart Manufacturing',
     Icon: Factory,
     badge: 'MFG',
-    badgeClass: 'sb-badge sb-badge-mfg',
+    badgeClass:  'sb-badge sb-badge-mfg',
+    labelClass:  'sb-category-label cat-mfg',
+    itemClass:   'cat-mfg',
   },
   multi: {
     label: 'Multi-Agent',
     Icon: Network,
     badge: 'MULTI',
-    badgeClass: 'sb-badge sb-badge-multi',
+    badgeClass:  'sb-badge sb-badge-multi',
+    labelClass:  'sb-category-label cat-multi',
+    itemClass:   'cat-multi',
   },
   single: {
     label: 'Single Agent',
     Icon: Bot,
     badge: 'AGENT',
-    badgeClass: 'sb-badge sb-badge-single',
+    badgeClass:  'sb-badge sb-badge-single',
+    labelClass:  'sb-category-label cat-single',
+    itemClass:   'cat-single',
   },
 };
 
@@ -292,20 +298,20 @@ const SideBar: React.FC<SideBarProps> = ({
                   {CATEGORY_ORDER.map(cat => {
                     const items = grouped[cat];
                     if (items.length === 0) return null;
-                    const { label, Icon, badgeClass, badge } = CATEGORY_META[cat];
+                    const { label, Icon, badgeClass, badge, labelClass, itemClass } = CATEGORY_META[cat];
                     return (
                       <div key={cat} className="sb-category-group">
-                        <div className="sb-category-label" style={{ paddingTop: 10, paddingBottom: 4 }}>
-                          <Icon size={11} strokeWidth={2} />
+                        <div className={labelClass} style={{ paddingTop: 10, paddingBottom: 4 }}>
+                          <Icon size={12} strokeWidth={2} />
                           {label}
                         </div>
                         {items.map(config => (
                           <Tooltip key={config} content={config}>
                             <div
-                              className={`sb-item ${currentConfig === config ? 'active' : ''}`}
+                              className={`sb-item ${itemClass} ${currentConfig === config ? 'active' : ''}`}
                               onClick={() => onConfigSelect(config)}
                             >
-                              <Settings2 size={12} strokeWidth={1.5} style={{ flexShrink: 0, opacity: 0.5 }} />
+                              <Settings2 size={12} strokeWidth={1.5} style={{ flexShrink: 0, opacity: 0.45 }} />
                               <span className="sb-item-label">{getFilename(config)}</span>
                               <span className={badgeClass}>{badge}</span>
                             </div>
