@@ -1,0 +1,4 @@
+name: case_detective
+mode: customized
+customized_filepath: examples/case_detective/tools/case_detective_toolkit.py
+customized_classname: CaseDetectiveToolkit

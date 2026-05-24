@@ -1,0 +1,192 @@
+[
+  {
+    "customer_id": "C-10001",
+    "name": "陳怡君",
+    "plan": {
+      "plan_id": "FBB-500",
+      "name": "光纖寬頻 500M",
+      "monthly_fee": 599,
+      "speed_down": 500,
+      "speed_up": 100,
+      "sla_uptime": 99.5
+    },
+    "contract_start": "2022-03-15",
+    "contract_end": "2024-03-14",
+    "address": "新北市板橋區文化路二段",
+    "phone": "0995822412",
+    "email": "陳怡君@example.com",
+    "credit_score": "A",
+    "vip_tier": "一般"
+  },
+  {
+    "customer_id": "C-10002",
+    "name": "林志豪",
+    "plan": {
+      "plan_id": "FBB-1G",
+      "name": "光纖寬頻 1Gbps",
+      "monthly_fee": 899,
+      "speed_down": 1000,
+      "speed_up": 300,
+      "sla_uptime": 99.7
+    },
+    "contract_start": "2021-07-01",
+    "contract_end": "2023-07-01",
+    "address": "台北市大安區仁愛路四段",
+    "phone": "0946913810",
+    "email": "林志豪@example.com",
+    "credit_score": "A",
+    "vip_tier": "一般"
+  },
+  {
+    "customer_id": "C-10003",
+    "name": "王美玲",
+    "plan": {
+      "plan_id": "MOB-5G",
+      "name": "5G 行動方案 30GB",
+      "monthly_fee": 799,
+      "speed_down": 300,
+      "speed_up": 50,
+      "sla_uptime": 98.5
+    },
+    "contract_start": "2023-01-20",
+    "contract_end": "2025-01-19",
+    "address": "台中市西屯區台灣大道三段",
+    "phone": "0928728463",
+    "email": "王美玲@example.com",
+    "credit_score": "A",
+    "vip_tier": "一般"
+  },
+  {
+    "customer_id": "C-10004",
+    "name": "張建國",
+    "plan": {
+      "plan_id": "MOB-4G",
+      "name": "4G 行動方案 15GB",
+      "monthly_fee": 499,
+      "speed_down": 100,
+      "speed_up": 20,
+      "sla_uptime": 97.0
+    },
+    "contract_start": "2020-11-05",
+    "contract_end": "2022-11-05",
+    "address": "高雄市前鎮區中山二路",
+    "phone": "0989254563",
+    "email": "張建國@example.com",
+    "credit_score": "B",
+    "vip_tier": "一般"
+  },
+  {
+    "customer_id": "C-10005",
+    "name": "李佳穎",
+    "plan": {
+      "plan_id": "FBB-1G",
+      "name": "光纖寬頻 1Gbps",
+      "monthly_fee": 899,
+      "speed_down": 1000,
+      "speed_up": 300,
+      "sla_uptime": 99.7
+    },
+    "contract_start": "2023-06-10",
+    "contract_end": "2025-06-09",
+    "address": "台北市信義區松仁路",
+    "phone": "0913999315",
+    "email": "李佳穎@example.com",
+    "credit_score": "A",
+    "vip_tier": "一般"
+  },
+  {
+    "customer_id": "C-10006",
+    "name": "黃俊傑",
+    "plan": {
+      "plan_id": "BIZ-FBB",
+      "name": "企業光纖 10G",
+      "monthly_fee": 3500,
+      "speed_down": 10000,
+      "speed_up": 5000,
+      "sla_uptime": 99.9
+    },
+    "contract_start": "2019-09-01",
+    "contract_end": "2021-08-31",
+    "address": "新竹科學園區台積電路",
+    "phone": "0941227216",
+    "email": "黃俊傑@example.com",
+    "credit_score": "B",
+    "vip_tier": "企業"
+  },
+  {
+    "customer_id": "C-10007",
+    "name": "鄭雅婷",
+    "plan": {
+      "plan_id": "FBB-500",
+      "name": "光纖寬頻 500M",
+      "monthly_fee": 599,
+      "speed_down": 500,
+      "speed_up": 100,
+      "sla_uptime": 99.5
+    },
+    "contract_start": "2024-02-14",
+    "contract_end": "2026-02-13",
+    "address": "桃園市中壢區中山路",
+    "phone": "0990801586",
+    "email": "鄭雅婷@example.com",
+    "credit_score": "A",
+    "vip_tier": "一般"
+  },
+  {
+    "customer_id": "C-10008",
+    "name": "吳家豪",
+    "plan": {
+      "plan_id": "MOB-5G",
+      "name": "5G 行動方案 30GB",
+      "monthly_fee": 799,
+      "speed_down": 300,
+      "speed_up": 50,
+      "sla_uptime": 98.5
+    },
+    "contract_start": "2022-08-30",
+    "contract_end": "2024-08-29",
+    "address": "台南市東區長榮路",
+    "phone": "0997226012",
+    "email": "吳家豪@example.com",
+    "credit_score": "B",
+    "vip_tier": "金卡"
+  },
+  {
+    "customer_id": "C-10009",
+    "name": "許淑芬",
+    "plan": {
+      "plan_id": "FBB-500",
+      "name": "光纖寬頻 500M",
+      "monthly_fee": 599,
+      "speed_down": 500,
+      "speed_up": 100,
+      "sla_uptime": 99.5
+    },
+    "contract_start": "2021-04-22",
+    "contract_end": "2023-04-22",
+    "address": "新北市三重區重新路",
+    "phone": "0939587039",
+    "email": "許淑芬@example.com",
+    "credit_score": "B",
+    "vip_tier": "銀卡"
+  },
+  {
+    "customer_id": "C-10010",
+    "name": "蔡明宏",
+    "plan": {
+      "plan_id": "MOB-4G",
+      "name": "4G 行動方案 15GB",
+      "monthly_fee": 499,
+      "speed_down": 100,
+      "speed_up": 20,
+      "sla_uptime": 97.0
+    },
+    "contract_start": "2023-10-01",
+    "contract_end": "2025-09-30",
+    "address": "彰化市中正路",
+    "phone": "0910872248",
+    "email": "蔡明宏@example.com",
+    "credit_score": "A",
+    "vip_tier": "金卡"
+  }
+]

@@ -6,8 +6,8 @@ import json
 from pathlib import Path
 from typing import Any
 
-from agents import function_tool
 from utu.tools.base import AsyncBaseToolkit
+from utu.tools.utils import register_tool
 
 _DATA = Path(__file__).parent.parent / "mock_data"
 
@@ -23,19 +23,19 @@ class SensorSageToolkit(AsyncBaseToolkit):
     def __init__(self, config=None) -> None:
         super().__init__(config)
 
-    @function_tool
+    @register_tool
     def get_heartbeat_snapshot(self) -> str:
         """取得最新心跳掃描快照，顯示所有設備的目前 HPI 狀態與警示摘要。"""
         data = _load(_DATA / "heartbeat_snapshot.json")
         return json.dumps(data, ensure_ascii=False)
 
-    @function_tool
+    @register_tool
     def get_equipment_list(self) -> str:
         """列出廠區所有設備的基本資料（設備ID、名稱、類型、規格、安裝日期）。"""
         data = _load(_DATA / "equipment_registry.json")
         return json.dumps(data, ensure_ascii=False)
 
-    @function_tool
+    @register_tool
     def get_sensor_tags(self, equipment_id: str) -> str:
         """取得指定設備的 PI Tag 清單與正常操作範圍。
 
@@ -48,7 +48,7 @@ class SensorSageToolkit(AsyncBaseToolkit):
             return json.dumps({"error": f"找不到設備 {equipment_id} 的感測器資料"}, ensure_ascii=False)
         return json.dumps(tags, ensure_ascii=False)
 
-    @function_tool
+    @register_tool
     def get_hpi_history(self, equipment_id: str, weeks: int = 20) -> str:
         """取得指定設備的 HPI 歷史趨勢（最近 N 週）。
 
@@ -63,7 +63,7 @@ class SensorSageToolkit(AsyncBaseToolkit):
             return json.dumps({"error": f"找不到設備 {equipment_id} 的 HPI 資料"}, ensure_ascii=False)
         return json.dumps(records, ensure_ascii=False)
 
-    @function_tool
+    @register_tool
     def get_sensor_trends(self, equipment_id: str, weeks: int = 8) -> str:
         """取得指定設備最近 N 週各測點數值趨勢，用於識別偏差測點。
 
@@ -78,7 +78,7 @@ class SensorSageToolkit(AsyncBaseToolkit):
             return json.dumps({"error": f"找不到設備 {equipment_id} 的感測器趨勢資料"}, ensure_ascii=False)
         return json.dumps(records, ensure_ascii=False)
 
-    @function_tool
+    @register_tool
     def search_failure_cases(self, symptom_keywords: str) -> str:
         """搜尋老師傅知識庫，根據症狀關鍵字找出歷史故障案例與診斷建議。
 
@@ -96,7 +96,7 @@ class SensorSageToolkit(AsyncBaseToolkit):
             return json.dumps({"message": "未找到符合症狀的歷史案例", "total": 0}, ensure_ascii=False)
         return json.dumps({"total": len(results), "cases": results}, ensure_ascii=False)
 
-    @function_tool
+    @register_tool
     def get_maintenance_history(self, equipment_id: str) -> str:
         """查詢指定設備的歷史維護工單紀錄（包含 PM、預測性維護、緊急搶修）。
 
@@ -110,7 +110,7 @@ class SensorSageToolkit(AsyncBaseToolkit):
             return json.dumps({"message": f"設備 {equipment_id} 無維護紀錄", "total": 0}, ensure_ascii=False)
         return json.dumps({"equipment_id": equipment_id, "total": len(records), "records": records}, ensure_ascii=False)
 
-    @function_tool
+    @register_tool
     def get_catalyst_status(self) -> str:
         """取得 REACT-201 觸媒反應器的目前活性指數、衰退趨勢與更換時程預測。"""
         history = _load(_DATA / "catalyst" / "catalyst_activity_history.json")
@@ -125,7 +125,7 @@ class SensorSageToolkit(AsyncBaseToolkit):
         }
         return json.dumps(summary, ensure_ascii=False)
 
-    @function_tool
+    @register_tool
     def get_catalyst_history(self, months: int = 18) -> str:
         """取得觸媒活性指數的歷史月度數據。
 
@@ -136,7 +136,7 @@ class SensorSageToolkit(AsyncBaseToolkit):
         records = sorted(data, key=lambda x: x["month"])[-months:]
         return json.dumps(records, ensure_ascii=False)
 
-    @function_tool
+    @register_tool
     def get_catalyst_replacement_sop(self) -> str:
         """取得觸媒更換 SOP，包含作業程序、安全注意事項與費用估算。"""
         data = _load(_DATA / "catalyst" / "catalyst_sop.json")

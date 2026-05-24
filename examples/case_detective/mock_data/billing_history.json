@@ -1,0 +1,1411 @@
+[
+  {
+    "customer_id": "C-10001",
+    "billing_month": "2025-06",
+    "base_fee": 599,
+    "extras": [],
+    "total_amount": 599,
+    "due_date": "2025-06-20",
+    "paid_date": "2025-06-15",
+    "status": "paid",
+    "invoice_id": "INV-C-10001-202506"
+  },
+  {
+    "customer_id": "C-10001",
+    "billing_month": "2025-07",
+    "base_fee": 599,
+    "extras": [],
+    "total_amount": 599,
+    "due_date": "2025-07-20",
+    "paid_date": "2025-07-14",
+    "status": "paid",
+    "invoice_id": "INV-C-10001-202507"
+  },
+  {
+    "customer_id": "C-10001",
+    "billing_month": "2025-08",
+    "base_fee": 599,
+    "extras": [],
+    "total_amount": 599,
+    "due_date": "2025-08-20",
+    "paid_date": "2025-08-16",
+    "status": "paid",
+    "invoice_id": "INV-C-10001-202508"
+  },
+  {
+    "customer_id": "C-10001",
+    "billing_month": "2025-09",
+    "base_fee": 599,
+    "extras": [
+      {
+        "item": "超量使用費",
+        "amount": 150
+      }
+    ],
+    "total_amount": 749,
+    "due_date": "2025-09-20",
+    "paid_date": "2025-09-15",
+    "status": "paid",
+    "invoice_id": "INV-C-10001-202509"
+  },
+  {
+    "customer_id": "C-10001",
+    "billing_month": "2025-10",
+    "base_fee": 599,
+    "extras": [
+      {
+        "item": "服務品質補償折抵",
+        "amount": -60
+      },
+      {
+        "item": "超量使用費",
+        "amount": 150
+      }
+    ],
+    "total_amount": 689,
+    "due_date": "2025-10-20",
+    "paid_date": "2025-10-14",
+    "status": "paid",
+    "invoice_id": "INV-C-10001-202510"
+  },
+  {
+    "customer_id": "C-10001",
+    "billing_month": "2025-11",
+    "base_fee": 599,
+    "extras": [],
+    "total_amount": 599,
+    "due_date": "2025-11-20",
+    "paid_date": "2025-11-17",
+    "status": "paid",
+    "invoice_id": "INV-C-10001-202511"
+  },
+  {
+    "customer_id": "C-10001",
+    "billing_month": "2025-12",
+    "base_fee": 599,
+    "extras": [],
+    "total_amount": 599,
+    "due_date": "2025-12-20",
+    "paid_date": "2025-12-14",
+    "status": "paid",
+    "invoice_id": "INV-C-10001-202512"
+  },
+  {
+    "customer_id": "C-10001",
+    "billing_month": "2026-01",
+    "base_fee": 599,
+    "extras": [],
+    "total_amount": 599,
+    "due_date": "2026-01-20",
+    "paid_date": "2026-01-18",
+    "status": "paid",
+    "invoice_id": "INV-C-10001-202601"
+  },
+  {
+    "customer_id": "C-10001",
+    "billing_month": "2026-02",
+    "base_fee": 599,
+    "extras": [],
+    "total_amount": 599,
+    "due_date": "2026-02-20",
+    "paid_date": "2026-02-18",
+    "status": "paid",
+    "invoice_id": "INV-C-10001-202602"
+  },
+  {
+    "customer_id": "C-10001",
+    "billing_month": "2026-03",
+    "base_fee": 599,
+    "extras": [],
+    "total_amount": 599,
+    "due_date": "2026-03-20",
+    "paid_date": "2026-03-10",
+    "status": "paid",
+    "invoice_id": "INV-C-10001-202603"
+  },
+  {
+    "customer_id": "C-10001",
+    "billing_month": "2026-04",
+    "base_fee": 599,
+    "extras": [],
+    "total_amount": 599,
+    "due_date": "2026-04-20",
+    "paid_date": "2026-04-19",
+    "status": "paid",
+    "invoice_id": "INV-C-10001-202604"
+  },
+  {
+    "customer_id": "C-10001",
+    "billing_month": "2026-05",
+    "base_fee": 599,
+    "extras": [],
+    "total_amount": 599,
+    "due_date": "2026-05-20",
+    "paid_date": "2026-05-17",
+    "status": "paid",
+    "invoice_id": "INV-C-10001-202605"
+  },
+  {
+    "customer_id": "C-10002",
+    "billing_month": "2025-06",
+    "base_fee": 899,
+    "extras": [],
+    "total_amount": 899,
+    "due_date": "2025-06-20",
+    "paid_date": "2025-06-19",
+    "status": "paid",
+    "invoice_id": "INV-C-10002-202506"
+  },
+  {
+    "customer_id": "C-10002",
+    "billing_month": "2025-07",
+    "base_fee": 899,
+    "extras": [],
+    "total_amount": 899,
+    "due_date": "2025-07-20",
+    "paid_date": "2025-07-12",
+    "status": "paid",
+    "invoice_id": "INV-C-10002-202507"
+  },
+  {
+    "customer_id": "C-10002",
+    "billing_month": "2025-08",
+    "base_fee": 899,
+    "extras": [
+      {
+        "item": "國際漫遊費",
+        "amount": 99
+      }
+    ],
+    "total_amount": 998,
+    "due_date": "2025-08-20",
+    "paid_date": "2025-08-12",
+    "status": "paid",
+    "invoice_id": "INV-C-10002-202508"
+  },
+  {
+    "customer_id": "C-10002",
+    "billing_month": "2025-09",
+    "base_fee": 899,
+    "extras": [],
+    "total_amount": 899,
+    "due_date": "2025-09-20",
+    "paid_date": "2025-09-17",
+    "status": "paid",
+    "invoice_id": "INV-C-10002-202509"
+  },
+  {
+    "customer_id": "C-10002",
+    "billing_month": "2025-10",
+    "base_fee": 899,
+    "extras": [],
+    "total_amount": 899,
+    "due_date": "2025-10-20",
+    "paid_date": null,
+    "status": "paid",
+    "invoice_id": "INV-C-10002-202510"
+  },
+  {
+    "customer_id": "C-10002",
+    "billing_month": "2025-11",
+    "base_fee": 899,
+    "extras": [],
+    "total_amount": 899,
+    "due_date": "2025-11-20",
+    "paid_date": "2025-11-15",
+    "status": "paid",
+    "invoice_id": "INV-C-10002-202511"
+  },
+  {
+    "customer_id": "C-10002",
+    "billing_month": "2025-12",
+    "base_fee": 899,
+    "extras": [],
+    "total_amount": 899,
+    "due_date": "2025-12-20",
+    "paid_date": "2025-12-14",
+    "status": "paid",
+    "invoice_id": "INV-C-10002-202512"
+  },
+  {
+    "customer_id": "C-10002",
+    "billing_month": "2026-01",
+    "base_fee": 899,
+    "extras": [],
+    "total_amount": 899,
+    "due_date": "2026-01-20",
+    "paid_date": "2026-01-14",
+    "status": "paid",
+    "invoice_id": "INV-C-10002-202601"
+  },
+  {
+    "customer_id": "C-10002",
+    "billing_month": "2026-02",
+    "base_fee": 899,
+    "extras": [],
+    "total_amount": 899,
+    "due_date": "2026-02-20",
+    "paid_date": "2026-02-12",
+    "status": "paid",
+    "invoice_id": "INV-C-10002-202602"
+  },
+  {
+    "customer_id": "C-10002",
+    "billing_month": "2026-03",
+    "base_fee": 899,
+    "extras": [],
+    "total_amount": 899,
+    "due_date": "2026-03-20",
+    "paid_date": null,
+    "status": "paid",
+    "invoice_id": "INV-C-10002-202603"
+  },
+  {
+    "customer_id": "C-10002",
+    "billing_month": "2026-04",
+    "base_fee": 899,
+    "extras": [
+      {
+        "item": "國際漫遊費",
+        "amount": 199
+      }
+    ],
+    "total_amount": 1098,
+    "due_date": "2026-04-20",
+    "paid_date": "2026-04-14",
+    "status": "paid",
+    "invoice_id": "INV-C-10002-202604"
+  },
+  {
+    "customer_id": "C-10002",
+    "billing_month": "2026-05",
+    "base_fee": 899,
+    "extras": [],
+    "total_amount": 899,
+    "due_date": "2026-05-20",
+    "paid_date": "2026-05-17",
+    "status": "paid",
+    "invoice_id": "INV-C-10002-202605"
+  },
+  {
+    "customer_id": "C-10003",
+    "billing_month": "2025-06",
+    "base_fee": 799,
+    "extras": [],
+    "total_amount": 799,
+    "due_date": "2025-06-20",
+    "paid_date": "2025-06-17",
+    "status": "paid",
+    "invoice_id": "INV-C-10003-202506"
+  },
+  {
+    "customer_id": "C-10003",
+    "billing_month": "2025-07",
+    "base_fee": 799,
+    "extras": [],
+    "total_amount": 799,
+    "due_date": "2025-07-20",
+    "paid_date": "2025-07-13",
+    "status": "paid",
+    "invoice_id": "INV-C-10003-202507"
+  },
+  {
+    "customer_id": "C-10003",
+    "billing_month": "2025-08",
+    "base_fee": 799,
+    "extras": [],
+    "total_amount": 799,
+    "due_date": "2025-08-20",
+    "paid_date": "2025-08-16",
+    "status": "paid",
+    "invoice_id": "INV-C-10003-202508"
+  },
+  {
+    "customer_id": "C-10003",
+    "billing_month": "2025-09",
+    "base_fee": 799,
+    "extras": [],
+    "total_amount": 799,
+    "due_date": "2025-09-20",
+    "paid_date": "2025-09-11",
+    "status": "paid",
+    "invoice_id": "INV-C-10003-202509"
+  },
+  {
+    "customer_id": "C-10003",
+    "billing_month": "2025-10",
+    "base_fee": 799,
+    "extras": [
+      {
+        "item": "國際漫遊費",
+        "amount": 99
+      }
+    ],
+    "total_amount": 898,
+    "due_date": "2025-10-20",
+    "paid_date": "2025-10-13",
+    "status": "overdue",
+    "invoice_id": "INV-C-10003-202510"
+  },
+  {
+    "customer_id": "C-10003",
+    "billing_month": "2025-11",
+    "base_fee": 799,
+    "extras": [],
+    "total_amount": 799,
+    "due_date": "2025-11-20",
+    "paid_date": "2025-11-10",
+    "status": "paid",
+    "invoice_id": "INV-C-10003-202511"
+  },
+  {
+    "customer_id": "C-10003",
+    "billing_month": "2025-12",
+    "base_fee": 799,
+    "extras": [
+      {
+        "item": "國際漫遊費",
+        "amount": 99
+      }
+    ],
+    "total_amount": 898,
+    "due_date": "2025-12-20",
+    "paid_date": "2025-12-18",
+    "status": "paid",
+    "invoice_id": "INV-C-10003-202512"
+  },
+  {
+    "customer_id": "C-10003",
+    "billing_month": "2026-01",
+    "base_fee": 799,
+    "extras": [],
+    "total_amount": 799,
+    "due_date": "2026-01-20",
+    "paid_date": "2026-01-17",
+    "status": "paid",
+    "invoice_id": "INV-C-10003-202601"
+  },
+  {
+    "customer_id": "C-10003",
+    "billing_month": "2026-02",
+    "base_fee": 799,
+    "extras": [],
+    "total_amount": 799,
+    "due_date": "2026-02-20",
+    "paid_date": "2026-02-16",
+    "status": "paid",
+    "invoice_id": "INV-C-10003-202602"
+  },
+  {
+    "customer_id": "C-10003",
+    "billing_month": "2026-03",
+    "base_fee": 799,
+    "extras": [],
+    "total_amount": 799,
+    "due_date": "2026-03-20",
+    "paid_date": "2026-03-11",
+    "status": "paid",
+    "invoice_id": "INV-C-10003-202603"
+  },
+  {
+    "customer_id": "C-10003",
+    "billing_month": "2026-04",
+    "base_fee": 799,
+    "extras": [],
+    "total_amount": 799,
+    "due_date": "2026-04-20",
+    "paid_date": "2026-04-13",
+    "status": "paid",
+    "invoice_id": "INV-C-10003-202604"
+  },
+  {
+    "customer_id": "C-10003",
+    "billing_month": "2026-05",
+    "base_fee": 799,
+    "extras": [],
+    "total_amount": 799,
+    "due_date": "2026-05-20",
+    "paid_date": "2026-05-13",
+    "status": "paid",
+    "invoice_id": "INV-C-10003-202605"
+  },
+  {
+    "customer_id": "C-10004",
+    "billing_month": "2025-06",
+    "base_fee": 499,
+    "extras": [
+      {
+        "item": "國際漫遊費",
+        "amount": 299
+      }
+    ],
+    "total_amount": 798,
+    "due_date": "2025-06-20",
+    "paid_date": "2025-06-18",
+    "status": "paid",
+    "invoice_id": "INV-C-10004-202506"
+  },
+  {
+    "customer_id": "C-10004",
+    "billing_month": "2025-07",
+    "base_fee": 499,
+    "extras": [],
+    "total_amount": 499,
+    "due_date": "2025-07-20",
+    "paid_date": "2025-07-12",
+    "status": "paid",
+    "invoice_id": "INV-C-10004-202507"
+  },
+  {
+    "customer_id": "C-10004",
+    "billing_month": "2025-08",
+    "base_fee": 499,
+    "extras": [],
+    "total_amount": 499,
+    "due_date": "2025-08-20",
+    "paid_date": "2025-08-12",
+    "status": "paid",
+    "invoice_id": "INV-C-10004-202508"
+  },
+  {
+    "customer_id": "C-10004",
+    "billing_month": "2025-09",
+    "base_fee": 499,
+    "extras": [],
+    "total_amount": 499,
+    "due_date": "2025-09-20",
+    "paid_date": "2025-09-17",
+    "status": "paid",
+    "invoice_id": "INV-C-10004-202509"
+  },
+  {
+    "customer_id": "C-10004",
+    "billing_month": "2025-10",
+    "base_fee": 499,
+    "extras": [],
+    "total_amount": 499,
+    "due_date": "2025-10-20",
+    "paid_date": "2025-10-17",
+    "status": "paid",
+    "invoice_id": "INV-C-10004-202510"
+  },
+  {
+    "customer_id": "C-10004",
+    "billing_month": "2025-11",
+    "base_fee": 499,
+    "extras": [],
+    "total_amount": 499,
+    "due_date": "2025-11-20",
+    "paid_date": "2025-11-18",
+    "status": "paid",
+    "invoice_id": "INV-C-10004-202511"
+  },
+  {
+    "customer_id": "C-10004",
+    "billing_month": "2025-12",
+    "base_fee": 499,
+    "extras": [],
+    "total_amount": 499,
+    "due_date": "2025-12-20",
+    "paid_date": "2025-12-18",
+    "status": "paid",
+    "invoice_id": "INV-C-10004-202512"
+  },
+  {
+    "customer_id": "C-10004",
+    "billing_month": "2026-01",
+    "base_fee": 499,
+    "extras": [],
+    "total_amount": 499,
+    "due_date": "2026-01-20",
+    "paid_date": "2026-01-19",
+    "status": "paid",
+    "invoice_id": "INV-C-10004-202601"
+  },
+  {
+    "customer_id": "C-10004",
+    "billing_month": "2026-02",
+    "base_fee": 499,
+    "extras": [],
+    "total_amount": 499,
+    "due_date": "2026-02-20",
+    "paid_date": "2026-02-19",
+    "status": "paid",
+    "invoice_id": "INV-C-10004-202602"
+  },
+  {
+    "customer_id": "C-10004",
+    "billing_month": "2026-03",
+    "base_fee": 499,
+    "extras": [],
+    "total_amount": 499,
+    "due_date": "2026-03-20",
+    "paid_date": "2026-03-19",
+    "status": "paid",
+    "invoice_id": "INV-C-10004-202603"
+  },
+  {
+    "customer_id": "C-10004",
+    "billing_month": "2026-04",
+    "base_fee": 499,
+    "extras": [],
+    "total_amount": 499,
+    "due_date": "2026-04-20",
+    "paid_date": "2026-04-15",
+    "status": "paid",
+    "invoice_id": "INV-C-10004-202604"
+  },
+  {
+    "customer_id": "C-10004",
+    "billing_month": "2026-05",
+    "base_fee": 499,
+    "extras": [],
+    "total_amount": 499,
+    "due_date": "2026-05-20",
+    "paid_date": "2026-05-15",
+    "status": "paid",
+    "invoice_id": "INV-C-10004-202605"
+  },
+  {
+    "customer_id": "C-10005",
+    "billing_month": "2025-06",
+    "base_fee": 899,
+    "extras": [
+      {
+        "item": "服務品質補償折抵",
+        "amount": -90
+      }
+    ],
+    "total_amount": 809,
+    "due_date": "2025-06-20",
+    "paid_date": "2025-06-19",
+    "status": "paid",
+    "invoice_id": "INV-C-10005-202506"
+  },
+  {
+    "customer_id": "C-10005",
+    "billing_month": "2025-07",
+    "base_fee": 899,
+    "extras": [
+      {
+        "item": "國際漫遊費",
+        "amount": 99
+      }
+    ],
+    "total_amount": 998,
+    "due_date": "2025-07-20",
+    "paid_date": "2025-07-15",
+    "status": "paid",
+    "invoice_id": "INV-C-10005-202507"
+  },
+  {
+    "customer_id": "C-10005",
+    "billing_month": "2025-08",
+    "base_fee": 899,
+    "extras": [],
+    "total_amount": 899,
+    "due_date": "2025-08-20",
+    "paid_date": "2025-08-18",
+    "status": "paid",
+    "invoice_id": "INV-C-10005-202508"
+  },
+  {
+    "customer_id": "C-10005",
+    "billing_month": "2025-09",
+    "base_fee": 899,
+    "extras": [],
+    "total_amount": 899,
+    "due_date": "2025-09-20",
+    "paid_date": "2025-09-10",
+    "status": "paid",
+    "invoice_id": "INV-C-10005-202509"
+  },
+  {
+    "customer_id": "C-10005",
+    "billing_month": "2025-10",
+    "base_fee": 899,
+    "extras": [],
+    "total_amount": 899,
+    "due_date": "2025-10-20",
+    "paid_date": "2025-10-12",
+    "status": "paid",
+    "invoice_id": "INV-C-10005-202510"
+  },
+  {
+    "customer_id": "C-10005",
+    "billing_month": "2025-11",
+    "base_fee": 899,
+    "extras": [],
+    "total_amount": 899,
+    "due_date": "2025-11-20",
+    "paid_date": "2025-11-14",
+    "status": "paid",
+    "invoice_id": "INV-C-10005-202511"
+  },
+  {
+    "customer_id": "C-10005",
+    "billing_month": "2025-12",
+    "base_fee": 899,
+    "extras": [],
+    "total_amount": 899,
+    "due_date": "2025-12-20",
+    "paid_date": "2025-12-14",
+    "status": "paid",
+    "invoice_id": "INV-C-10005-202512"
+  },
+  {
+    "customer_id": "C-10005",
+    "billing_month": "2026-01",
+    "base_fee": 899,
+    "extras": [],
+    "total_amount": 899,
+    "due_date": "2026-01-20",
+    "paid_date": "2026-01-16",
+    "status": "paid",
+    "invoice_id": "INV-C-10005-202601"
+  },
+  {
+    "customer_id": "C-10005",
+    "billing_month": "2026-02",
+    "base_fee": 899,
+    "extras": [
+      {
+        "item": "國際漫遊費",
+        "amount": 199
+      }
+    ],
+    "total_amount": 1098,
+    "due_date": "2026-02-20",
+    "paid_date": "2026-02-14",
+    "status": "paid",
+    "invoice_id": "INV-C-10005-202602"
+  },
+  {
+    "customer_id": "C-10005",
+    "billing_month": "2026-03",
+    "base_fee": 899,
+    "extras": [],
+    "total_amount": 899,
+    "due_date": "2026-03-20",
+    "paid_date": "2026-03-11",
+    "status": "paid",
+    "invoice_id": "INV-C-10005-202603"
+  },
+  {
+    "customer_id": "C-10005",
+    "billing_month": "2026-04",
+    "base_fee": 899,
+    "extras": [],
+    "total_amount": 899,
+    "due_date": "2026-04-20",
+    "paid_date": "2026-04-15",
+    "status": "paid",
+    "invoice_id": "INV-C-10005-202604"
+  },
+  {
+    "customer_id": "C-10005",
+    "billing_month": "2026-05",
+    "base_fee": 899,
+    "extras": [],
+    "total_amount": 899,
+    "due_date": "2026-05-20",
+    "paid_date": "2026-05-10",
+    "status": "paid",
+    "invoice_id": "INV-C-10005-202605"
+  },
+  {
+    "customer_id": "C-10006",
+    "billing_month": "2025-06",
+    "base_fee": 3500,
+    "extras": [],
+    "total_amount": 3500,
+    "due_date": "2025-06-20",
+    "paid_date": "2025-06-18",
+    "status": "paid",
+    "invoice_id": "INV-C-10006-202506"
+  },
+  {
+    "customer_id": "C-10006",
+    "billing_month": "2025-07",
+    "base_fee": 3500,
+    "extras": [],
+    "total_amount": 3500,
+    "due_date": "2025-07-20",
+    "paid_date": "2025-07-13",
+    "status": "paid",
+    "invoice_id": "INV-C-10006-202507"
+  },
+  {
+    "customer_id": "C-10006",
+    "billing_month": "2025-08",
+    "base_fee": 3500,
+    "extras": [],
+    "total_amount": 3500,
+    "due_date": "2025-08-20",
+    "paid_date": "2025-08-10",
+    "status": "paid",
+    "invoice_id": "INV-C-10006-202508"
+  },
+  {
+    "customer_id": "C-10006",
+    "billing_month": "2025-09",
+    "base_fee": 3500,
+    "extras": [],
+    "total_amount": 3500,
+    "due_date": "2025-09-20",
+    "paid_date": "2025-09-13",
+    "status": "paid",
+    "invoice_id": "INV-C-10006-202509"
+  },
+  {
+    "customer_id": "C-10006",
+    "billing_month": "2025-10",
+    "base_fee": 3500,
+    "extras": [],
+    "total_amount": 3500,
+    "due_date": "2025-10-20",
+    "paid_date": "2025-10-17",
+    "status": "paid",
+    "invoice_id": "INV-C-10006-202510"
+  },
+  {
+    "customer_id": "C-10006",
+    "billing_month": "2025-11",
+    "base_fee": 3500,
+    "extras": [],
+    "total_amount": 3500,
+    "due_date": "2025-11-20",
+    "paid_date": "2025-11-13",
+    "status": "paid",
+    "invoice_id": "INV-C-10006-202511"
+  },
+  {
+    "customer_id": "C-10006",
+    "billing_month": "2025-12",
+    "base_fee": 3500,
+    "extras": [],
+    "total_amount": 3500,
+    "due_date": "2025-12-20",
+    "paid_date": "2025-12-11",
+    "status": "paid",
+    "invoice_id": "INV-C-10006-202512"
+  },
+  {
+    "customer_id": "C-10006",
+    "billing_month": "2026-01",
+    "base_fee": 3500,
+    "extras": [],
+    "total_amount": 3500,
+    "due_date": "2026-01-20",
+    "paid_date": "2026-01-18",
+    "status": "paid",
+    "invoice_id": "INV-C-10006-202601"
+  },
+  {
+    "customer_id": "C-10006",
+    "billing_month": "2026-02",
+    "base_fee": 3500,
+    "extras": [
+      {
+        "item": "國際漫遊費",
+        "amount": 199
+      }
+    ],
+    "total_amount": 3699,
+    "due_date": "2026-02-20",
+    "paid_date": "2026-02-14",
+    "status": "overdue",
+    "invoice_id": "INV-C-10006-202602"
+  },
+  {
+    "customer_id": "C-10006",
+    "billing_month": "2026-03",
+    "base_fee": 3500,
+    "extras": [],
+    "total_amount": 3500,
+    "due_date": "2026-03-20",
+    "paid_date": "2026-03-16",
+    "status": "paid",
+    "invoice_id": "INV-C-10006-202603"
+  },
+  {
+    "customer_id": "C-10006",
+    "billing_month": "2026-04",
+    "base_fee": 3500,
+    "extras": [],
+    "total_amount": 3500,
+    "due_date": "2026-04-20",
+    "paid_date": "2026-04-14",
+    "status": "overdue",
+    "invoice_id": "INV-C-10006-202604"
+  },
+  {
+    "customer_id": "C-10006",
+    "billing_month": "2026-05",
+    "base_fee": 3500,
+    "extras": [],
+    "total_amount": 3500,
+    "due_date": "2026-05-20",
+    "paid_date": "2026-05-13",
+    "status": "paid",
+    "invoice_id": "INV-C-10006-202605"
+  },
+  {
+    "customer_id": "C-10007",
+    "billing_month": "2025-06",
+    "base_fee": 599,
+    "extras": [
+      {
+        "item": "國際漫遊費",
+        "amount": 299
+      }
+    ],
+    "total_amount": 898,
+    "due_date": "2025-06-20",
+    "paid_date": "2025-06-11",
+    "status": "paid",
+    "invoice_id": "INV-C-10007-202506"
+  },
+  {
+    "customer_id": "C-10007",
+    "billing_month": "2025-07",
+    "base_fee": 599,
+    "extras": [],
+    "total_amount": 599,
+    "due_date": "2025-07-20",
+    "paid_date": "2025-07-16",
+    "status": "paid",
+    "invoice_id": "INV-C-10007-202507"
+  },
+  {
+    "customer_id": "C-10007",
+    "billing_month": "2025-08",
+    "base_fee": 599,
+    "extras": [],
+    "total_amount": 599,
+    "due_date": "2025-08-20",
+    "paid_date": "2025-08-16",
+    "status": "paid",
+    "invoice_id": "INV-C-10007-202508"
+  },
+  {
+    "customer_id": "C-10007",
+    "billing_month": "2025-09",
+    "base_fee": 599,
+    "extras": [],
+    "total_amount": 599,
+    "due_date": "2025-09-20",
+    "paid_date": "2025-09-18",
+    "status": "paid",
+    "invoice_id": "INV-C-10007-202509"
+  },
+  {
+    "customer_id": "C-10007",
+    "billing_month": "2025-10",
+    "base_fee": 599,
+    "extras": [],
+    "total_amount": 599,
+    "due_date": "2025-10-20",
+    "paid_date": "2025-10-19",
+    "status": "paid",
+    "invoice_id": "INV-C-10007-202510"
+  },
+  {
+    "customer_id": "C-10007",
+    "billing_month": "2025-11",
+    "base_fee": 599,
+    "extras": [],
+    "total_amount": 599,
+    "due_date": "2025-11-20",
+    "paid_date": "2025-11-17",
+    "status": "paid",
+    "invoice_id": "INV-C-10007-202511"
+  },
+  {
+    "customer_id": "C-10007",
+    "billing_month": "2025-12",
+    "base_fee": 599,
+    "extras": [],
+    "total_amount": 599,
+    "due_date": "2025-12-20",
+    "paid_date": "2025-12-14",
+    "status": "paid",
+    "invoice_id": "INV-C-10007-202512"
+  },
+  {
+    "customer_id": "C-10007",
+    "billing_month": "2026-01",
+    "base_fee": 599,
+    "extras": [],
+    "total_amount": 599,
+    "due_date": "2026-01-20",
+    "paid_date": "2026-01-13",
+    "status": "paid",
+    "invoice_id": "INV-C-10007-202601"
+  },
+  {
+    "customer_id": "C-10007",
+    "billing_month": "2026-02",
+    "base_fee": 599,
+    "extras": [],
+    "total_amount": 599,
+    "due_date": "2026-02-20",
+    "paid_date": null,
+    "status": "paid",
+    "invoice_id": "INV-C-10007-202602"
+  },
+  {
+    "customer_id": "C-10007",
+    "billing_month": "2026-03",
+    "base_fee": 599,
+    "extras": [],
+    "total_amount": 599,
+    "due_date": "2026-03-20",
+    "paid_date": "2026-03-16",
+    "status": "paid",
+    "invoice_id": "INV-C-10007-202603"
+  },
+  {
+    "customer_id": "C-10007",
+    "billing_month": "2026-04",
+    "base_fee": 599,
+    "extras": [],
+    "total_amount": 599,
+    "due_date": "2026-04-20",
+    "paid_date": "2026-04-16",
+    "status": "paid",
+    "invoice_id": "INV-C-10007-202604"
+  },
+  {
+    "customer_id": "C-10007",
+    "billing_month": "2026-05",
+    "base_fee": 599,
+    "extras": [
+      {
+        "item": "服務品質補償折抵",
+        "amount": -60
+      }
+    ],
+    "total_amount": 539,
+    "due_date": "2026-05-20",
+    "paid_date": "2026-05-11",
+    "status": "paid",
+    "invoice_id": "INV-C-10007-202605"
+  },
+  {
+    "customer_id": "C-10008",
+    "billing_month": "2025-06",
+    "base_fee": 799,
+    "extras": [],
+    "total_amount": 799,
+    "due_date": "2025-06-20",
+    "paid_date": "2025-06-17",
+    "status": "paid",
+    "invoice_id": "INV-C-10008-202506"
+  },
+  {
+    "customer_id": "C-10008",
+    "billing_month": "2025-07",
+    "base_fee": 799,
+    "extras": [],
+    "total_amount": 799,
+    "due_date": "2025-07-20",
+    "paid_date": "2025-07-17",
+    "status": "paid",
+    "invoice_id": "INV-C-10008-202507"
+  },
+  {
+    "customer_id": "C-10008",
+    "billing_month": "2025-08",
+    "base_fee": 799,
+    "extras": [],
+    "total_amount": 799,
+    "due_date": "2025-08-20",
+    "paid_date": "2025-08-17",
+    "status": "paid",
+    "invoice_id": "INV-C-10008-202508"
+  },
+  {
+    "customer_id": "C-10008",
+    "billing_month": "2025-09",
+    "base_fee": 799,
+    "extras": [],
+    "total_amount": 799,
+    "due_date": "2025-09-20",
+    "paid_date": "2025-09-18",
+    "status": "paid",
+    "invoice_id": "INV-C-10008-202509"
+  },
+  {
+    "customer_id": "C-10008",
+    "billing_month": "2025-10",
+    "base_fee": 799,
+    "extras": [],
+    "total_amount": 799,
+    "due_date": "2025-10-20",
+    "paid_date": "2025-10-13",
+    "status": "paid",
+    "invoice_id": "INV-C-10008-202510"
+  },
+  {
+    "customer_id": "C-10008",
+    "billing_month": "2025-11",
+    "base_fee": 799,
+    "extras": [],
+    "total_amount": 799,
+    "due_date": "2025-11-20",
+    "paid_date": "2025-11-13",
+    "status": "paid",
+    "invoice_id": "INV-C-10008-202511"
+  },
+  {
+    "customer_id": "C-10008",
+    "billing_month": "2025-12",
+    "base_fee": 799,
+    "extras": [
+      {
+        "item": "國際漫遊費",
+        "amount": 199
+      }
+    ],
+    "total_amount": 998,
+    "due_date": "2025-12-20",
+    "paid_date": "2025-12-18",
+    "status": "paid",
+    "invoice_id": "INV-C-10008-202512"
+  },
+  {
+    "customer_id": "C-10008",
+    "billing_month": "2026-01",
+    "base_fee": 799,
+    "extras": [],
+    "total_amount": 799,
+    "due_date": "2026-01-20",
+    "paid_date": "2026-01-13",
+    "status": "paid",
+    "invoice_id": "INV-C-10008-202601"
+  },
+  {
+    "customer_id": "C-10008",
+    "billing_month": "2026-02",
+    "base_fee": 799,
+    "extras": [],
+    "total_amount": 799,
+    "due_date": "2026-02-20",
+    "paid_date": "2026-02-13",
+    "status": "paid",
+    "invoice_id": "INV-C-10008-202602"
+  },
+  {
+    "customer_id": "C-10008",
+    "billing_month": "2026-03",
+    "base_fee": 799,
+    "extras": [],
+    "total_amount": 799,
+    "due_date": "2026-03-20",
+    "paid_date": "2026-03-10",
+    "status": "paid",
+    "invoice_id": "INV-C-10008-202603"
+  },
+  {
+    "customer_id": "C-10008",
+    "billing_month": "2026-04",
+    "base_fee": 799,
+    "extras": [],
+    "total_amount": 799,
+    "due_date": "2026-04-20",
+    "paid_date": null,
+    "status": "paid",
+    "invoice_id": "INV-C-10008-202604"
+  },
+  {
+    "customer_id": "C-10008",
+    "billing_month": "2026-05",
+    "base_fee": 799,
+    "extras": [],
+    "total_amount": 799,
+    "due_date": "2026-05-20",
+    "paid_date": "2026-05-16",
+    "status": "paid",
+    "invoice_id": "INV-C-10008-202605"
+  },
+  {
+    "customer_id": "C-10009",
+    "billing_month": "2025-06",
+    "base_fee": 599,
+    "extras": [],
+    "total_amount": 599,
+    "due_date": "2025-06-20",
+    "paid_date": "2025-06-17",
+    "status": "paid",
+    "invoice_id": "INV-C-10009-202506"
+  },
+  {
+    "customer_id": "C-10009",
+    "billing_month": "2025-07",
+    "base_fee": 599,
+    "extras": [
+      {
+        "item": "服務品質補償折抵",
+        "amount": -60
+      }
+    ],
+    "total_amount": 539,
+    "due_date": "2025-07-20",
+    "paid_date": "2025-07-16",
+    "status": "paid",
+    "invoice_id": "INV-C-10009-202507"
+  },
+  {
+    "customer_id": "C-10009",
+    "billing_month": "2025-08",
+    "base_fee": 599,
+    "extras": [],
+    "total_amount": 599,
+    "due_date": "2025-08-20",
+    "paid_date": "2025-08-18",
+    "status": "overdue",
+    "invoice_id": "INV-C-10009-202508"
+  },
+  {
+    "customer_id": "C-10009",
+    "billing_month": "2025-09",
+    "base_fee": 599,
+    "extras": [],
+    "total_amount": 599,
+    "due_date": "2025-09-20",
+    "paid_date": null,
+    "status": "paid",
+    "invoice_id": "INV-C-10009-202509"
+  },
+  {
+    "customer_id": "C-10009",
+    "billing_month": "2025-10",
+    "base_fee": 599,
+    "extras": [],
+    "total_amount": 599,
+    "due_date": "2025-10-20",
+    "paid_date": "2025-10-16",
+    "status": "paid",
+    "invoice_id": "INV-C-10009-202510"
+  },
+  {
+    "customer_id": "C-10009",
+    "billing_month": "2025-11",
+    "base_fee": 599,
+    "extras": [],
+    "total_amount": 599,
+    "due_date": "2025-11-20",
+    "paid_date": "2025-11-14",
+    "status": "paid",
+    "invoice_id": "INV-C-10009-202511"
+  },
+  {
+    "customer_id": "C-10009",
+    "billing_month": "2025-12",
+    "base_fee": 599,
+    "extras": [],
+    "total_amount": 599,
+    "due_date": "2025-12-20",
+    "paid_date": "2025-12-10",
+    "status": "paid",
+    "invoice_id": "INV-C-10009-202512"
+  },
+  {
+    "customer_id": "C-10009",
+    "billing_month": "2026-01",
+    "base_fee": 599,
+    "extras": [
+      {
+        "item": "國際漫遊費",
+        "amount": 199
+      }
+    ],
+    "total_amount": 798,
+    "due_date": "2026-01-20",
+    "paid_date": "2026-01-10",
+    "status": "paid",
+    "invoice_id": "INV-C-10009-202601"
+  },
+  {
+    "customer_id": "C-10009",
+    "billing_month": "2026-02",
+    "base_fee": 599,
+    "extras": [],
+    "total_amount": 599,
+    "due_date": "2026-02-20",
+    "paid_date": null,
+    "status": "paid",
+    "invoice_id": "INV-C-10009-202602"
+  },
+  {
+    "customer_id": "C-10009",
+    "billing_month": "2026-03",
+    "base_fee": 599,
+    "extras": [],
+    "total_amount": 599,
+    "due_date": "2026-03-20",
+    "paid_date": "2026-03-13",
+    "status": "paid",
+    "invoice_id": "INV-C-10009-202603"
+  },
+  {
+    "customer_id": "C-10009",
+    "billing_month": "2026-04",
+    "base_fee": 599,
+    "extras": [],
+    "total_amount": 599,
+    "due_date": "2026-04-20",
+    "paid_date": "2026-04-11",
+    "status": "paid",
+    "invoice_id": "INV-C-10009-202604"
+  },
+  {
+    "customer_id": "C-10009",
+    "billing_month": "2026-05",
+    "base_fee": 599,
+    "extras": [],
+    "total_amount": 599,
+    "due_date": "2026-05-20",
+    "paid_date": "2026-05-14",
+    "status": "paid",
+    "invoice_id": "INV-C-10009-202605"
+  },
+  {
+    "customer_id": "C-10010",
+    "billing_month": "2025-06",
+    "base_fee": 499,
+    "extras": [],
+    "total_amount": 499,
+    "due_date": "2025-06-20",
+    "paid_date": "2025-06-13",
+    "status": "paid",
+    "invoice_id": "INV-C-10010-202506"
+  },
+  {
+    "customer_id": "C-10010",
+    "billing_month": "2025-07",
+    "base_fee": 499,
+    "extras": [],
+    "total_amount": 499,
+    "due_date": "2025-07-20",
+    "paid_date": "2025-07-14",
+    "status": "paid",
+    "invoice_id": "INV-C-10010-202507"
+  },
+  {
+    "customer_id": "C-10010",
+    "billing_month": "2025-08",
+    "base_fee": 499,
+    "extras": [],
+    "total_amount": 499,
+    "due_date": "2025-08-20",
+    "paid_date": "2025-08-10",
+    "status": "paid",
+    "invoice_id": "INV-C-10010-202508"
+  },
+  {
+    "customer_id": "C-10010",
+    "billing_month": "2025-09",
+    "base_fee": 499,
+    "extras": [],
+    "total_amount": 499,
+    "due_date": "2025-09-20",
+    "paid_date": "2025-09-15",
+    "status": "overdue",
+    "invoice_id": "INV-C-10010-202509"
+  },
+  {
+    "customer_id": "C-10010",
+    "billing_month": "2025-10",
+    "base_fee": 499,
+    "extras": [],
+    "total_amount": 499,
+    "due_date": "2025-10-20",
+    "paid_date": "2025-10-15",
+    "status": "paid",
+    "invoice_id": "INV-C-10010-202510"
+  },
+  {
+    "customer_id": "C-10010",
+    "billing_month": "2025-11",
+    "base_fee": 499,
+    "extras": [],
+    "total_amount": 499,
+    "due_date": "2025-11-20",
+    "paid_date": "2025-11-18",
+    "status": "paid",
+    "invoice_id": "INV-C-10010-202511"
+  },
+  {
+    "customer_id": "C-10010",
+    "billing_month": "2025-12",
+    "base_fee": 499,
+    "extras": [],
+    "total_amount": 499,
+    "due_date": "2025-12-20",
+    "paid_date": "2025-12-17",
+    "status": "paid",
+    "invoice_id": "INV-C-10010-202512"
+  },
+  {
+    "customer_id": "C-10010",
+    "billing_month": "2026-01",
+    "base_fee": 499,
+    "extras": [],
+    "total_amount": 499,
+    "due_date": "2026-01-20",
+    "paid_date": "2026-01-13",
+    "status": "paid",
+    "invoice_id": "INV-C-10010-202601"
+  },
+  {
+    "customer_id": "C-10010",
+    "billing_month": "2026-02",
+    "base_fee": 499,
+    "extras": [
+      {
+        "item": "國際漫遊費",
+        "amount": 199
+      }
+    ],
+    "total_amount": 698,
+    "due_date": "2026-02-20",
+    "paid_date": "2026-02-19",
+    "status": "paid",
+    "invoice_id": "INV-C-10010-202602"
+  },
+  {
+    "customer_id": "C-10010",
+    "billing_month": "2026-03",
+    "base_fee": 499,
+    "extras": [],
+    "total_amount": 499,
+    "due_date": "2026-03-20",
+    "paid_date": "2026-03-17",
+    "status": "paid",
+    "invoice_id": "INV-C-10010-202603"
+  },
+  {
+    "customer_id": "C-10010",
+    "billing_month": "2026-04",
+    "base_fee": 499,
+    "extras": [],
+    "total_amount": 499,
+    "due_date": "2026-04-20",
+    "paid_date": "2026-04-14",
+    "status": "paid",
+    "invoice_id": "INV-C-10010-202604"
+  },
+  {
+    "customer_id": "C-10010",
+    "billing_month": "2026-05",
+    "base_fee": 499,
+    "extras": [],
+    "total_amount": 499,
+    "due_date": "2026-05-20",
+    "paid_date": "2026-05-16",
+    "status": "paid",
+    "invoice_id": "INV-C-10010-202605"
+  }
+]

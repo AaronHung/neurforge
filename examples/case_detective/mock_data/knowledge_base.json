@@ -1,0 +1,57 @@
+[
+  {
+    "kb_id": "KB-BILLING-001",
+    "category": "billing",
+    "title": "帳單爭議處理標準流程",
+    "content": "客戶提出帳單爭議時：\n1. 查核當月帳單明細（invoice_id），確認每筆費用項目\n2. 比對客戶合約方案費率，確認是否有額外費用觸發條件\n3. 若確認計費錯誤，授權範圍：客服人員可退費 NT$500 以內，NT$500 以上需組長審核\n4. 退費方式：下月帳單折抵或信用卡退款（3-5 工作天）\n5. 記錄案件並追蹤系統是否有系統性問題",
+    "applies_to": [
+      "billing_dispute"
+    ],
+    "updated": "2026-01-15"
+  },
+  {
+    "kb_id": "KB-SLA-001",
+    "title": "SLA 違約補償政策",
+    "category": "sla",
+    "content": "各方案 SLA 保證與補償規定：\n- 一般家庭方案（FBB-500/1G）：可用率 < 保證值，每月超出部分按比例折抵月租費（上限月租費 30%）\n- 5G/4G 行動方案：連續 4 小時以上中斷，補償 1 日免費數據 5GB\n- 企業方案（BIZ-FBB）：可用率 < 99.9%，依合約第 12 條，每 0.1% 缺口補償月租費 5%，無上限\n補償申請有效期：事件發生後 60 天內\n申請方式：客服專線或線上客服，提供帳號與發生時間",
+    "applies_to": [
+      "sla_violation",
+      "service_outage"
+    ],
+    "updated": "2025-11-01"
+  },
+  {
+    "kb_id": "KB-SPEED-001",
+    "title": "網速異常排查步驟",
+    "category": "technical",
+    "content": "接到網速申訴時的標準排查流程：\n1. 確認客戶測速工具及時間（避免尖峰時段誤判）\n2. 查詢附近施工工程（construction_lookup），確認是否施工影響\n3. 查詢近 30 天該地區測速紀錄（speed_test_logs）\n4. 若下載速度持續低於方案保證速度 50%，視為 SLA 違反，啟動補償流程\n5. 安排技術人員到府檢測（室內配線、數據機、光纖終端設備）\n尖峰時段定義：平日 19:00-23:00，假日 12:00-23:00",
+    "applies_to": [
+      "speed_degradation"
+    ],
+    "updated": "2026-02-10"
+  },
+  {
+    "kb_id": "KB-ESCAL-001",
+    "title": "案件升級（Escalation）規則",
+    "category": "escalation",
+    "content": "以下情況應立即升級至主管或專責組別：\n1. 企業客戶（VIP 企業）的任何 critical 案件\n2. 同一客戶同一問題重複申訴（第二次以上）\n3. 補償金額超過 NT$5,000\n4. 客戶明確表示不滿意並要求主管處理\n5. 案件逾期未處理超過 3 個工作天\n升級路徑：客服人員 → 組長 → 部門主管 → 總監（依金額/嚴重性）",
+    "applies_to": [
+      "billing_dispute",
+      "sla_violation",
+      "service_outage",
+      "speed_degradation"
+    ],
+    "updated": "2026-03-01"
+  },
+  {
+    "kb_id": "KB-CONST-001",
+    "title": "施工影響查詢與客戶說明話術",
+    "category": "construction",
+    "content": "確認施工影響後，對客戶說明要點：\n1. 說明施工名稱、預計完工日期\n2. 施工期間無法保證正常品質屬不可抗力，SLA 條款第 8 條免責\n3. 但應主動提供補償方案（例如：延長合約、優惠月租費）以維持客戶關係\n4. 確認客戶是否於施工通知日期前已收到 SMS 通知（若否則須道歉）\n施工免責條款不適用於：未提前通知客戶的情況",
+    "applies_to": [
+      "speed_degradation",
+      "service_outage"
+    ],
+    "updated": "2025-09-20"
+  }
+]

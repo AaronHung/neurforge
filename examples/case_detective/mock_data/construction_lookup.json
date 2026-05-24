@@ -1,0 +1,72 @@
+[
+  {
+    "project_id": "CONS-2026-NB-001",
+    "district": "新北市板橋區",
+    "address": "文化路二段 120-180 號路段",
+    "project_name": "板橋文化路地下管線更新工程",
+    "contractor": "捷達工程股份有限公司",
+    "start_date": "2026-03-01",
+    "expected_end": "2026-07-31",
+    "status": "in_progress",
+    "impact_radius_m": 300,
+    "telecom_impact": true,
+    "impact_description": "地下光纖管道施工，可能影響沿線用戶光纖品質，預估 C-10001 所在地址位於影響範圍內",
+    "notes": "工程期間網路品質可能出現波動，已通知受影響用戶（通知日期 2026-02-20）"
+  },
+  {
+    "project_id": "CONS-2026-TP-002",
+    "district": "台北市信義區",
+    "address": "松仁路 80-150 號",
+    "project_name": "信義區 5G 基礎設施擴容工程",
+    "contractor": "承昱電信工程有限公司",
+    "start_date": "2026-01-15",
+    "expected_end": "2026-06-30",
+    "status": "in_progress",
+    "impact_radius_m": 500,
+    "telecom_impact": true,
+    "impact_description": "5G 小基站安裝施工，夜間 21:00-06:00 進行高空作業，施工期間 5G 訊號可能切換至 4G",
+    "notes": "影響區域包含 C-10005 客戶地址，施工已知原因造成夜間降速"
+  },
+  {
+    "project_id": "CONS-2025-TN-003",
+    "district": "台南市東區",
+    "address": "長榮路一段至三段",
+    "project_name": "台南東區機房設備汰換",
+    "contractor": "電信自辦工程",
+    "start_date": "2026-04-14",
+    "expected_end": "2026-04-14",
+    "status": "completed",
+    "impact_radius_m": 2000,
+    "telecom_impact": true,
+    "impact_description": "台南東區 5G 機房主要設備更換，施工期 14:00-18:30 造成服務中斷",
+    "notes": "已提前 3 天 SMS 通知受影響用戶（含 C-10008），施工完成後服務完全恢復"
+  },
+  {
+    "project_id": "CONS-2026-HC-004",
+    "district": "新竹科學園區",
+    "address": "台積電路全區",
+    "project_name": "科學園區智慧電網整合工程",
+    "contractor": "台電配合工程",
+    "start_date": "2026-02-01",
+    "expected_end": "2026-03-15",
+    "status": "completed",
+    "impact_radius_m": 1000,
+    "telecom_impact": true,
+    "impact_description": "園區電力系統切換導致光纖機房多次短暫斷電，造成 SLA 可用率下降",
+    "notes": "2026/02 可用率降至 99.2%，低於企業 SLA 99.9% 目標。工程已於 3/15 結束"
+  },
+  {
+    "project_id": "CONS-2026-SJ-005",
+    "district": "新北市三重區",
+    "address": "重新路三段 200-350 號",
+    "project_name": "三重區舊管道汰換工程",
+    "contractor": "三和工程有限公司",
+    "start_date": "2026-04-20",
+    "expected_end": "2026-08-31",
+    "status": "in_progress",
+    "impact_radius_m": 400,
+    "telecom_impact": true,
+    "impact_description": "舊式銅線管道換光纖工程，施工期間線路品質不穩定",
+    "notes": "C-10009 搬遷後所在地址位於施工範圍，預計 8 月完工後恢復正常速度"
+  }
+]
