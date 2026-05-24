@@ -706,28 +706,29 @@ textarea {
   display: none;
 }
 
-@keyframes breathing {
-  0% {
-    transform: scale(1);
-    opacity: 0.8;
+@keyframes nf-glow {
+  0%, 100% {
+    box-shadow: 0 0 3px 1px rgba(124, 124, 248, 0.3);
+    transform: scale(0.85);
+    opacity: 0.6;
   }
   50% {
-    transform: scale(1.3);
+    box-shadow: 0 0 10px 3px rgba(124, 124, 248, 0.65);
+    transform: scale(1.15);
     opacity: 1;
-  }
-  100% {
-    transform: scale(1);
-    opacity: 0.8;
   }
 }
 
 .message-detail-summary[data-inprogress]:before {
-  content: '●';
-  font-size: 0.6em;
-  margin-right: 10px;
+  content: '';
   display: inline-block;
-  animation: breathing 1.5s ease-in-out infinite;
-  color: unset;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #7c7cf8;
+  margin-right: 10px;
+  vertical-align: middle;
+  animation: nf-glow 1.8s ease-in-out infinite;
 }
 
 details[open] > .message-detail-summary:before {
@@ -1359,20 +1360,17 @@ details[open] > .message-detail-content:has(.report-content) {
 }
 
 .agent-status:before {
-  content: '•';
-  font-size: 1.2em;
-  line-height: 1;
+  content: '';
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--agent-status-color, #7c7cf8);
+  flex-shrink: 0;
 }
 
 .agent-message[data-inprogress] .agent-status:before {
-  color: var(--agent-status-color);
-  animation: pulse 1.5s infinite;
-}
-
-@keyframes pulse {
-  0% { opacity: 0.5; }
-  50% { opacity: 1; }
-  100% { opacity: 0.5; }
+  animation: nf-glow 1.8s ease-in-out infinite;
 }
 
 /* Agent TOC Styles */
