@@ -1,58 +1,65 @@
 :root {
-  /* Light Theme Colors */
-  --color-text: #213547;
-  --color-bg: #ffffff;
-  --color-input-bg: #ffffff;
-  --chip-bg: #ffffff;
-  
+  /* ── NeurForge Light Work Area — Claude.ai warm + Linear clean ── */
+  --color-text:             #1a1812;   /* warm near-black                   */
+  --color-bg:               #f9f6f0;   /* warm cream — Claude.ai-inspired   */
+  --color-input-bg:         #ffffff;
+  --chip-bg:                #ffffff;
+
   /* Agent Component Colors */
-  --agent-bg: #f8fbff;
-  --agent-border: #e0eefd;
-  --agent-name-color: #0056b3;
-  --agent-status-color: #4a6cf7;
-  --color-border: #e0e0e0;
-  --color-header-bg: #f5f5f5;
-  --color-header-text: #333;
-  --color-row-even: #f9f9f9;
-  --color-row-hover: #f1f1f1;
-  --color-subtle-text: #6c757d;
-  --color-button-hover: #747bff;
-  --color-button-bg: #f9f9f9;
-  --color-chat-bg: rgb(240, 240, 240);
-  --color-detail-bg: #fff;
-  --color-detail-border: #eee;
-  --color-detail-hover: #f0f0f0;
-  --color-accent: #4a6cf7;
-  --mermaid-bg: #ffffff;
-  --mermaid-node: #4a6cf7;
-  --mermaid-text: #213547;
-  --color-error-bg: #fee2e2;
-  --color-error-border: #ef4444;
-  --color-error-text: #b91c1c;
-  --color-error-icon: #d32f2f;
-  --color-shadow: rgba(0, 0, 0, 0.1);
-  --color-example-bg: #333;
-  --color-example-text: #f0f0f0;
-  --color-message-confirm-bg: #f9f9f9;
-  
+  --agent-bg:               #ffffff;
+  --agent-border:           #e8e3da;
+  --agent-name-color:       #b85c28;   /* warm amber-orange                 */
+  --agent-status-color:     #d4773a;
+  --color-border:           #e4dfd6;
+  --color-header-bg:        #f9f6f0;
+  --color-header-text:      #1a1812;
+  --color-row-even:         #f5f1eb;
+  --color-row-hover:        #ede8e0;
+  --color-subtle-text:      #9e9080;
+  --color-button-hover:     #d4773a;
+  --color-button-bg:        #f5f1eb;
+  --color-chat-bg:          #eee9e1;   /* input area background             */
+  --color-detail-bg:        #ffffff;
+  --color-detail-border:    #e4dfd6;
+  --color-detail-hover:     #f5f1eb;
+  --color-accent:           #d4773a;   /* warm orange — primary accent      */
+  --color-accent-secondary: #7c5cfc;   /* violet — secondary / send button  */
+  --mermaid-bg:             #ffffff;
+  --mermaid-node:           #d4773a;
+  --mermaid-text:           #1a1812;
+  --color-error-bg:         #fee2e2;
+  --color-error-border:     #ef4444;
+  --color-error-text:       #b91c1c;
+  --color-error-icon:       #d32f2f;
+  --color-shadow:           rgba(26, 24, 18, 0.08);
+  --color-example-bg:       #f2ede6;   /* warm light — tool call content    */
+  --color-example-text:     #3a3228;
+  --color-message-confirm-bg: #f5f1eb;
+
+  /* Input card */
+  --input-card-bg:          #ffffff;
+  --input-card-border:      #ddd8cf;
+  --input-card-radius:      16px;
+  --input-card-shadow:      0 2px 16px rgba(26, 24, 18, 0.07), 0 1px 3px rgba(26, 24, 18, 0.05);
+
   /* Modal Colors */
-  --modal-bg: #ffffff;
-  --modal-text: #333333;
-  --modal-border: #e0e0e0;
-  --modal-button-bg: #f5f5f5;
-  --modal-button-hover: #e0e0e0;
-  --modal-button-primary: #4a6cf7;
-  --modal-button-primary-hover: #3a5bd9;
-  --modal-input-bg: #ffffff;
-  --modal-input-border: #e0e0e0;
-  --modal-input-text: #333333;
-  
+  --modal-bg:               #ffffff;
+  --modal-text:             #1a1812;
+  --modal-border:           #e4dfd6;
+  --modal-button-bg:        #f5f1eb;
+  --modal-button-hover:     #ede8e0;
+  --modal-button-primary:   #d4773a;
+  --modal-button-primary-hover: #b85c28;
+  --modal-input-bg:         #ffffff;
+  --modal-input-border:     #ddd8cf;
+  --modal-input-text:       #1a1812;
+
   /* Action Button Colors */
-  --action-button-primary-bg: rgba(76, 175, 80, 0.1);
-  --action-button-primary-text: #2e7d32;
+  --action-button-primary-bg:     rgba(76, 175, 80, 0.1);
+  --action-button-primary-text:   #2e7d32;
   --action-button-primary-border: rgba(76, 175, 80, 0.3);
-  --action-button-primary-hover: rgba(76, 175, 80, 0.2);
-  --config-display-color: rgb(222, 222, 222);
+  --action-button-primary-hover:  rgba(76, 175, 80, 0.2);
+  --config-display-color:   rgb(222, 222, 222);
 
   --side-bar-width: 250px;
 }
@@ -280,13 +287,11 @@ body {
 }
 
 body {
-  font-family: system-ui, -apple-system, sans-serif;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
   line-height: 1.5;
   min-height: 100vh;
-  /* height: 100vh; */
   margin: 0;
   padding: 0;
-  /* overflow: hidden; */
 }
 
 #root {
@@ -370,47 +375,49 @@ body {
 }
 
 .example-query {
-  background: var(--color-example-bg);
-  border-radius: 16px;
-  padding: 6px 12px;
-  font-size: 0.9em;
-  color: var(--color-example-text);
-  cursor: pointer;
-  transition: all 0.2s ease;
+  background: rgba(212, 119, 58, 0.08);
+  border: 1px solid rgba(212, 119, 58, 0.20);
+  border-radius: 20px;
+  padding: 6px 14px;
   font-size: 0.75rem;
-  opacity: 75%;
+  color: #c8632a;
+  cursor: pointer;
+  transition: background 0.15s, transform 0.15s, box-shadow 0.15s;
 }
 
 .example-query:hover {
+  background: rgba(212, 119, 58, 0.14);
   transform: translateY(-1px);
-  opacity: 100%;
+  box-shadow: 0 2px 8px rgba(212, 119, 58, 0.15);
 }
 
 .chat-input-container {
-  padding: 0.5rem;
-  background: var(--color-bg);
+  padding: 0.5rem 0.5rem 0;
   position: fixed;
   bottom: 50px;
   z-index: 100;
-  background: rgba(255, 255, 255, 0);
+  background: transparent;
 }
 
 .send-button {
-  /* background: #007bff; */
   background: rgba(0, 0, 0, 0);
-  /* color: white; */
   border: none;
   padding: 0.5em;
-  border-radius: 4px;
+  border-radius: 10px;
   cursor: pointer;
-  transition: background-color 0.2s;
+  transition: background 0.15s, color 0.15s;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 38px;
-  height: 38px;
+  width: 36px;
+  height: 36px;
   flex-shrink: 0;
-  color: var(--color-text);
+  color: var(--color-subtle-text);
+}
+
+.send-button:hover:not(:disabled) {
+  background: var(--color-row-hover);
+  color: #d4773a;
 }
 
 /* .send-button:hover:not(:disabled) {
@@ -418,31 +425,54 @@ body {
 } */
 
 .send-button:disabled {
-  /* background: #cccccc; */
   cursor: not-allowed;
+  opacity: 0.4;
 }
 
+.send-button--active {
+  color: #d4773a !important;
+}
+
+/* ── Thinking indicators ────────────────────────────── */
+
+/* Legacy breathing-circle — keep for file chips uploading state */
 .breathing-circle {
-  width: 16px;
-  height: 16px;
-  animation: breathing 1.5s infinite ease-in-out;
-  color: var(--color-text);
-  scale: 0.8;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--color-accent);
+  display: inline-block;
+  animation: nf-glow 1.8s ease-in-out infinite;
 }
 
-@keyframes breathing {
-  0% {
-    transform: scale(0.1);
-    opacity: 0;
-  }
-  50% {
-    transform: scale(0.8);
-    opacity: 1;
-  }
-  100% {
-    transform: scale(0.1);
-    opacity: 0;
-  }
+/* Modern thinking dot in respond-placeholder */
+.nf-thinking-dot {
+  display: inline-block;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: #d4773a;
+  animation: nf-glow-warm 1.8s ease-in-out infinite;
+}
+
+@keyframes nf-glow-warm {
+  0%, 100% { box-shadow: 0 0 3px 1px rgba(212, 119, 58, 0.3); transform: scale(0.85); opacity: 0.6; }
+  50%       { box-shadow: 0 0 10px 3px rgba(212, 119, 58, 0.6); transform: scale(1.15); opacity: 1; }
+}
+
+/* Send button in-flight indicator */
+.nf-send-spinner {
+  width: 15px;
+  height: 15px;
+  border: 2px solid rgba(212, 119, 58, 0.25);
+  border-top-color: #d4773a;
+  border-radius: 50%;
+  animation: nf-spin 0.8s linear infinite;
+  display: inline-block;
+}
+
+@keyframes nf-spin {
+  to { transform: rotate(360deg); }
 }
 
 .input-group {
@@ -457,11 +487,18 @@ body {
   gap: 8px;
   align-items: center;
   justify-content: center;
-  padding: 0 1em 0 1em;
-  background: var(--color-chat-bg);
-  overflow: hidden;
-  border-radius: 1000px;
+  padding: 6px 10px 6px 14px;
+  background: var(--input-card-bg);
+  border: 1px solid var(--input-card-border);
+  border-radius: var(--input-card-radius);
+  box-shadow: var(--input-card-shadow);
   margin-top: 0.5rem;
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+
+.chat-input-wrapper:focus-within {
+  border-color: rgba(212, 119, 58, 0.45);
+  box-shadow: 0 2px 20px rgba(212, 119, 58, 0.10), 0 1px 3px rgba(26, 24, 18, 0.05);
 }
 
 /* File selection area and chips */
@@ -608,25 +645,32 @@ textarea {
   }
 }
 
-/* Header styles */
+/* ── Header ─────────────────────────────────────────── */
 .header-container {
   text-align: center;
-  padding: 1.5rem 0;
+  padding: 1.5rem 0 0.75rem;
 }
 
 .chat-title {
-  font-size: 2rem;
-  margin: 0 0 0.5rem 0;
-  color: var(--color-header-text);
+  font-size: 1.25rem;
+  margin: 0 0 0.2rem 0;
   font-weight: 600;
+  letter-spacing: -0.01em;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 0.2em;
+  gap: 0.4em;
+  color: #c8632a;            /* warm terracotta orange */
+}
+
+.title-logo {
+  height: 1.5em;
+  display: inline-block;
+  filter: drop-shadow(0 1px 3px rgba(212, 119, 58, 0.2));
 }
 
 .chat-subtitle {
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   color: var(--color-subtle-text);
   margin: 0;
   font-weight: 400;
@@ -636,9 +680,10 @@ textarea {
 .message-detail {
   margin: 4px 0;
   border: 1px solid var(--color-border);
-  border-radius: 6px;
+  border-radius: 8px;
   overflow: visible !important;
   transition: height 0.3s ease-in-out;
+  background: var(--color-detail-bg);
 }
 
 .message-detail-summary {
@@ -769,9 +814,9 @@ details[open] > .message-detail-content:has(.report-content) {
   line-height: 1.5;
 }
 
-/* Footer Styles */
+/* ── Footer ─────────────────────────────────────────── */
 .app-footer {
-  padding: 0.5rem;
+  padding: 6px 0;
   text-align: center;
   position: fixed;
   bottom: 0;
@@ -793,12 +838,10 @@ details[open] > .message-detail-content:has(.report-content) {
 }
 
 .footer-logo {
-  max-width: 100px;
+  max-width: 80px;
   height: auto;
-  margin-bottom: 0.5rem;
-  background-color: rgba(255, 255, 255, 0.9);
-  padding: 0.2em 0.5em;
-  border-radius: 1000px;
+  opacity: 0.75;
+  filter: drop-shadow(0 1px 2px rgba(28, 28, 46, 0.1));
 }
 
 .footer-text {
@@ -996,11 +1039,7 @@ details[open] > .message-detail-content:has(.report-content) {
   --modal-input-text: #e2e8f0;
 }
 
-.title-logo {
-  height: 2em;
-  display: inline-block;
-  text-align: center;
-}
+/* .title-logo defined in header block above */
 
 /* Settings Icon */
 .settings-icon-container {
@@ -1336,10 +1375,11 @@ details[open] > .message-detail-content:has(.report-content) {
 }
 
 .agent-content {
-  padding: 12px;
+  padding: 12px 14px;
   background-color: var(--agent-bg);
-  border-radius: 8px;
+  border-radius: 10px;
   border: 1px solid var(--agent-border);
+  box-shadow: 0 1px 4px rgba(26, 24, 18, 0.05);
 }
 
 .agent-name {

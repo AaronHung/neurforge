@@ -1003,7 +1003,7 @@ const App: React.FC = () => {
             
             {isModelResponding && (
               <div className="respond-placeholder">
-                <i className="breathing-circle fa fa-circle"></i>
+                <span className="nf-thinking-dot" />
               </div>
             )}
             

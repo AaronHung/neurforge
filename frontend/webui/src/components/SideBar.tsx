@@ -17,6 +17,7 @@ import {
   Factory,
   Settings2,
   Users,
+  Cpu,
 } from 'lucide-react';
 
 interface SideBarProps {
@@ -205,7 +206,7 @@ const SideBar: React.FC<SideBarProps> = ({
                 className="sb-item"
                 onClick={() => onNavigate(Number(msg.id))}
               >
-                <span style={{ fontSize: 13 }}>🐙</span>
+                <Cpu size={13} strokeWidth={1.5} style={{ flexShrink: 0, opacity: 0.55 }} />
                 <span className="sb-item-label">{msg.content as string}</span>
               </div>
             ))
