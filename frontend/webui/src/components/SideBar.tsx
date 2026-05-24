@@ -2,6 +2,22 @@ import React, { useEffect, useRef, useState } from 'react';
 import './SideBar.css';
 import type { Message } from '../types/message';
 import { useTranslation } from 'react-i18next';
+import {
+  SquarePen,
+  History,
+  CheckCircle2,
+  RefreshCw,
+  Search,
+  X,
+  ChevronRight,
+  ChevronDown,
+  Plus,
+  Bot,
+  Network,
+  Factory,
+  Settings2,
+  Users,
+} from 'lucide-react';
 
 interface SideBarProps {
   isOpen: boolean;
@@ -19,57 +35,89 @@ interface SideBarProps {
   showAgentConfigs?: boolean;
 }
 
-// Helper function to convert path to a more readable format
-const getFilename = (path: string) => {
-  // Remove file extension and path
-  const filename = path.split('/').pop() || '';
-  const nameWithoutExt = filename.replace(/\.ya?ml$/, '');
-  
-  // Convert snake_case or kebab-case to Title Case
-  return nameWithoutExt
-    .split(/[_-]/)
-    .map(word => word.charAt(0).toUpperCase() + word.slice(1))
-    .join('');
+// ── Config categorisation ──────────────────────────────────────────────────
+
+// MFG: the three NeurForge industrial scenario agents
+const MFG_KEYWORDS = ['sensor_sage', 'industrial_qa', 'case_detective'];
+// Multi-Agent: example configs (flask icon before), orchestrators, generated
+const MULTI_PATTERNS = ['examples/', 'orchestra', 'generated/'];
+
+type ConfigCategory = 'manufacturing' | 'multi' | 'single';
+
+function getCategory(config: string): ConfigCategory {
+  const key = config.toLowerCase();
+  if (MFG_KEYWORDS.some(k => key.includes(k))) return 'manufacturing';
+  if (MULTI_PATTERNS.some(k => key.includes(k))) return 'multi';
+  return 'single';
+}
+
+const CATEGORY_META: Record<ConfigCategory, { label: string; Icon: React.ElementType; badge: string; badgeClass: string; labelClass: string; itemClass: string }> = {
+  manufacturing: {
+    label: 'Smart Manufacturing',
+    Icon: Factory,
+    badge: 'MFG',
+    badgeClass:  'sb-badge sb-badge-mfg',
+    labelClass:  'sb-category-label cat-mfg',
+    itemClass:   'cat-mfg',
+  },
+  multi: {
+    label: 'Multi-Agent',
+    Icon: Network,
+    badge: 'MULTI',
+    badgeClass:  'sb-badge sb-badge-multi',
+    labelClass:  'sb-category-label cat-multi',
+    itemClass:   'cat-multi',
+  },
+  single: {
+    label: 'Single Agent',
+    Icon: Bot,
+    badge: 'AGENT',
+    badgeClass:  'sb-badge sb-badge-single',
+    labelClass:  'sb-category-label cat-single',
+    itemClass:   'cat-single',
+  },
 };
 
-// Custom tooltip component
-const Tooltip = ({ content, children }: { content: string; children: React.ReactNode }) => {
-  const [isHovered, setIsHovered] = React.useState(false);
-  const [position, setPosition] = React.useState({ top: 0, left: 0 });
-  const ref = React.useRef<HTMLDivElement>(null);
+const CATEGORY_ORDER: ConfigCategory[] = ['manufacturing', 'multi', 'single'];
 
-  React.useEffect(() => {
-    if (ref.current && isHovered) {
-      const rect = ref.current.getBoundingClientRect();
-      setPosition({
-        left: rect.right + window.scrollX + 8, // 8px offset from the right edge
-        top: rect.top + window.scrollY + (rect.height / 2) // Vertical center
-      });
+// ── Filename display ───────────────────────────────────────────────────────
+
+function getFilename(path: string): string {
+  const filename = path.split('/').pop() || '';
+  return filename
+    .replace(/\.ya?ml$/, '')
+    .split(/[_-]/)
+    .map(w => w.charAt(0).toUpperCase() + w.slice(1))
+    .join(' ');
+}
+
+// ── Tooltip ────────────────────────────────────────────────────────────────
+
+const Tooltip = ({ content, children }: { content: string; children: React.ReactNode }) => {
+  const [hovered, setHovered] = useState(false);
+  const [pos, setPos] = useState({ top: 0, left: 0 });
+  const ref = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (ref.current && hovered) {
+      const r = ref.current.getBoundingClientRect();
+      setPos({ left: r.right + window.scrollX + 10, top: r.top + window.scrollY + r.height / 2 });
     }
-  }, [isHovered]);
-  
+  }, [hovered]);
+
   return (
-    <div 
-      ref={ref}
-      className="tooltip-container"
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
-    >
+    <div ref={ref} className="tooltip-container" onMouseEnter={() => setHovered(true)} onMouseLeave={() => setHovered(false)}>
       {children}
-      {isHovered && (
-        <div 
-          className="tooltip"
-          style={{
-            left: position.left,
-            top: position.top,
-          }}
-        >
+      {hovered && (
+        <div className="tooltip" style={{ left: pos.left, top: pos.top }}>
           {content}
         </div>
       )}
     </div>
   );
 };
+
+// ── Main Component ─────────────────────────────────────────────────────────
 
 const SideBar: React.FC<SideBarProps> = ({
   isOpen,
@@ -84,249 +132,202 @@ const SideBar: React.FC<SideBarProps> = ({
   getConfigList,
   availableConfigs = [],
   showNewChatButton = true,
-  showAgentConfigs = true
+  showAgentConfigs = true,
 }) => {
   const sidebarRef = useRef<HTMLDivElement>(null);
   const [isRefreshing, setIsRefreshing] = useState(false);
   const [searchTerm, setSearchTerm] = useState('');
-  const COLLAPSE_STORAGE_KEY = 'sidebar.availableConfigsCollapsed';
-  const [isConfigsCollapsed, setIsConfigsCollapsed] = useState<boolean>(() => {
-    try {
-      if (typeof window === 'undefined') return false;
-      const saved = window.localStorage.getItem(COLLAPSE_STORAGE_KEY);
-      return saved === 'true';
-    } catch {
-      return false;
-    }
+  const COLLAPSE_KEY = 'sidebar.availableConfigsCollapsed';
+  const [isCollapsed, setIsCollapsed] = useState<boolean>(() => {
+    try { return window.localStorage.getItem(COLLAPSE_KEY) === 'true'; } catch { return false; }
   });
   const { t } = useTranslation();
-  const filteredConfigs = availableConfigs
-    .filter(config => config.toLowerCase().includes(searchTerm.toLowerCase()))
-    .sort((a, b) => getFilename(a).localeCompare(getFilename(b)));
 
-  // Load configs only once when component mounts
+  // Load configs once on mount
   useEffect(() => {
-    if (availableConfigs.length === 0) {
-      getConfigList();
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []); // Empty dependency array means this runs once on mount
+    if (availableConfigs.length === 0) getConfigList();
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
-  // Close sidebar when clicking outside on mobile
+  // Persist collapse state
   useEffect(() => {
-    if (window.innerWidth > 768) return; // Only for mobile
-    
-    const handleClickOutside = (event: MouseEvent) => {
-      if (sidebarRef.current && !sidebarRef.current.contains(event.target as Node)) {
-        onClose();
-      }
-    };
+    try { window.localStorage.setItem(COLLAPSE_KEY, String(isCollapsed)); } catch { /* noop */ }
+  }, [isCollapsed]);
 
-    if (isOpen) {
-      document.addEventListener('mousedown', handleClickOutside);
-    }
-
-    return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
+  // Close sidebar on outside click (mobile)
+  useEffect(() => {
+    if (window.innerWidth > 768) return;
+    const handle = (e: MouseEvent) => {
+      if (sidebarRef.current && !sidebarRef.current.contains(e.target as Node)) onClose();
     };
+    if (isOpen) document.addEventListener('mousedown', handle);
+    return () => document.removeEventListener('mousedown', handle);
   }, [isOpen, onClose]);
 
-  // Persist collapse state to localStorage whenever it changes
-  useEffect(() => {
-    try {
-      if (typeof window !== 'undefined') {
-        window.localStorage.setItem(COLLAPSE_STORAGE_KEY, String(isConfigsCollapsed));
-      }
-    } catch {
-      // noop
-    }
-  }, [isConfigsCollapsed]);
+  const handleNewChat = () => window.open(window.location.href, '_blank');
 
-  const handleNewChat = () => {
-    window.open(window.location.href, '_blank');
-  };
+  // Group configs by category
+  const filteredConfigs = availableConfigs
+    .filter(c => c.toLowerCase().includes(searchTerm.toLowerCase()))
+    .sort((a, b) => getFilename(a).localeCompare(getFilename(b)));
+
+  const grouped = CATEGORY_ORDER.reduce<Record<ConfigCategory, string[]>>(
+    (acc, cat) => { acc[cat] = filteredConfigs.filter(c => getCategory(c) === cat); return acc; },
+    { manufacturing: [], multi: [], single: [] }
+  );
+
+  const agentHistory = messages.filter(m => m.type === 'new_agent' && typeof m.content === 'string');
 
   return (
-    <div 
-      ref={sidebarRef}
-      className={`sidebar ${isOpen ? 'sidebar-open' : ''}`}
-    >
+    <div ref={sidebarRef} className={`sidebar ${isOpen ? 'sidebar-open' : ''}`}>
       <div className="sidebar-content">
+
+        {/* ── New Chat ── */}
         {showNewChatButton && (
           <>
-            <div className="sidebar-section">
-              <button 
-                className="sidebar-button primary"
-                onClick={handleNewChat}
-              >
-                <i className="fas fa-plus" />
-                {t('sidebar.newChat')}
-              </button>
-            </div>
-            
-            <div className="sidebar-divider" />
+            <button className="sb-new-chat" onClick={handleNewChat}>
+              <SquarePen size={14} strokeWidth={2} />
+              {t('sidebar.newChat')}
+            </button>
+            <div className="sb-divider" />
           </>
         )}
-        
-        {/* Agent History Section */}
+
+        {/* ── Agent History ── */}
         <div className="sidebar-section">
-          <div className="sidebar-section-title">{t('sidebar.agentHistoryTitle')}</div>
-          <div className="agent-toc-list">
-            {messages.filter(msg => msg.type === 'new_agent' && typeof msg.content === 'string').length > 0 ? (
-              messages
-                .filter((msg) => msg.type === 'new_agent' && typeof msg.content === 'string')
-                .map((msg) => (
-                  <div 
-                    key={msg.id}
-                    className="sidebar-button sidebar-button-text agent-toc-item"
-                    onClick={() => onNavigate(Number(msg.id))}
-                  >
-                    <span style={{ marginRight: '8px' }}>🐙</span>
-                    {msg.content as string}
-                  </div>
-                ))
-            ) : (
-              <div className="sidebar-button-text" style={{ padding: '8px 16px', color: 'var(--color-subtle-text, #6c757d)' }}>
-                {t('sidebar.noHistoryShort')}
-              </div>
-            )}
+          <div className="sb-category-label">
+            <History size={11} strokeWidth={2} />
+            {t('sidebar.agentHistoryTitle')}
           </div>
+          {agentHistory.length > 0 ? (
+            agentHistory.map(msg => (
+              <div
+                key={msg.id}
+                className="sb-item"
+                onClick={() => onNavigate(Number(msg.id))}
+              >
+                <span style={{ fontSize: 13 }}>🐙</span>
+                <span className="sb-item-label">{msg.content as string}</span>
+              </div>
+            ))
+          ) : (
+            <div className="sb-empty">{t('sidebar.noHistoryShort')}</div>
+          )}
         </div>
 
-        <div className="sidebar-divider" />
-        
-        {/* Current Config Section */}
-        {currentConfig ? (
+        <div className="sb-divider" />
+
+        {/* ── Current Config ── */}
+        {currentConfig && (
           <div className="sidebar-section">
-            <div className="sidebar-section-title">{t('sidebar.currentConfigTitle')}</div>
-            <div className="current-config-display">
-              <div className="current-config-header">
-                <i className="fas fa-check-circle"></i>
-                <span className="current-config-title">{getFilename(currentConfig)}</span>
-              </div>
-              <div className="current-config-path">
-              {currentConfig}
+            <div className="sb-category-label">
+              <CheckCircle2 size={11} strokeWidth={2.5} />
+              {t('sidebar.currentConfigTitle')}
             </div>
-            {(agentType === 'orchestra' || agentType === 'orchestrator') && subAgents && subAgents.length > 0 && (
-              <div className="sub-agents-section">
-                <div className="sub-agents-title">{t('sidebar.subAgentsTitle')}</div>
-                <div className="sub-agents-list">
-                  {subAgents.map((agent, index) => (
-                    <div key={index} className="sub-agent-item">
-                      <span className="sub-agent-name">{agent}</span>
-                    </div>
-                  ))}
+
+            <div className="sb-current-card">
+              <div className="sb-current-header">
+                {getCategory(currentConfig) === 'manufacturing'
+                  ? <Factory size={14} strokeWidth={1.5} />
+                  : getCategory(currentConfig) === 'multi'
+                  ? <Network size={14} strokeWidth={1.5} />
+                  : <Bot size={14} strokeWidth={1.5} />}
+                <span>{getFilename(currentConfig)}</span>
+              </div>
+              <div className="sb-current-path">{currentConfig}</div>
+
+              {(agentType === 'orchestra' || agentType === 'orchestrator') && subAgents && subAgents.length > 0 && (
+                <div className="sb-subagents">
+                  <div className="sb-subagents-label"><Users size={10} style={{ display: 'inline', marginRight: 4 }} />{t('sidebar.subAgentsTitle')}</div>
+                  {subAgents.map((a, i) => <div key={i} className="sb-subagent-row">· {a}</div>)}
                 </div>
-              </div>
-            )}
+              )}
             </div>
-            <div 
-              className="sidebar-button-text agent-toc-item add-config-button"
-              onClick={handleAddConfig}
-            >
-              <i className="fas fa-plus" style={{ marginRight: '6px' }}></i>
+
+            <div className="sb-add-link" onClick={handleAddConfig}>
+              <Plus size={13} strokeWidth={2} />
               {t('sidebar.addNewConfig')}
             </div>
           </div>
-        ) : null}
-        
+        )}
+
+        {/* ── Available Configs ── */}
         {showAgentConfigs && (
           <>
-            <div className="sidebar-divider" style={{ margin: '12px 0' }} />
-
-            {/* Available Configs Section */}
+            <div className="sb-divider" />
             <div className="sidebar-section">
-              <div className="sidebar-section-header">
-                <div className="sidebar-section-left">
-                  <div className="sidebar-section-title">
-                    {t('sidebar.availableConfigsTitle')}
-                  </div>
-                </div>
-                <button 
-                  className={`refresh-button ${isRefreshing ? 'refreshing' : ''}`}
-                  onClick={() => {
-                    setIsRefreshing(true);
-                    getConfigList();
-                    setTimeout(() => setIsRefreshing(false), 1000);
-                  }}
+              <div className="sb-section-header">
+                <span className="sb-section-title">{t('sidebar.availableConfigsTitle')}</span>
+                <button
+                  className={`sb-refresh ${isRefreshing ? 'spinning' : ''}`}
+                  onClick={() => { setIsRefreshing(true); getConfigList(); setTimeout(() => setIsRefreshing(false), 1000); }}
                   disabled={isRefreshing}
                   title={t('sidebar.refreshConfigs')}
                 >
-                  <i className="fas fa-sync-alt" />
+                  <RefreshCw size={13} strokeWidth={2} />
                 </button>
               </div>
-              {/* Search box should stay visible regardless of collapse state */}
-              <div className="search-box-container" style={{ marginBottom: '12px' }}>
-                <div className="search-box">
-                  <i className="fas fa-search search-icon" />
-                  <input
-                    type="text"
-                    placeholder={t('sidebar.searchConfigs')}
-                    value={searchTerm}
-                    onFocus={() => {
-                      if (isConfigsCollapsed) setIsConfigsCollapsed(false);
-                    }}
-                    onChange={(e) => {
-                      const val = e.target.value;
-                      setSearchTerm(val);
-                      if (val && isConfigsCollapsed) setIsConfigsCollapsed(false);
-                    }}
-                    className="search-input"
-                  />
-                  {searchTerm && (
-                    <button 
-                      className="clear-search" 
-                      onClick={() => setSearchTerm('')}
-                      title={t('sidebar.clearSearch')}
-                    >
-                      <i className="fas fa-times" />
-                    </button>
+
+              {/* Search */}
+              <div className="sb-search">
+                <Search size={12} strokeWidth={2} className="sb-search-icon" />
+                <input
+                  type="text"
+                  placeholder={t('sidebar.searchConfigs')}
+                  value={searchTerm}
+                  onFocus={() => { if (isCollapsed) setIsCollapsed(false); }}
+                  onChange={e => { setSearchTerm(e.target.value); if (e.target.value && isCollapsed) setIsCollapsed(false); }}
+                />
+                {searchTerm && (
+                  <button className="sb-search-clear" onClick={() => setSearchTerm('')} title={t('sidebar.clearSearch')}>
+                    <X size={12} strokeWidth={2} />
+                  </button>
+                )}
+              </div>
+
+              {/* Collapse toggle */}
+              <div className="sb-collapse-row">
+                <button className="sb-collapse-btn" onClick={() => setIsCollapsed(p => !p)} aria-expanded={!isCollapsed}>
+                  {isCollapsed
+                    ? <ChevronRight size={12} strokeWidth={2} />
+                    : <ChevronDown size={12} strokeWidth={2} />}
+                  {isCollapsed ? t('sidebar.expand') : t('sidebar.collapse')}
+                </button>
+              </div>
+
+              {/* Grouped config list */}
+              {!isCollapsed && (
+                <div className="sb-config-list">
+                  {CATEGORY_ORDER.map(cat => {
+                    const items = grouped[cat];
+                    if (items.length === 0) return null;
+                    const { label, Icon, badgeClass, badge, labelClass, itemClass } = CATEGORY_META[cat];
+                    return (
+                      <div key={cat} className="sb-category-group">
+                        <div className={labelClass} style={{ paddingTop: 10, paddingBottom: 4 }}>
+                          <Icon size={12} strokeWidth={2} />
+                          {label}
+                        </div>
+                        {items.map(config => (
+                          <Tooltip key={config} content={config}>
+                            <div
+                              className={`sb-item ${itemClass} ${currentConfig === config ? 'active' : ''}`}
+                              onClick={() => onConfigSelect(config)}
+                            >
+                              <Settings2 size={12} strokeWidth={1.5} style={{ flexShrink: 0, opacity: 0.45 }} />
+                              <span className="sb-item-label">{getFilename(config)}</span>
+                              <span className={badgeClass}>{badge}</span>
+                            </div>
+                          </Tooltip>
+                        ))}
+                      </div>
+                    );
+                  })}
+                  {filteredConfigs.length === 0 && (
+                    <div className="sb-empty">
+                      {availableConfigs.length === 0 ? t('sidebar.noConfigsShort') : t('sidebar.noMatchingConfigs')}
+                    </div>
                   )}
                 </div>
-              </div>
-              {/* Collapse/Expand control on its own row */}
-              <div className="collapse-row">
-                <button
-                  className="collapse-action"
-                  onClick={() => setIsConfigsCollapsed(prev => !prev)}
-                  aria-expanded={!isConfigsCollapsed}
-                >
-                  <i className={`fas ${isConfigsCollapsed ? 'fa-chevron-right' : 'fa-chevron-down'}`} />
-                  <span>{isConfigsCollapsed ? t('sidebar.expand') : t('sidebar.collapse')}</span>
-                </button>
-              </div>
-              {!isConfigsCollapsed && (
-                <>
-                  <div className="config-list">
-                    {filteredConfigs.length > 0 ? (
-                      filteredConfigs.map((config) => (
-                        <Tooltip key={config} content={config}>
-                          <div
-                            className={`config-toc-item ${currentConfig === config ? 'active' : ''}`}
-                            onClick={() => onConfigSelect(config)}
-                          >
-                            <div className="config-list-item">
-                              <div className="config-icon-container">
-                                {config.includes('generated/') ? (
-                                  <i className="fas fa-robot config-icon" title={t('sidebar.generatedConfigTooltip')} />
-                                ) : config.includes('examples/') ? (
-                                  <i className="fas fa-flask config-icon" title={t('sidebar.exampleConfigTooltip')} />
-                                ) : null}
-                              </div>
-                              <span className="config-name">
-                                {getFilename(config)}
-                              </span>
-                            </div>
-                          </div>
-                        </Tooltip>
-                      ))
-                    ) : (
-                      <div className="sidebar-button-text" style={{ padding: '8px 16px', color: 'var(--color-subtle-text, #6c757d)' }}>
-                        {availableConfigs.length === 0 ? t('sidebar.noConfigsShort') : t('sidebar.noMatchingConfigs')}
-                      </div>
-                    )}
-                  </div>
-                </>
               )}
             </div>
           </>
