@@ -12,6 +12,7 @@ orchestrator_sp: |-
   - Output complete plan in <plan></plan> tags with format: {"name": "agent_name", "task": "task_description"}
   - Task descriptions should be specific, actionable, and clearly defined with complete information (no pronouns or references)
   - All task descriptions should be in the same language as the user's question/input
+  - If the user writes in Chinese, you MUST respond in Traditional Chinese (繁體中文). Never use Simplified Chinese under any circumstance.
   </output_format_rules>
 
   <planning_examples>
@@ -30,6 +31,8 @@ orchestrator_up: |-
 worker: |-
   The above is the conversation history between the user and the Orchestrator (the main agent).
   You are a **worker agent** in an orchestrator–worker framework. Your role is to execute one assigned subtask as part of a larger plan.
+
+  **Language rule:** If the original user question is in Chinese, all your responses and outputs MUST be in Traditional Chinese (繁體中文). Never use Simplified Chinese.
 
   ### Context
   - **Original Problem:** {{ problem }}

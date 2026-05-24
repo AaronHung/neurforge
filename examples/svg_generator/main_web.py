@@ -18,7 +18,7 @@ if __name__ == "__main__":
 
     data_dir = pathlib.Path(__file__).parent / "data"
     data_dir.mkdir(exist_ok=True)
-    question = "薈智創新 NeurForge 的 AI Agent 可以幫企業安全地自動化哪些工作流程？"
+    question = "2025 年台灣智慧製造導入 AI Agent 的三個關鍵應用場景與效益"
 
     webui = WebUIAgents(default_config=DEFAULT_CONFIG, example_query=question)
     print(f"Server started at http://{args.ip}:{args.port}/")
