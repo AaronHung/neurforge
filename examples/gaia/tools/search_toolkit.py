@@ -86,7 +86,7 @@ class SearchToolkit(AsyncBaseToolkit):
         return filtered_response
 
     def _format_web_content(self, query: str, extracted_contents: list[dict[str, str]]) -> str:
-        """格式化网页内容搜索结果"""
+        """格式化網頁內容搜尋結果"""
         if not extracted_contents:
             return f"<search results for '{query}'>\nNo valid content extracted.\n</search results end>"
 
@@ -172,7 +172,7 @@ class SearchToolkit(AsyncBaseToolkit):
                 return None
 
             # Use ThreadPoolExecutor for parallel content extraction within this query
-            query_extracted_contents = []  # 提取的内容
+            query_extracted_contents = []  # 提取的內容
 
             async def task(result):
                 async with asyncio.Semaphore(5):
@@ -194,7 +194,7 @@ class SearchToolkit(AsyncBaseToolkit):
 
         await asyncio.gather(*[task(query) for query in search_queries])
 
-        # URL去重 - 移除重复的URL内容（所有查询的结果去重）
+        # URL去重 - 移除重複的URL內容（所有查詢的結果去重）
         seen_urls = set()
         unique_all_extracted_contents = []
         for content_item in all_extracted_contents:
@@ -325,7 +325,7 @@ class SearchToolkit(AsyncBaseToolkit):
 
         await asyncio.gather(*[task(query) for query in search_queries])
 
-        # URL去重 - 从所有搜索结果中移除重复的URL
+        # URL去重 - 從所有搜尋結果中移除重複的URL
         all_unique_results = []
         seen_urls = set()
         for query_data in all_search_results:

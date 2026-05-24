@@ -10,26 +10,26 @@ def prepare_messy_files(work_dir="/tmp/mock_files/"):
     os.makedirs(work_dir, exist_ok=True)
 
     student_names = [
-        "张三",
+        "張三",
         "李四",
         "王五",
-        "赵六",
-        "孙七",
+        "趙六",
+        "孫七",
         "周八",
-        "吴九",
-        "郑十",
-        "冯十一",
-        "陈十二",
+        "吳九",
+        "鄭十",
+        "馮十一",
+        "陳十二",
         "褚十三",
-        "卫十四",
-        "蒋十五",
+        "衛十四",
+        "蔣十五",
         "沈十六",
-        "韩十七",
-        "杨十八",
+        "韓十七",
+        "楊十八",
         "朱十九",
         "秦二十",
         "尤二一",
-        "许二二",
+        "許二二",
     ]
     student_numbers = [
         "2021001",
@@ -54,16 +54,16 @@ def prepare_messy_files(work_dir="/tmp/mock_files/"):
         "2021020",
     ]
     titles = [
-        "实验报告",
-        "课程报告",
-        "数据结构大作业",
-        "数据结构report",
-        "数据结构实验报告",
-        "数据结构课程报告",
-        "数据结构实验",
-        "数据结构大作业报告",
-        "数据结构课程设计",
-        "数据结构课程设计报告",
+        "實驗報告",
+        "課程報告",
+        "資料結構大作業",
+        "資料結構report",
+        "資料結構實驗報告",
+        "資料結構課程報告",
+        "資料結構實驗",
+        "資料結構大作業報告",
+        "資料結構課程設計",
+        "資料結構課程設計報告",
         "report",
     ]
     extensions = ["pdf", "docx"]
@@ -87,7 +87,7 @@ def prepare_messy_files(work_dir="/tmp/mock_files/"):
             )
             file_path = os.path.join(work_dir, file_name)
             with open(file_path, "w", encoding="utf-8") as f:
-                f.write(f"这是{student_name}的{file_name}。\n")
+                f.write(f"這是{student_name}的{file_name}。\n")
     print(f"Simulated messy files in {work_dir}")
 
 

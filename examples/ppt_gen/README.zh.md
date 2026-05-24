@@ -1,31 +1,31 @@
 # PowerPoint 模板示例
 
-## 环境依赖
+## 環境依賴
 
-**安装方式：**
+**安裝方式：**
 
 ```bash
-# 项目根目录
+# 專案根目錄
 cd youtu-agent
 
-# 安装 PPT 生成所需依赖
+# 安裝 PPT 生成所需依賴
 uv sync --extra ppt-gen
 ```
 
-## 快速开始
+## 快速開始
 
-1. 下载[模板文件](https://cdn.jsdelivr.net/gh/TencentCloudADP-DevRel/picgo-images@main/assets/templates.zip)到 `examples/ppt_gen/templates` 目录。
-2. 准备需要转成 PPT 的参考资料（纯文本、Markdown 或网页）。例如下载 [诺贝尔奖介绍网页](https://www.nobelprize.org/prizes/physics/2025/popular-information/)。
+1. 下載[模板檔案](https://cdn.jsdelivr.net/gh/TencentCloudADP-DevRel/picgo-images@main/assets/templates.zip)到 `examples/ppt_gen/templates` 目錄。
+2. 準備需要轉成 PPT 的參考資料（純文本、Markdown 或網頁）。例如下載 [諾貝爾獎介紹網頁](https://www.nobelprize.org/prizes/physics/2025/popular-information/)。
 
 ```bash
-# 进入示例目录
+# 進入示例目錄
 cd examples/ppt_gen
 
-# 下载示例网页
+# 下載示例網頁
 wget https://www.nobelprize.org/prizes/physics/2025/popular-information/ -O webpage.html
 ```
 
-运行 PPT 生成脚本：
+執行 PPT 生成指令碼：
 
 ```python
 python main.py \
@@ -34,29 +34,29 @@ python main.py \
   --yaml_path yaml_example2.yaml \
   --pages 8 \
   --disable_tooluse \
-  --extra_prompt "确保PPT语言是中文" \
+  --extra_prompt "確保PPT語言是中文" \
   --template_name 11
 ```
 
-脚本会生成同名的 `json` 与 `pptx` 文件。通过 `--yaml_path` 可以切换不同的模板配置。
+指令碼會生成同名的 `json` 與 `pptx` 檔案。透過 `--yaml_path` 可以切換不同的模板配置。
 
-## YAML 驱动的模板配置
+## YAML 驅動的模板配置
 
-> 详见 [YAML 配置指南](YAML_CONFIG_GUIDE.zh.md)。
+> 詳見 [YAML 配置指南](YAML_CONFIG_GUIDE.zh.md)。
 
-套模板流程由 YAML 配置驱动（参见 `yaml_example.yaml`），配置文件主要有两部分：
+套模板流程由 YAML 配置驅動（參見 `yaml_example.yaml`），配置檔案主要有兩部分：
 
-1. **type_map**：将每类幻灯片的 `type`（如 `title`, `items_page_4`）映射到模板 PPT 中的幻灯片索引，渲染器据此复制对应母板。
-2. **页面定义块**：每个 `<name>_page` 描述该类幻灯片的全部字段，字段会声明 `type`、长度限制以及会被注入到 JSON Schema 的提示。
+1. **type_map**：將每類幻燈片的 `type`（如 `title`, `items_page_4`）對映到模板 PPT 中的幻燈片索引，渲染器據此複製對應母板。
+2. **頁面定義塊**：每個 `<name>_page` 描述該類幻燈片的全部欄位，欄位會宣告 `type`、長度限制以及會被注入到 JSON Schema 的提示。
 
-支持的字段类型包括 `str`、`int`、`content`（富文本/图片/表格容器）、`content_list`、`item_list`、`str_list` 与 `image`。当 Agent 输出内容后，`fill_template_with_yaml_config` 会读取 YAML、根据 `type_map` 找到目标幻灯片、复制模板，并按照字段类型渲染。自定义模板步骤：
+支援的欄位型別包括 `str`、`int`、`content`（富文本/圖片/表格容器）、`content_list`、`item_list`、`str_list` 與 `image`。當 Agent 輸出內容後，`fill_template_with_yaml_config` 會讀取 YAML、根據 `type_map` 找到目標幻燈片、複製模板，並按照欄位型別渲染。自定義模板步驟：
 
-1. 复制 `yaml_example.yaml`，调整 `type_map` 使其与 PPT 模板的幻灯片顺序一致。
-2. 更新或新增页面块，确保所有期望生成的 slide 类型都拥有正确的字段定义。
-3. 运行脚本时使用 `--yaml_path <your_config.yaml>`，即可加载新的 schema 并与模板贴合。
+1. 複製 `yaml_example.yaml`，調整 `type_map` 使其與 PPT 模板的幻燈片順序一致。
+2. 更新或新增頁面塊，確保所有期望生成的 slide 型別都擁有正確的欄位定義。
+3. 執行指令碼時使用 `--yaml_path <your_config.yaml>`，即可載入新的 schema 並與模板貼合。
 
-### 如何标注新的 PPT 模板
+### 如何標註新的 PPT 模板
 
-- 在 PowerPoint 的「选择窗格」（Selection Pane）中重命名形状，确保名称与 YAML 字段完全一致（例如：`title`、`subtitle`、`item_title1`、`item_content1`、`label1`、`content1`）。
-- 同一页不可出现重复的名称。每个形状名称必须唯一，以便渲染器能准确定位并替换。
-- 可参考 `examples/ppt_gen/templates` 中的现有模板，以及 `yaml_example.yaml` 的字段定义进行命名。
+- 在 PowerPoint 的「選擇窗格」（Selection Pane）中重新命名形狀，確保名稱與 YAML 欄位完全一致（例如：`title`、`subtitle`、`item_title1`、`item_content1`、`label1`、`content1`）。
+- 同一頁不可出現重複的名稱。每個形狀名稱必須唯一，以便渲染器能準確定位並替換。
+- 可參考 `examples/ppt_gen/templates` 中的現有模板，以及 `yaml_example.yaml` 的欄位定義進行命名。

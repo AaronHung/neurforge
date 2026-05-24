@@ -110,7 +110,7 @@ items_page_4_alt:
     max_len: 4
                               
 items_page_4_key_point:
-  description: "this slide is designed to present four key elements, stages, or pillars in a clean, balanced layout. each element is represented by a customizable label — which can be: a letter (e.g., s-w-o-t) or a chinese character (e.g., 增 / 删 / 改 / 查)"                
+  description: "this slide is designed to present four key elements, stages, or pillars in a clean, balanced layout. each element is represented by a customizable label — which can be: a letter (e.g., s-w-o-t) or a chinese character (e.g., 增 / 刪 / 改 / 查)"                
   type: items_page_4_key_point
   title:
     type: str
@@ -187,7 +187,7 @@ acknowledgement_page:
   type: acknowledgement_page
   title:
     type: str
-    description: just place "Thank you"/"谢谢"/"END"/"FIN" here                                
+    description: just place "Thank you"/"謝謝"/"END"/"FIN" here                                
   subtitle:
     type: str
     description: be very concise within 10 words                  

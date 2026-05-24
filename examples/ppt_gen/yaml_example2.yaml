@@ -129,7 +129,7 @@ acknowledgement_page:
   type: acknowledgement_page
   title:
     type: str
-    description: just place "Thank you"/"谢谢"/"END"/"FIN" here                                
+    description: just place "Thank you"/"謝謝"/"END"/"FIN" here                                
   subtitle:
     type: str
     description: be very concise within 6 words                  
