@@ -1,0 +1,68 @@
+[
+  {
+    "equipment_id": "EQ-001",
+    "name": "攪拌機 #1",
+    "type": "mixer",
+    "location": "亞東水泥 製程廠 A棟 製程區",
+    "manufacturer": "亞東水泥",
+    "install_date": "2019-03-15",
+    "last_maintenance": "2024-11-20",
+    "status": "運行中",
+    "responsible_team": "製程維護組"
+  },
+  {
+    "equipment_id": "EQ-002",
+    "name": "攪拌機 #2",
+    "type": "mixer",
+    "location": "亞東水泥 製程廠 A棟 製程區",
+    "manufacturer": "亞東水泥",
+    "install_date": "2019-03-15",
+    "last_maintenance": "2025-01-10",
+    "status": "運行中",
+    "responsible_team": "製程維護組"
+  },
+  {
+    "equipment_id": "EQ-003",
+    "name": "定型機 #1",
+    "type": "stenter",
+    "location": "東豐纖維 後整理廠 B棟 後整理區",
+    "manufacturer": "德國 Brückner",
+    "install_date": "2020-07-01",
+    "last_maintenance": "2025-02-05",
+    "status": "運行中",
+    "responsible_team": "定型機維運組"
+  },
+  {
+    "equipment_id": "EQ-004",
+    "name": "汽輪機 #1",
+    "type": "steam_turbine",
+    "location": "煉研所 觸媒研發測試中心 C棟 主機房",
+    "manufacturer": "煉研所／觸媒研發測試中心",
+    "install_date": "2015-06-20",
+    "last_maintenance": "2024-09-15",
+    "status": "運行中",
+    "responsible_team": "研究設備維運組"
+  },
+  {
+    "equipment_id": "EQ-005",
+    "name": "鍋爐 #1",
+    "type": "boiler",
+    "location": "東豐纖維 後整理廠 B棟 鍋爐房",
+    "manufacturer": "東豐纖維",
+    "install_date": "2015-06-20",
+    "last_maintenance": "2025-01-28",
+    "status": "運行中",
+    "responsible_team": "定型機維運組"
+  },
+  {
+    "equipment_id": "EQ-006",
+    "name": "鋁液攪拌爐 #1",
+    "type": "aluminum_furnace",
+    "location": "中鋁集團 鑄造廠 D棟 熔煉區",
+    "manufacturer": "中鋁集團",
+    "install_date": "2018-09-10",
+    "last_maintenance": "2025-03-02",
+    "status": "運行中",
+    "responsible_team": "熔煉維護組"
+  }
+]

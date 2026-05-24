@@ -1,0 +1,91 @@
+{
+  "facility": "煉研所 觸媒研發測試中心",
+  "equipment": ["EQ-004", "EQ-005"],
+  "description": "每月汽輪機與鍋爐熱耗、耗電量及效率紀錄",
+  "monthly_records": [
+    {
+      "month": "2024-10",
+      "turbine_id": "EQ-004",
+      "boiler_id": "EQ-005",
+      "steam_pressure_mpa": 8.2,
+      "steam_temp_c": 485,
+      "turbine_output_mw": 42.1,
+      "heat_rate_kj_kwh": 9820,
+      "boiler_efficiency_pct": 88.3,
+      "fuel_consumption_ton": 312,
+      "power_generation_mwh": 30312,
+      "note": "正常月份"
+    },
+    {
+      "month": "2024-11",
+      "turbine_id": "EQ-004",
+      "boiler_id": "EQ-005",
+      "steam_pressure_mpa": 8.1,
+      "steam_temp_c": 482,
+      "turbine_output_mw": 41.8,
+      "heat_rate_kj_kwh": 9890,
+      "boiler_efficiency_pct": 87.9,
+      "fuel_consumption_ton": 318,
+      "power_generation_mwh": 30096,
+      "note": "輕微效率下降"
+    },
+    {
+      "month": "2024-12",
+      "turbine_id": "EQ-004",
+      "boiler_id": "EQ-005",
+      "steam_pressure_mpa": 7.9,
+      "steam_temp_c": 478,
+      "turbine_output_mw": 40.5,
+      "heat_rate_kj_kwh": 10150,
+      "boiler_efficiency_pct": 86.1,
+      "fuel_consumption_ton": 335,
+      "power_generation_mwh": 29160,
+      "note": "熱耗上升，蒸汽壓力下滑，建議安排季度保養"
+    },
+    {
+      "month": "2025-01",
+      "turbine_id": "EQ-004",
+      "boiler_id": "EQ-005",
+      "steam_pressure_mpa": 7.7,
+      "steam_temp_c": 475,
+      "turbine_output_mw": 39.2,
+      "heat_rate_kj_kwh": 10420,
+      "boiler_efficiency_pct": 85.2,
+      "fuel_consumption_ton": 348,
+      "power_generation_mwh": 28224,
+      "note": "效率繼續惡化，已排定 3 月季度保養"
+    },
+    {
+      "month": "2025-02",
+      "turbine_id": "EQ-004",
+      "boiler_id": "EQ-005",
+      "steam_pressure_mpa": 7.6,
+      "steam_temp_c": 473,
+      "turbine_output_mw": 38.9,
+      "heat_rate_kj_kwh": 10580,
+      "boiler_efficiency_pct": 84.8,
+      "fuel_consumption_ton": 355,
+      "power_generation_mwh": 28008,
+      "note": "維持低效運行，等待 3 月保養"
+    },
+    {
+      "month": "2025-03",
+      "turbine_id": "EQ-004",
+      "boiler_id": "EQ-005",
+      "steam_pressure_mpa": 8.2,
+      "steam_temp_c": 486,
+      "turbine_output_mw": 42.3,
+      "heat_rate_kj_kwh": 9790,
+      "boiler_efficiency_pct": 88.5,
+      "fuel_consumption_ton": 308,
+      "power_generation_mwh": 30456,
+      "note": "季度保養後效率恢復正常，清洗蒸汽通道及更換密封件"
+    }
+  ],
+  "benchmarks": {
+    "design_heat_rate_kj_kwh": 9600,
+    "alert_heat_rate_kj_kwh": 10200,
+    "design_boiler_efficiency_pct": 89.0,
+    "alert_boiler_efficiency_pct": 86.0
+  }
+}

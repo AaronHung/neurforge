@@ -1,0 +1,68 @@
+{
+  "facility": "東豐纖維 後整理廠",
+  "equipment": ["EQ-003"],
+  "description": "定型機各區溫度設定對照表，依布料材質與克重分類",
+  "zones": ["Zone1_入口", "Zone2", "Zone3", "Zone4", "Zone5_出口"],
+  "products": [
+    {
+      "fabric_code": "PET-150D",
+      "material": "100% 聚酯纖維",
+      "weight_gsm": 150,
+      "finish": "防皺定型",
+      "speed_m_min": 20,
+      "zone_temps_c": [170, 175, 180, 175, 165],
+      "tension_n": 45,
+      "overfeed_pct": 3,
+      "result_shrinkage_pct": 1.2,
+      "note": "標準設定，品質穩定"
+    },
+    {
+      "fabric_code": "PET-300D",
+      "material": "100% 聚酯纖維",
+      "weight_gsm": 300,
+      "finish": "防皺定型",
+      "speed_m_min": 15,
+      "zone_temps_c": [175, 182, 188, 182, 170],
+      "tension_n": 60,
+      "overfeed_pct": 4,
+      "result_shrinkage_pct": 0.9,
+      "note": "厚料需升溫並降速"
+    },
+    {
+      "fabric_code": "NYLON-70D",
+      "material": "100% 尼龍",
+      "weight_gsm": 80,
+      "finish": "光澤定型",
+      "speed_m_min": 25,
+      "zone_temps_c": [155, 160, 162, 158, 150],
+      "tension_n": 30,
+      "overfeed_pct": 2,
+      "result_shrinkage_pct": 1.8,
+      "note": "尼龍熔點低，溫度不可超過 165°C"
+    },
+    {
+      "fabric_code": "COTTON-32S",
+      "material": "100% 棉",
+      "weight_gsm": 200,
+      "finish": "柔軟定型",
+      "speed_m_min": 18,
+      "zone_temps_c": [160, 168, 172, 168, 158],
+      "tension_n": 50,
+      "overfeed_pct": 5,
+      "result_shrinkage_pct": 2.5,
+      "note": "棉料超送量大以控制縮水率"
+    },
+    {
+      "fabric_code": "TC-65-35",
+      "material": "65% 聚酯 / 35% 棉 混紡",
+      "weight_gsm": 175,
+      "finish": "免燙定型",
+      "speed_m_min": 18,
+      "zone_temps_c": [168, 175, 178, 173, 162],
+      "tension_n": 48,
+      "overfeed_pct": 3,
+      "result_shrinkage_pct": 1.5,
+      "note": "混紡料以棉的限制為主，Zone3 不超過 180°C"
+    }
+  ]
+}

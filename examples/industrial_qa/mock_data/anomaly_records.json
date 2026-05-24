@@ -1,0 +1,72 @@
+[
+  {
+    "anomaly_id": "ANO-2025-0088",
+    "equipment_id": "EQ-001",
+    "equipment_name": "攪拌機 #1（亞東水泥）",
+    "detected_at": "2025-02-10 07:45",
+    "type": "振動異常",
+    "severity": "高",
+    "description": "X 軸振動值 8.2 mm/s，超過警戒值 6.0 mm/s，伴隨低頻噪音",
+    "sensor_readings": {
+      "vibration_x_mm_s": 8.2,
+      "vibration_y_mm_s": 3.1,
+      "temperature_bearing_c": 72,
+      "rpm": 148
+    },
+    "linked_wo": "WO-2025-0341",
+    "resolved": true
+  },
+  {
+    "anomaly_id": "ANO-2025-0112",
+    "equipment_id": "EQ-003",
+    "equipment_name": "定型機 #1（東豐纖維）",
+    "detected_at": "2025-01-05 13:50",
+    "type": "溫度偏低",
+    "severity": "緊急",
+    "description": "3 號烘箱設定 180°C，實測 152°C，偏差 28°C，超過允許偏差 ±5°C",
+    "sensor_readings": {
+      "zone1_temp_c": 179,
+      "zone2_temp_c": 181,
+      "zone3_temp_c": 152,
+      "zone4_temp_c": 178,
+      "exhaust_temp_c": 95
+    },
+    "linked_wo": "WO-2025-0198",
+    "resolved": true
+  },
+  {
+    "anomaly_id": "ANO-2025-0201",
+    "equipment_id": "EQ-002",
+    "equipment_name": "攪拌機 #2（亞東水泥）",
+    "detected_at": "2025-04-15 09:58",
+    "type": "轉速波動",
+    "severity": "高",
+    "description": "轉速波動達 ±15 RPM，正常應在 ±3 RPM 以內，懷疑變頻器參數飄移",
+    "sensor_readings": {
+      "rpm_avg": 150,
+      "rpm_std": 15.2,
+      "vibration_x_mm_s": 4.1,
+      "current_a": 32.8,
+      "inverter_output_hz": 49.3
+    },
+    "linked_wo": "WO-2025-0378",
+    "resolved": false
+  },
+  {
+    "anomaly_id": "ANO-2025-0245",
+    "equipment_id": "EQ-006",
+    "equipment_name": "鋁液攪拌爐 #1（中鋁集團）",
+    "detected_at": "2025-05-02 11:20",
+    "type": "爐溫異常偏高",
+    "severity": "中",
+    "description": "爐內溫度 780°C，超過正常作業上限 750°C，爐蓋密封圈疑似老化",
+    "sensor_readings": {
+      "furnace_temp_c": 780,
+      "target_temp_c": 730,
+      "cooling_water_flow_lpm": 28.5,
+      "sealing_pressure_kpa": 12.1
+    },
+    "linked_wo": null,
+    "resolved": false
+  }
+]

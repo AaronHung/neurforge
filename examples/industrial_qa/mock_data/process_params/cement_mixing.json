@@ -1,0 +1,74 @@
+{
+  "facility": "亞東水泥 製程廠",
+  "equipment": ["EQ-001", "EQ-002"],
+  "product": "水泥生料漿",
+  "description": "根據攪拌轉速與加水率（由 YOLO 視覺系統量測）預測坍度與 28 天抗壓強度",
+  "parameters": [
+    {
+      "batch_id": "B-20250401-01",
+      "timestamp": "2025-04-01 08:15",
+      "rpm": 145,
+      "water_ratio_pct": 38.2,
+      "mixing_time_min": 4.5,
+      "slump_cm": 18.5,
+      "strength_28d_mpa": 42.1,
+      "quality_pass": true,
+      "note": "正常批次"
+    },
+    {
+      "batch_id": "B-20250401-02",
+      "timestamp": "2025-04-01 10:30",
+      "rpm": 142,
+      "water_ratio_pct": 40.5,
+      "mixing_time_min": 4.5,
+      "slump_cm": 21.0,
+      "strength_28d_mpa": 39.3,
+      "quality_pass": false,
+      "note": "加水率偏高，坍度超標（上限 20cm），強度下降"
+    },
+    {
+      "batch_id": "B-20250402-01",
+      "timestamp": "2025-04-02 08:00",
+      "rpm": 148,
+      "water_ratio_pct": 37.1,
+      "mixing_time_min": 5.0,
+      "slump_cm": 17.2,
+      "strength_28d_mpa": 44.5,
+      "quality_pass": true,
+      "note": "低加水率、高轉速，強度佳"
+    },
+    {
+      "batch_id": "B-20250403-01",
+      "timestamp": "2025-04-03 09:10",
+      "rpm": 138,
+      "water_ratio_pct": 39.0,
+      "mixing_time_min": 4.0,
+      "slump_cm": 19.8,
+      "strength_28d_mpa": 40.8,
+      "quality_pass": true,
+      "note": "轉速偏低，攪拌時間縮短，品質邊緣通過"
+    },
+    {
+      "batch_id": "B-20250403-02",
+      "timestamp": "2025-04-03 14:20",
+      "rpm": 135,
+      "water_ratio_pct": 41.2,
+      "mixing_time_min": 4.0,
+      "slump_cm": 23.5,
+      "strength_28d_mpa": 36.7,
+      "quality_pass": false,
+      "note": "低轉速加高加水率，坍度嚴重超標，強度不足"
+    }
+  ],
+  "quality_spec": {
+    "slump_min_cm": 14,
+    "slump_max_cm": 20,
+    "strength_28d_min_mpa": 40.0
+  },
+  "optimal_range": {
+    "rpm": "145-150",
+    "water_ratio_pct": "36.5-38.5",
+    "mixing_time_min": "4.5-5.0",
+    "note": "維持此範圍可穩定達到坍度 17-19cm，28d 強度 ≥42 MPa"
+  }
+}

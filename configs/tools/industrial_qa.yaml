@@ -1,0 +1,6 @@
+name: industrial_qa
+mode: customized
+customized_filepath: examples/industrial_qa/tools/industrial_toolkit.py
+customized_classname: IndustrialQAToolkit
+activated_tools: null
+config: {}
