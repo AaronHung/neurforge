@@ -1,57 +1,58 @@
 :root {
-  /* ── NeurForge Light Work Area — Option B ── */
-  --color-text:             #1c1c2e;
-  --color-bg:               #f4f4f8;   /* light lavender-gray work area    */
+  /* ── NeurForge Light Work Area — Claude.ai warm + Linear clean ── */
+  --color-text:             #1a1812;   /* warm near-black                   */
+  --color-bg:               #f9f6f0;   /* warm cream — Claude.ai-inspired   */
   --color-input-bg:         #ffffff;
   --chip-bg:                #ffffff;
 
   /* Agent Component Colors */
   --agent-bg:               #ffffff;
-  --agent-border:           #e8e8f4;
-  --agent-name-color:       #5b45c8;
-  --agent-status-color:     #7c5cfc;
-  --color-border:           #e0e0ec;
-  --color-header-bg:        #f4f4f8;
-  --color-header-text:      #1a1a2e;
-  --color-row-even:         #f7f7fb;
-  --color-row-hover:        #eeeef6;
-  --color-subtle-text:      #8888a8;
-  --color-button-hover:     #7c5cfc;
-  --color-button-bg:        #f4f4f8;
-  --color-chat-bg:          #eaeaf0;   /* input pill background             */
+  --agent-border:           #e8e3da;
+  --agent-name-color:       #b85c28;   /* warm amber-orange                 */
+  --agent-status-color:     #d4773a;
+  --color-border:           #e4dfd6;
+  --color-header-bg:        #f9f6f0;
+  --color-header-text:      #1a1812;
+  --color-row-even:         #f5f1eb;
+  --color-row-hover:        #ede8e0;
+  --color-subtle-text:      #9e9080;
+  --color-button-hover:     #d4773a;
+  --color-button-bg:        #f5f1eb;
+  --color-chat-bg:          #eee9e1;   /* input area background             */
   --color-detail-bg:        #ffffff;
-  --color-detail-border:    #e8e8f0;
-  --color-detail-hover:     #f0f0f8;
-  --color-accent:           #7c5cfc;   /* NeurForge violet                  */
+  --color-detail-border:    #e4dfd6;
+  --color-detail-hover:     #f5f1eb;
+  --color-accent:           #d4773a;   /* warm orange — primary accent      */
+  --color-accent-secondary: #7c5cfc;   /* violet — secondary / send button  */
   --mermaid-bg:             #ffffff;
-  --mermaid-node:           #7c5cfc;
-  --mermaid-text:           #1c1c2e;
+  --mermaid-node:           #d4773a;
+  --mermaid-text:           #1a1812;
   --color-error-bg:         #fee2e2;
   --color-error-border:     #ef4444;
   --color-error-text:       #b91c1c;
   --color-error-icon:       #d32f2f;
-  --color-shadow:           rgba(28, 28, 46, 0.08);
-  --color-example-bg:       #1a1a2e;   /* dark navy for tool call content  */
-  --color-example-text:     #d8d8f0;
-  --color-message-confirm-bg: #f4f4fb;
+  --color-shadow:           rgba(26, 24, 18, 0.08);
+  --color-example-bg:       #f2ede6;   /* warm light — tool call content    */
+  --color-example-text:     #3a3228;
+  --color-message-confirm-bg: #f5f1eb;
 
   /* Input card */
   --input-card-bg:          #ffffff;
-  --input-card-border:      #dcdcec;
+  --input-card-border:      #ddd8cf;
   --input-card-radius:      16px;
-  --input-card-shadow:      0 2px 16px rgba(28, 28, 46, 0.08), 0 1px 3px rgba(28, 28, 46, 0.06);
+  --input-card-shadow:      0 2px 16px rgba(26, 24, 18, 0.07), 0 1px 3px rgba(26, 24, 18, 0.05);
 
   /* Modal Colors */
   --modal-bg:               #ffffff;
-  --modal-text:             #1c1c2e;
-  --modal-border:           #e0e0ec;
-  --modal-button-bg:        #f4f4f8;
-  --modal-button-hover:     #e8e8f0;
-  --modal-button-primary:   #7c5cfc;
-  --modal-button-primary-hover: #6a4de0;
+  --modal-text:             #1a1812;
+  --modal-border:           #e4dfd6;
+  --modal-button-bg:        #f5f1eb;
+  --modal-button-hover:     #ede8e0;
+  --modal-button-primary:   #d4773a;
+  --modal-button-primary-hover: #b85c28;
   --modal-input-bg:         #ffffff;
-  --modal-input-border:     #dcdcec;
-  --modal-input-text:       #1c1c2e;
+  --modal-input-border:     #ddd8cf;
+  --modal-input-text:       #1a1812;
 
   /* Action Button Colors */
   --action-button-primary-bg:     rgba(76, 175, 80, 0.1);
@@ -374,20 +375,20 @@ body {
 }
 
 .example-query {
-  background: rgba(124, 92, 252, 0.08);
-  border: 1px solid rgba(124, 92, 252, 0.18);
+  background: rgba(212, 119, 58, 0.08);
+  border: 1px solid rgba(212, 119, 58, 0.20);
   border-radius: 20px;
   padding: 6px 14px;
   font-size: 0.75rem;
-  color: var(--color-accent);
+  color: #c8632a;
   cursor: pointer;
   transition: background 0.15s, transform 0.15s, box-shadow 0.15s;
 }
 
 .example-query:hover {
-  background: rgba(124, 92, 252, 0.15);
+  background: rgba(212, 119, 58, 0.14);
   transform: translateY(-1px);
-  box-shadow: 0 2px 8px rgba(124, 92, 252, 0.15);
+  box-shadow: 0 2px 8px rgba(212, 119, 58, 0.15);
 }
 
 .chat-input-container {
@@ -416,7 +417,7 @@ body {
 
 .send-button:hover:not(:disabled) {
   background: var(--color-row-hover);
-  color: var(--color-accent);
+  color: #d4773a;
 }
 
 /* .send-button:hover:not(:disabled) {
@@ -429,7 +430,7 @@ body {
 }
 
 .send-button--active {
-  color: var(--color-accent) !important;
+  color: #d4773a !important;
 }
 
 /* ── Thinking indicators ────────────────────────────── */
@@ -450,16 +451,21 @@ body {
   width: 9px;
   height: 9px;
   border-radius: 50%;
-  background: var(--color-accent);
-  animation: nf-glow 1.8s ease-in-out infinite;
+  background: #d4773a;
+  animation: nf-glow-warm 1.8s ease-in-out infinite;
+}
+
+@keyframes nf-glow-warm {
+  0%, 100% { box-shadow: 0 0 3px 1px rgba(212, 119, 58, 0.3); transform: scale(0.85); opacity: 0.6; }
+  50%       { box-shadow: 0 0 10px 3px rgba(212, 119, 58, 0.6); transform: scale(1.15); opacity: 1; }
 }
 
 /* Send button in-flight indicator */
 .nf-send-spinner {
-  width: 16px;
-  height: 16px;
-  border: 2px solid rgba(124, 92, 252, 0.25);
-  border-top-color: var(--color-accent);
+  width: 15px;
+  height: 15px;
+  border: 2px solid rgba(212, 119, 58, 0.25);
+  border-top-color: #d4773a;
   border-radius: 50%;
   animation: nf-spin 0.8s linear infinite;
   display: inline-block;
@@ -491,8 +497,8 @@ body {
 }
 
 .chat-input-wrapper:focus-within {
-  border-color: rgba(124, 92, 252, 0.45);
-  box-shadow: 0 2px 20px rgba(124, 92, 252, 0.12), 0 1px 3px rgba(28, 28, 46, 0.06);
+  border-color: rgba(212, 119, 58, 0.45);
+  box-shadow: 0 2px 20px rgba(212, 119, 58, 0.10), 0 1px 3px rgba(26, 24, 18, 0.05);
 }
 
 /* File selection area and chips */
@@ -642,29 +648,25 @@ textarea {
 /* ── Header ─────────────────────────────────────────── */
 .header-container {
   text-align: center;
-  padding: 2rem 0 1rem;
+  padding: 1.5rem 0 0.75rem;
 }
 
 .chat-title {
-  font-size: 1.55rem;
-  margin: 0 0 0.25rem 0;
+  font-size: 1.25rem;
+  margin: 0 0 0.2rem 0;
   font-weight: 600;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.01em;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 0.4em;
-  background: linear-gradient(135deg, #a78bfa 0%, #7c5cfc 50%, #5b45c8 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: #c8632a;            /* warm terracotta orange */
 }
 
 .title-logo {
-  height: 1.7em;
+  height: 1.5em;
   display: inline-block;
-  -webkit-text-fill-color: initial;
-  filter: drop-shadow(0 1px 4px rgba(124, 92, 252, 0.25));
+  filter: drop-shadow(0 1px 3px rgba(212, 119, 58, 0.2));
 }
 
 .chat-subtitle {
@@ -1377,7 +1379,7 @@ details[open] > .message-detail-content:has(.report-content) {
   background-color: var(--agent-bg);
   border-radius: 10px;
   border: 1px solid var(--agent-border);
-  box-shadow: 0 1px 4px rgba(28, 28, 46, 0.05);
+  box-shadow: 0 1px 4px rgba(26, 24, 18, 0.05);
 }
 
 .agent-name {
