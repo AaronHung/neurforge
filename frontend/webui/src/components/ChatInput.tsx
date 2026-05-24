@@ -1,5 +1,6 @@
 import React, { type FC, type KeyboardEvent, useRef, useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
+import { Paperclip, Send, X, FileText } from 'lucide-react';
 
 export type ChatInputLoadingState = "loading" | "ready" | "hide";
 
@@ -175,14 +176,14 @@ const ChatInput: FC<ChatInputProps> = ({
         onMouseEnter={() => onHover(item.id, true)}
         onMouseLeave={() => onHover(item.id, false)}
         onClick={() => item.hovering && onRemove(item.id)}
-        title={item.hovering ? t('app.delete', '删除') : ''}
+        title={item.hovering ? t('app.delete', '刪除') : ''}
       >
         {item.hovering ? (
-          <i className="fas fa-times"></i>
+          <X size={14} strokeWidth={2} />
         ) : item.status === 'uploading' ? (
-          <i className="breathing-circle fa fa-circle"></i>
+          <span className="breathing-circle" />
         ) : (
-          <i className="fas fa-file"></i>
+          <FileText size={14} strokeWidth={1.5} />
         )}
       </span>
       <span className="file-chip-name">{item.name}</span>
@@ -250,7 +251,7 @@ const ChatInput: FC<ChatInputProps> = ({
             disabled={isModelResponding}
             title={isModelResponding ? t('app.aiThinking') : t('app.attachFile', 'Attach file')}
           >
-            <i className="fas fa-paperclip"></i>
+            <Paperclip size={16} strokeWidth={1.8} />
           </button>
           <input
             ref={fileInputRef}
@@ -270,15 +271,15 @@ const ChatInput: FC<ChatInputProps> = ({
             disabled={isModelResponding}
           />
           <button
-            className="send-button"
+            className={`send-button ${!isModelResponding && inputValue.trim() ? 'send-button--active' : ''}`}
             onClick={sendWithRelated}
             disabled={isModelResponding}
             title={isModelResponding ? t('app.aiThinking') : t('app.sendMessage')}
           >
             {isModelResponding ? (
-              <i className="breathing-circle fa fa-circle"></i>
+              <span className="nf-send-spinner" />
             ) : (
-              <i className="fas fa-paper-plane"></i>
+              <Send size={16} strokeWidth={1.8} />
             )}
           </button>
         </div>
