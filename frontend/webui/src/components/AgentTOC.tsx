@@ -26,7 +26,7 @@ const AgentTOC: React.FC<AgentTOCProps> = ({ messages, onNavigate }) => {
             className="agent-toc-item"
             onClick={() => onNavigate(msg.id)}
           >
-            <i className="fas fa-robot agent-toc-icon"></i>
+            <span className="agent-toc-icon">🐙</span>
             <span className="agent-toc-name">{msg.content as string}</span>
           </div>
         ))}

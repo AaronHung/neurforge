@@ -146,7 +146,7 @@ const MessageComponent: React.FC<MessageComponentProps> = ({
   const renderAgentContent = (agentName: string) => (
     <div className="agent-content">
       <div className="agent-name">
-        <i className="fas fa-robot"></i> {agentName}
+        <span>🐙</span> {agentName}
       </div>
       <div className="agent-status">
         {message.inprogress ? 'Initializing...' : 'Ready'}

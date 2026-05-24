@@ -181,7 +181,7 @@ const SideBar: React.FC<SideBarProps> = ({
                     className="sidebar-button sidebar-button-text agent-toc-item"
                     onClick={() => onNavigate(Number(msg.id))}
                   >
-                    <i className="fas fa-robot" style={{ marginRight: '8px' }}></i>
+                    <span style={{ marginRight: '8px' }}>🐙</span>
                     {msg.content as string}
                   </div>
                 ))
