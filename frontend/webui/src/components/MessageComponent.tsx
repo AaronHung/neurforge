@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import SafeMarkdown from './SafeMarkdown';
 import type { Message, ToolCallMessage } from '../types/message';
 import type { PlanItem } from '../types/events';
+import { Cpu, Globe, BookOpen, Search, MessageSquare, Lightbulb, Wrench } from 'lucide-react';
 
 interface MessageComponentProps {
   message: Message;
@@ -146,7 +147,7 @@ const MessageComponent: React.FC<MessageComponentProps> = ({
   const renderAgentContent = (agentName: string) => (
     <div className="agent-content">
       <div className="agent-name">
-        <span>🐙</span> {agentName}
+        <Cpu size={14} strokeWidth={1.5} style={{ opacity: 0.6 }} /> {agentName}
       </div>
       <div className="agent-status">
         {message.inprogress ? 'Initializing...' : 'Ready'}
@@ -378,22 +379,15 @@ const MessageComponent: React.FC<MessageComponentProps> = ({
   
     // Tool call message
     if (message.type === 'tool_call') {
-      let icon = "🖥️";
-      if ((message.content as ToolCallMessage).toolName == "web_qa") {
-        icon = "🌐";
-      } else if ((message.content as ToolCallMessage).toolName == "document_qa") {
-        icon = "📖";
-      } else if ((message.content as ToolCallMessage).toolName == "search") {
-        icon = "🔍";
-      } else if ((message.content as ToolCallMessage).toolName == "ask_user") {
-        icon = "💬";
-      } else if ((message.content as ToolCallMessage).toolName == "final_answer") {
-        icon = "💡";
-      }
+      const toolName = (message.content as ToolCallMessage).toolName;
+      let ToolIcon: React.ElementType = Wrench;
+      if (toolName === "web_qa")       ToolIcon = Globe;
+      else if (toolName === "document_qa") ToolIcon = BookOpen;
+      else if (toolName === "search")  ToolIcon = Search;
+      else if (toolName === "ask_user") ToolIcon = MessageSquare;
+      else if (toolName === "final_answer") ToolIcon = Lightbulb;
 
-      // if ask_user or final answer, don't open
-
-      let shouldHide = (message.content as ToolCallMessage).toolName == "ask_user";
+      const shouldHide = toolName === "ask_user";
 
       return (
         <details className="message-detail tool-call-message" open={!shouldHide}>
@@ -401,7 +395,8 @@ const MessageComponent: React.FC<MessageComponentProps> = ({
             className="message-detail-summary"
             {...(message.inprogress ? { 'data-inprogress': 'true' } : {})}
           >
-            <span>{getToolCallStatus()}</span> {icon}
+            <span>{getToolCallStatus()}</span>
+            <ToolIcon size={13} strokeWidth={1.6} style={{ flexShrink: 0, opacity: 0.55, marginLeft: 4 }} />
           </summary>
           <div className="message-detail-content">
             {renderToolCall()}

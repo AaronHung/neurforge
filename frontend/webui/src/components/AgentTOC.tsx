@@ -1,5 +1,6 @@
 import React from 'react';
 import type { Message } from '../types/message';
+import { Cpu } from 'lucide-react';
 
 interface AgentTOCProps {
   messages: Message[];
@@ -26,7 +27,7 @@ const AgentTOC: React.FC<AgentTOCProps> = ({ messages, onNavigate }) => {
             className="agent-toc-item"
             onClick={() => onNavigate(msg.id)}
           >
-            <span className="agent-toc-icon">🐙</span>
+            <Cpu size={13} strokeWidth={1.5} className="agent-toc-icon" style={{ opacity: 0.6 }} />
             <span className="agent-toc-name">{msg.content as string}</span>
           </div>
         ))}

@@ -1,4 +1,5 @@
 import React, { useState, useRef, useEffect, useCallback } from 'react';
+import { Settings } from 'lucide-react';
 import { useChatWebSocket } from './services/websocket.service';
 import { ReadyState } from 'react-use-websocket';
 import MessageComponent from './components/MessageComponent';
@@ -922,7 +923,7 @@ const App: React.FC = () => {
           onClick={handleOpenSettings}
           title={t('app.settingsButtonTitle')}
         >
-          <i className="fas fa-cog"></i>
+          <Settings size={17} strokeWidth={1.6} />
         </button>
         
         {settingsOpen && (
