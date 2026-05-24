@@ -1,0 +1,321 @@
+{
+  "warning_threshold": 70,
+  "alarm_threshold": 50,
+  "equipment": {
+    "COMP-102R-A": {
+      "name": "往復式壓縮機 A台",
+      "history": [
+        {
+          "date": "2026-01-05",
+          "hpi": 87.4,
+          "status": "normal"
+        },
+        {
+          "date": "2026-01-12",
+          "hpi": 87.4,
+          "status": "normal"
+        },
+        {
+          "date": "2026-01-19",
+          "hpi": 87.4,
+          "status": "normal"
+        },
+        {
+          "date": "2026-01-26",
+          "hpi": 88.1,
+          "status": "normal"
+        },
+        {
+          "date": "2026-02-02",
+          "hpi": 87.4,
+          "status": "normal"
+        },
+        {
+          "date": "2026-02-09",
+          "hpi": 86.3,
+          "status": "normal"
+        },
+        {
+          "date": "2026-02-16",
+          "hpi": 87.8,
+          "status": "normal"
+        },
+        {
+          "date": "2026-02-23",
+          "hpi": 87.3,
+          "status": "normal"
+        },
+        {
+          "date": "2026-03-02",
+          "hpi": 87.3,
+          "status": "normal"
+        },
+        {
+          "date": "2026-03-09",
+          "hpi": 87.6,
+          "status": "normal"
+        },
+        {
+          "date": "2026-03-16",
+          "hpi": 87.7,
+          "status": "normal"
+        },
+        {
+          "date": "2026-03-23",
+          "hpi": 88.4,
+          "status": "normal"
+        },
+        {
+          "date": "2026-03-30",
+          "hpi": 88.0,
+          "status": "normal"
+        },
+        {
+          "date": "2026-04-06",
+          "hpi": 87.6,
+          "status": "normal"
+        },
+        {
+          "date": "2026-04-13",
+          "hpi": 86.9,
+          "status": "normal"
+        },
+        {
+          "date": "2026-04-20",
+          "hpi": 86.7,
+          "status": "normal"
+        },
+        {
+          "date": "2026-04-27",
+          "hpi": 87.7,
+          "status": "normal"
+        },
+        {
+          "date": "2026-05-04",
+          "hpi": 88.5,
+          "status": "normal"
+        },
+        {
+          "date": "2026-05-11",
+          "hpi": 87.5,
+          "status": "normal"
+        },
+        {
+          "date": "2026-05-18",
+          "hpi": 87.4,
+          "status": "normal"
+        }
+      ]
+    },
+    "COMP-102R-B": {
+      "name": "往復式壓縮機 B台",
+      "history": [
+        {
+          "date": "2026-01-05",
+          "hpi": 88.6,
+          "status": "normal"
+        },
+        {
+          "date": "2026-01-12",
+          "hpi": 87.0,
+          "status": "normal"
+        },
+        {
+          "date": "2026-01-19",
+          "hpi": 88.0,
+          "status": "normal"
+        },
+        {
+          "date": "2026-01-26",
+          "hpi": 88.6,
+          "status": "normal"
+        },
+        {
+          "date": "2026-02-02",
+          "hpi": 88.9,
+          "status": "normal"
+        },
+        {
+          "date": "2026-02-09",
+          "hpi": 88.0,
+          "status": "normal"
+        },
+        {
+          "date": "2026-02-16",
+          "hpi": 88.5,
+          "status": "normal"
+        },
+        {
+          "date": "2026-02-23",
+          "hpi": 86.3,
+          "status": "normal"
+        },
+        {
+          "date": "2026-03-02",
+          "hpi": 84.6,
+          "status": "normal"
+        },
+        {
+          "date": "2026-03-09",
+          "hpi": 81.0,
+          "status": "normal"
+        },
+        {
+          "date": "2026-03-16",
+          "hpi": 80.2,
+          "status": "normal"
+        },
+        {
+          "date": "2026-03-23",
+          "hpi": 76.5,
+          "status": "normal"
+        },
+        {
+          "date": "2026-03-30",
+          "hpi": 73.5,
+          "status": "normal"
+        },
+        {
+          "date": "2026-04-06",
+          "hpi": 73.0,
+          "status": "normal"
+        },
+        {
+          "date": "2026-04-13",
+          "hpi": 70.7,
+          "status": "normal"
+        },
+        {
+          "date": "2026-04-20",
+          "hpi": 70.0,
+          "status": "normal"
+        },
+        {
+          "date": "2026-04-27",
+          "hpi": 67.7,
+          "status": "warning"
+        },
+        {
+          "date": "2026-05-04",
+          "hpi": 64.1,
+          "status": "warning"
+        },
+        {
+          "date": "2026-05-11",
+          "hpi": 63.7,
+          "status": "warning"
+        },
+        {
+          "date": "2026-05-18",
+          "hpi": 60.1,
+          "status": "warning"
+        }
+      ]
+    },
+    "COMP-101C": {
+      "name": "離心式壓縮機",
+      "history": [
+        {
+          "date": "2026-01-05",
+          "hpi": 89.0,
+          "status": "normal"
+        },
+        {
+          "date": "2026-01-12",
+          "hpi": 88.9,
+          "status": "normal"
+        },
+        {
+          "date": "2026-01-19",
+          "hpi": 89.2,
+          "status": "normal"
+        },
+        {
+          "date": "2026-01-26",
+          "hpi": 89.8,
+          "status": "normal"
+        },
+        {
+          "date": "2026-02-02",
+          "hpi": 89.6,
+          "status": "normal"
+        },
+        {
+          "date": "2026-02-09",
+          "hpi": 89.4,
+          "status": "normal"
+        },
+        {
+          "date": "2026-02-16",
+          "hpi": 89.6,
+          "status": "normal"
+        },
+        {
+          "date": "2026-02-23",
+          "hpi": 89.5,
+          "status": "normal"
+        },
+        {
+          "date": "2026-03-02",
+          "hpi": 88.6,
+          "status": "normal"
+        },
+        {
+          "date": "2026-03-09",
+          "hpi": 88.5,
+          "status": "normal"
+        },
+        {
+          "date": "2026-03-16",
+          "hpi": 88.7,
+          "status": "normal"
+        },
+        {
+          "date": "2026-03-23",
+          "hpi": 89.5,
+          "status": "normal"
+        },
+        {
+          "date": "2026-03-30",
+          "hpi": 88.9,
+          "status": "normal"
+        },
+        {
+          "date": "2026-04-06",
+          "hpi": 91.0,
+          "status": "normal"
+        },
+        {
+          "date": "2026-04-13",
+          "hpi": 88.4,
+          "status": "normal"
+        },
+        {
+          "date": "2026-04-20",
+          "hpi": 88.2,
+          "status": "normal"
+        },
+        {
+          "date": "2026-04-27",
+          "hpi": 89.7,
+          "status": "normal"
+        },
+        {
+          "date": "2026-05-04",
+          "hpi": 90.2,
+          "status": "normal"
+        },
+        {
+          "date": "2026-05-11",
+          "hpi": 89.5,
+          "status": "normal"
+        },
+        {
+          "date": "2026-05-18",
+          "hpi": 89.8,
+          "status": "normal"
+        }
+      ]
+    }
+  }
+}

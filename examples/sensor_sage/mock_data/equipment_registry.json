@@ -1,0 +1,73 @@
+[
+  {
+    "equipment_id": "COMP-102R-A",
+    "name": "往復式壓縮機 A台",
+    "type": "reciprocating_compressor",
+    "facility": "低溫工場",
+    "location": "C棟 壓縮機房",
+    "install_date": "2010-06-15",
+    "last_major_overhaul": "2026-03-12",
+    "status": "運行中",
+    "responsible_team": "轉機維護組",
+    "design_capacity": "120 TON/HR",
+    "stages": 2,
+    "driver": "電動馬達"
+  },
+  {
+    "equipment_id": "COMP-102R-B",
+    "name": "往復式壓縮機 B台",
+    "type": "reciprocating_compressor",
+    "facility": "低溫工場",
+    "location": "C棟 壓縮機房",
+    "install_date": "2010-06-15",
+    "last_major_overhaul": "2024-12-31",
+    "status": "運行中",
+    "responsible_team": "轉機維護組",
+    "design_capacity": "120 TON/HR",
+    "stages": 2,
+    "driver": "電動馬達",
+    "pdm_note": "⚠️ PRiSM 預警中 — HPI 持續下降，請查閱機況先知診斷報告"
+  },
+  {
+    "equipment_id": "COMP-102R-S",
+    "name": "往復式壓縮機 備用台",
+    "type": "reciprocating_compressor",
+    "facility": "低溫工場",
+    "location": "C棟 壓縮機房",
+    "install_date": "2010-06-15",
+    "last_major_overhaul": "2025-12-25",
+    "status": "備用(離線)",
+    "responsible_team": "轉機維護組",
+    "design_capacity": "120 TON/HR",
+    "stages": 2,
+    "driver": "電動馬達"
+  },
+  {
+    "equipment_id": "COMP-101C",
+    "name": "離心式壓縮機",
+    "type": "centrifugal_compressor",
+    "facility": "低溫工場",
+    "location": "D棟 主機房",
+    "install_date": "2010-06-15",
+    "last_major_overhaul": "2025-09-15",
+    "status": "運行中",
+    "responsible_team": "轉機維護組",
+    "design_capacity": "57,000 KG/HR",
+    "stages": 3,
+    "driver": "蒸汽渦輪 (11,500 RPM)"
+  },
+  {
+    "equipment_id": "REACT-201",
+    "name": "加氫裂解觸媒反應器",
+    "type": "catalytic_reactor",
+    "facility": "煉製工場",
+    "location": "E棟 反應器區",
+    "install_date": "2018-03-01",
+    "catalyst_load_date": "2025-01-15",
+    "status": "運行中",
+    "responsible_team": "製程維護組",
+    "catalyst_type": "Ni-Mo / Al₂O₃",
+    "design_conversion_pct": 95.0,
+    "catalyst_replacement_cost_ntd": 32000000
+  }
+]

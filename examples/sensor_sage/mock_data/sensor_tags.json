@@ -1,0 +1,176 @@
+{
+  "COMP-102R": {
+    "TI1_INLET": {
+      "desc": "一級進口溫度",
+      "unit": "°C",
+      "normal_min": 18,
+      "normal_max": 32
+    },
+    "TI1_OUTLET": {
+      "desc": "一級出口溫度",
+      "unit": "°C",
+      "normal_min": 138,
+      "normal_max": 148
+    },
+    "TI2_INLET": {
+      "desc": "二級進口溫度",
+      "unit": "°C",
+      "normal_min": 30,
+      "normal_max": 42
+    },
+    "TI2_OUTLET": {
+      "desc": "二級出口溫度",
+      "unit": "°C",
+      "normal_min": 138,
+      "normal_max": 148
+    },
+    "PI1_INLET": {
+      "desc": "一級進口壓力",
+      "unit": "kg/cm²",
+      "normal_min": 0.05,
+      "normal_max": 0.15
+    },
+    "PI1_OUTLET": {
+      "desc": "一級出口壓力",
+      "unit": "kg/cm²",
+      "normal_min": 3.5,
+      "normal_max": 4.2
+    },
+    "PI2_OUTLET": {
+      "desc": "二級出口壓力",
+      "unit": "kg/cm²",
+      "normal_min": 15.5,
+      "normal_max": 17.5
+    },
+    "II_CURRENT": {
+      "desc": "電動機電流",
+      "unit": "A",
+      "normal_min": 150,
+      "normal_max": 168
+    },
+    "FI_FLOW": {
+      "desc": "出口流量",
+      "unit": "TON/HR",
+      "normal_min": 105,
+      "normal_max": 125
+    },
+    "TI_PACKING1": {
+      "desc": "一級填料溫度",
+      "unit": "°C",
+      "normal_min": 35,
+      "normal_max": 55
+    },
+    "TI_PACKING2": {
+      "desc": "二級填料溫度",
+      "unit": "°C",
+      "normal_min": 40,
+      "normal_max": 62
+    }
+  },
+  "COMP-101C": {
+    "ZI_AXIAL_A": {
+      "desc": "軸向位移 A",
+      "unit": "MIL",
+      "normal_min": -9.5,
+      "normal_max": -3.0
+    },
+    "ZI_AXIAL_B": {
+      "desc": "軸向位移 B",
+      "unit": "MIL",
+      "normal_min": -9.5,
+      "normal_max": -3.0
+    },
+    "XI_VIB_C": {
+      "desc": "振動 C（mil p-p）",
+      "unit": "MIL p-p",
+      "normal_min": 0.3,
+      "normal_max": 0.8
+    },
+    "XI_VIB_D": {
+      "desc": "振動 D（mil p-p）",
+      "unit": "MIL p-p",
+      "normal_min": 0.3,
+      "normal_max": 0.8
+    },
+    "XI_VIB_E": {
+      "desc": "振動 E（mil p-p）",
+      "unit": "MIL p-p",
+      "normal_min": 0.6,
+      "normal_max": 1.3
+    },
+    "XI_VIB_G": {
+      "desc": "振動 G（mil p-p）",
+      "unit": "MIL p-p",
+      "normal_min": 0.3,
+      "normal_max": 0.8
+    },
+    "TI_TEMP_1": {
+      "desc": "壓縮機 T1 溫度",
+      "unit": "°C",
+      "normal_min": 56,
+      "normal_max": 72
+    },
+    "TI_TEMP_5": {
+      "desc": "壓縮機 T5 溫度（高壓段）",
+      "unit": "°C",
+      "normal_min": 90,
+      "normal_max": 100
+    },
+    "STX_SPEED": {
+      "desc": "渦輪轉速",
+      "unit": "RPM",
+      "normal_min": 10500,
+      "normal_max": 12200
+    },
+    "FIC_FLOW_1": {
+      "desc": "一段吸入流量",
+      "unit": "TON/HR",
+      "normal_min": 13,
+      "normal_max": 22
+    }
+  },
+  "REACT-201": {
+    "REACT_TEMP_IN": {
+      "desc": "進料溫度（入口）",
+      "unit": "°C",
+      "normal_min": 340,
+      "normal_max": 400
+    },
+    "REACT_TEMP_OUT": {
+      "desc": "出料溫度（出口）",
+      "unit": "°C",
+      "normal_min": 355,
+      "normal_max": 420
+    },
+    "REACT_DELTA_T": {
+      "desc": "反應溫升 ΔT",
+      "unit": "°C",
+      "normal_min": 12,
+      "normal_max": 25
+    },
+    "WHSV": {
+      "desc": "重量空間速度",
+      "unit": "hr⁻¹",
+      "normal_min": 1.0,
+      "normal_max": 2.5
+    },
+    "CONVERSION": {
+      "desc": "進料轉化率",
+      "unit": "%",
+      "normal_min": 88,
+      "normal_max": 96
+    },
+    "SELECTIVITY": {
+      "desc": "產品選擇性",
+      "unit": "%",
+      "normal_min": 82,
+      "normal_max": 92
+    },
+    "PRODUCT_QUAL": {
+      "desc": "產品品質指標（API）",
+      "unit": "API°",
+      "normal_min": 38,
+      "normal_max": 46
+    }
+  }
+}

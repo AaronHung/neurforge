@@ -1,0 +1,4 @@
+name: sensor_sage
+mode: customized
+customized_filepath: examples/sensor_sage/tools/sensor_sage_toolkit.py
+customized_classname: SensorSageToolkit
