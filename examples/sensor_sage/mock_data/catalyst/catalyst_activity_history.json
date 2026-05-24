@@ -1,0 +1,557 @@
+{
+  "reactor_id": "REACT-201",
+  "catalyst_type": "Ni-Mo / Al₂O₃ 加氫裂解催化劑",
+  "load_date": "2025-01-15",
+  "warning_threshold": 55,
+  "alarm_threshold": 48,
+  "replacement_cost_ntd": 32000000,
+  "design_life_months": 24,
+  "current_activity": 62.3,
+  "current_months_in_service": 16.3,
+  "history": [
+    {
+      "date": "2025-01-15",
+      "catalyst_activity": 100.0,
+      "REACT_TEMP_IN": 354.6,
+      "CONVERSION": 94.8,
+      "SELECTIVITY": 91.1
+    },
+    {
+      "date": "2025-01-22",
+      "catalyst_activity": 98.7,
+      "REACT_TEMP_IN": 356.1,
+      "CONVERSION": 95.0,
+      "SELECTIVITY": 90.7
+    },
+    {
+      "date": "2025-01-29",
+      "catalyst_activity": 98.4,
+      "REACT_TEMP_IN": 356.1,
+      "CONVERSION": 95.1,
+      "SELECTIVITY": 91.2
+    },
+    {
+      "date": "2025-02-05",
+      "catalyst_activity": 97.4,
+      "REACT_TEMP_IN": 356.1,
+      "CONVERSION": 94.7,
+      "SELECTIVITY": 90.7
+    },
+    {
+      "date": "2025-02-12",
+      "catalyst_activity": 96.4,
+      "REACT_TEMP_IN": 357.1,
+      "CONVERSION": 94.8,
+      "SELECTIVITY": 90.7
+    },
+    {
+      "date": "2025-02-19",
+      "catalyst_activity": 95.6,
+      "REACT_TEMP_IN": 357.6,
+      "CONVERSION": 94.6,
+      "SELECTIVITY": 90.6
+    },
+    {
+      "date": "2025-02-26",
+      "catalyst_activity": 95.0,
+      "REACT_TEMP_IN": 357.8,
+      "CONVERSION": 94.3,
+      "SELECTIVITY": 90.9
+    },
+    {
+      "date": "2025-03-05",
+      "catalyst_activity": 94.6,
+      "REACT_TEMP_IN": 358.4,
+      "CONVERSION": 94.6,
+      "SELECTIVITY": 90.8
+    },
+    {
+      "date": "2025-03-12",
+      "catalyst_activity": 93.5,
+      "REACT_TEMP_IN": 359.3,
+      "CONVERSION": 95.0,
+      "SELECTIVITY": 90.7
+    },
+    {
+      "date": "2025-03-19",
+      "catalyst_activity": 92.9,
+      "REACT_TEMP_IN": 359.8,
+      "CONVERSION": 94.4,
+      "SELECTIVITY": 90.4
+    },
+    {
+      "date": "2025-03-26",
+      "catalyst_activity": 92.3,
+      "REACT_TEMP_IN": 359.0,
+      "CONVERSION": 95.0,
+      "SELECTIVITY": 90.8
+    },
+    {
+      "date": "2025-04-02",
+      "catalyst_activity": 91.2,
+      "REACT_TEMP_IN": 360.3,
+      "CONVERSION": 94.9,
+      "SELECTIVITY": 90.4
+    },
+    {
+      "date": "2025-04-09",
+      "catalyst_activity": 89.9,
+      "REACT_TEMP_IN": 360.5,
+      "CONVERSION": 94.2,
+      "SELECTIVITY": 90.3
+    },
+    {
+      "date": "2025-04-16",
+      "catalyst_activity": 89.7,
+      "REACT_TEMP_IN": 361.4,
+      "CONVERSION": 94.0,
+      "SELECTIVITY": 90.8
+    },
+    {
+      "date": "2025-04-23",
+      "catalyst_activity": 88.3,
+      "REACT_TEMP_IN": 361.1,
+      "CONVERSION": 94.3,
+      "SELECTIVITY": 90.4
+    },
+    {
+      "date": "2025-04-30",
+      "catalyst_activity": 88.3,
+      "REACT_TEMP_IN": 361.9,
+      "CONVERSION": 93.8,
+      "SELECTIVITY": 90.2
+    },
+    {
+      "date": "2025-05-07",
+      "catalyst_activity": 87.1,
+      "REACT_TEMP_IN": 363.0,
+      "CONVERSION": 93.9,
+      "SELECTIVITY": 90.5
+    },
+    {
+      "date": "2025-05-14",
+      "catalyst_activity": 86.9,
+      "REACT_TEMP_IN": 363.7,
+      "CONVERSION": 94.3,
+      "SELECTIVITY": 90.5
+    },
+    {
+      "date": "2025-05-21",
+      "catalyst_activity": 86.2,
+      "REACT_TEMP_IN": 363.4,
+      "CONVERSION": 93.9,
+      "SELECTIVITY": 89.9
+    },
+    {
+      "date": "2025-05-28",
+      "catalyst_activity": 85.3,
+      "REACT_TEMP_IN": 363.8,
+      "CONVERSION": 94.0,
+      "SELECTIVITY": 90.3
+    },
+    {
+      "date": "2025-06-04",
+      "catalyst_activity": 83.9,
+      "REACT_TEMP_IN": 364.1,
+      "CONVERSION": 93.8,
+      "SELECTIVITY": 90.1
+    },
+    {
+      "date": "2025-06-11",
+      "catalyst_activity": 83.8,
+      "REACT_TEMP_IN": 364.6,
+      "CONVERSION": 93.8,
+      "SELECTIVITY": 89.8
+    },
+    {
+      "date": "2025-06-18",
+      "catalyst_activity": 82.2,
+      "REACT_TEMP_IN": 366.0,
+      "CONVERSION": 93.3,
+      "SELECTIVITY": 90.0
+    },
+    {
+      "date": "2025-06-25",
+      "catalyst_activity": 81.8,
+      "REACT_TEMP_IN": 365.4,
+      "CONVERSION": 93.6,
+      "SELECTIVITY": 90.0
+    },
+    {
+      "date": "2025-07-02",
+      "catalyst_activity": 82.1,
+      "REACT_TEMP_IN": 366.8,
+      "CONVERSION": 93.5,
+      "SELECTIVITY": 90.2
+    },
+    {
+      "date": "2025-07-09",
+      "catalyst_activity": 81.4,
+      "REACT_TEMP_IN": 367.3,
+      "CONVERSION": 93.4,
+      "SELECTIVITY": 90.2
+    },
+    {
+      "date": "2025-07-16",
+      "catalyst_activity": 81.0,
+      "REACT_TEMP_IN": 367.9,
+      "CONVERSION": 94.0,
+      "SELECTIVITY": 90.1
+    },
+    {
+      "date": "2025-07-23",
+      "catalyst_activity": 80.0,
+      "REACT_TEMP_IN": 367.5,
+      "CONVERSION": 93.1,
+      "SELECTIVITY": 89.9
+    },
+    {
+      "date": "2025-07-30",
+      "catalyst_activity": 78.3,
+      "REACT_TEMP_IN": 368.2,
+      "CONVERSION": 93.7,
+      "SELECTIVITY": 89.7
+    },
+    {
+      "date": "2025-08-06",
+      "catalyst_activity": 78.5,
+      "REACT_TEMP_IN": 368.3,
+      "CONVERSION": 93.2,
+      "SELECTIVITY": 90.0
+    },
+    {
+      "date": "2025-08-13",
+      "catalyst_activity": 77.7,
+      "REACT_TEMP_IN": 369.6,
+      "CONVERSION": 93.8,
+      "SELECTIVITY": 90.0
+    },
+    {
+      "date": "2025-08-20",
+      "catalyst_activity": 76.7,
+      "REACT_TEMP_IN": 370.6,
+      "CONVERSION": 93.0,
+      "SELECTIVITY": 89.7
+    },
+    {
+      "date": "2025-08-27",
+      "catalyst_activity": 76.4,
+      "REACT_TEMP_IN": 371.0,
+      "CONVERSION": 92.8,
+      "SELECTIVITY": 89.8
+    },
+    {
+      "date": "2025-09-03",
+      "catalyst_activity": 75.9,
+      "REACT_TEMP_IN": 371.3,
+      "CONVERSION": 93.0,
+      "SELECTIVITY": 89.8
+    },
+    {
+      "date": "2025-09-10",
+      "catalyst_activity": 74.8,
+      "REACT_TEMP_IN": 372.0,
+      "CONVERSION": 93.2,
+      "SELECTIVITY": 89.3
+    },
+    {
+      "date": "2025-09-17",
+      "catalyst_activity": 74.6,
+      "REACT_TEMP_IN": 372.0,
+      "CONVERSION": 92.9,
+      "SELECTIVITY": 89.4
+    },
+    {
+      "date": "2025-09-24",
+      "catalyst_activity": 73.7,
+      "REACT_TEMP_IN": 371.7,
+      "CONVERSION": 93.4,
+      "SELECTIVITY": 89.3
+    },
+    {
+      "date": "2025-10-01",
+      "catalyst_activity": 72.9,
+      "REACT_TEMP_IN": 373.4,
+      "CONVERSION": 93.0,
+      "SELECTIVITY": 89.6
+    },
+    {
+      "date": "2025-10-08",
+      "catalyst_activity": 73.2,
+      "REACT_TEMP_IN": 373.2,
+      "CONVERSION": 92.5,
+      "SELECTIVITY": 89.6
+    },
+    {
+      "date": "2025-10-15",
+      "catalyst_activity": 72.3,
+      "REACT_TEMP_IN": 373.7,
+      "CONVERSION": 92.4,
+      "SELECTIVITY": 89.6
+    },
+    {
+      "date": "2025-10-22",
+      "catalyst_activity": 71.6,
+      "REACT_TEMP_IN": 373.6,
+      "CONVERSION": 92.9,
+      "SELECTIVITY": 89.1
+    },
+    {
+      "date": "2025-10-29",
+      "catalyst_activity": 70.6,
+      "REACT_TEMP_IN": 374.2,
+      "CONVERSION": 92.5,
+      "SELECTIVITY": 89.1
+    },
+    {
+      "date": "2025-11-05",
+      "catalyst_activity": 69.9,
+      "REACT_TEMP_IN": 375.6,
+      "CONVERSION": 92.7,
+      "SELECTIVITY": 89.4
+    },
+    {
+      "date": "2025-11-12",
+      "catalyst_activity": 70.0,
+      "REACT_TEMP_IN": 375.6,
+      "CONVERSION": 92.5,
+      "SELECTIVITY": 89.3
+    },
+    {
+      "date": "2025-11-19",
+      "catalyst_activity": 69.7,
+      "REACT_TEMP_IN": 376.7,
+      "CONVERSION": 92.9,
+      "SELECTIVITY": 89.4
+    },
+    {
+      "date": "2025-11-26",
+      "catalyst_activity": 68.8,
+      "REACT_TEMP_IN": 375.8,
+      "CONVERSION": 92.7,
+      "SELECTIVITY": 89.2
+    },
+    {
+      "date": "2025-12-03",
+      "catalyst_activity": 67.9,
+      "REACT_TEMP_IN": 376.9,
+      "CONVERSION": 92.2,
+      "SELECTIVITY": 89.2
+    },
+    {
+      "date": "2025-12-10",
+      "catalyst_activity": 67.6,
+      "REACT_TEMP_IN": 376.9,
+      "CONVERSION": 92.4,
+      "SELECTIVITY": 88.9
+    },
+    {
+      "date": "2025-12-17",
+      "catalyst_activity": 66.3,
+      "REACT_TEMP_IN": 378.4,
+      "CONVERSION": 92.1,
+      "SELECTIVITY": 88.9
+    },
+    {
+      "date": "2025-12-24",
+      "catalyst_activity": 65.8,
+      "REACT_TEMP_IN": 378.8,
+      "CONVERSION": 92.2,
+      "SELECTIVITY": 88.8
+    },
+    {
+      "date": "2025-12-31",
+      "catalyst_activity": 65.3,
+      "REACT_TEMP_IN": 379.1,
+      "CONVERSION": 92.2,
+      "SELECTIVITY": 88.7
+    },
+    {
+      "date": "2026-01-07",
+      "catalyst_activity": 65.2,
+      "REACT_TEMP_IN": 379.2,
+      "CONVERSION": 92.9,
+      "SELECTIVITY": 88.7
+    },
+    {
+      "date": "2026-01-14",
+      "catalyst_activity": 64.2,
+      "REACT_TEMP_IN": 380.2,
+      "CONVERSION": 91.7,
+      "SELECTIVITY": 89.0
+    },
+    {
+      "date": "2026-01-21",
+      "catalyst_activity": 64.7,
+      "REACT_TEMP_IN": 380.4,
+      "CONVERSION": 92.0,
+      "SELECTIVITY": 88.7
+    },
+    {
+      "date": "2026-01-28",
+      "catalyst_activity": 63.4,
+      "REACT_TEMP_IN": 381.8,
+      "CONVERSION": 92.2,
+      "SELECTIVITY": 88.6
+    },
+    {
+      "date": "2026-02-04",
+      "catalyst_activity": 63.5,
+      "REACT_TEMP_IN": 382.1,
+      "CONVERSION": 92.0,
+      "SELECTIVITY": 88.6
+    },
+    {
+      "date": "2026-02-11",
+      "catalyst_activity": 62.4,
+      "REACT_TEMP_IN": 381.6,
+      "CONVERSION": 91.9,
+      "SELECTIVITY": 88.6
+    },
+    {
+      "date": "2026-02-18",
+      "catalyst_activity": 61.0,
+      "REACT_TEMP_IN": 383.0,
+      "CONVERSION": 91.8,
+      "SELECTIVITY": 88.9
+    },
+    {
+      "date": "2026-02-25",
+      "catalyst_activity": 61.3,
+      "REACT_TEMP_IN": 383.1,
+      "CONVERSION": 92.0,
+      "SELECTIVITY": 88.7
+    },
+    {
+      "date": "2026-03-04",
+      "catalyst_activity": 60.9,
+      "REACT_TEMP_IN": 385.1,
+      "CONVERSION": 91.6,
+      "SELECTIVITY": 88.6
+    },
+    {
+      "date": "2026-03-11",
+      "catalyst_activity": 61.0,
+      "REACT_TEMP_IN": 383.6,
+      "CONVERSION": 91.2,
+      "SELECTIVITY": 88.2
+    },
+    {
+      "date": "2026-03-18",
+      "catalyst_activity": 60.0,
+      "REACT_TEMP_IN": 384.8,
+      "CONVERSION": 91.7,
+      "SELECTIVITY": 88.2
+    },
+    {
+      "date": "2026-03-25",
+      "catalyst_activity": 59.7,
+      "REACT_TEMP_IN": 385.5,
+      "CONVERSION": 91.4,
+      "SELECTIVITY": 88.4
+    },
+    {
+      "date": "2026-04-01",
+      "catalyst_activity": 59.1,
+      "REACT_TEMP_IN": 385.6,
+      "CONVERSION": 91.6,
+      "SELECTIVITY": 88.2
+    },
+    {
+      "date": "2026-04-08",
+      "catalyst_activity": 58.2,
+      "REACT_TEMP_IN": 385.3,
+      "CONVERSION": 91.5,
+      "SELECTIVITY": 88.5
+    },
+    {
+      "date": "2026-04-15",
+      "catalyst_activity": 57.8,
+      "REACT_TEMP_IN": 386.5,
+      "CONVERSION": 90.8,
+      "SELECTIVITY": 88.5
+    },
+    {
+      "date": "2026-04-22",
+      "catalyst_activity": 57.1,
+      "REACT_TEMP_IN": 386.9,
+      "CONVERSION": 91.5,
+      "SELECTIVITY": 88.1
+    },
+    {
+      "date": "2026-04-29",
+      "catalyst_activity": 57.3,
+      "REACT_TEMP_IN": 387.4,
+      "CONVERSION": 91.2,
+      "SELECTIVITY": 88.3
+    },
+    {
+      "date": "2026-05-06",
+      "catalyst_activity": 55.9,
+      "REACT_TEMP_IN": 388.1,
+      "CONVERSION": 91.1,
+      "SELECTIVITY": 88.4
+    },
+    {
+      "date": "2026-05-13",
+      "catalyst_activity": 55.8,
+      "REACT_TEMP_IN": 388.1,
+      "CONVERSION": 91.1,
+      "SELECTIVITY": 88.1
+    },
+    {
+      "date": "2026-05-20",
+      "catalyst_activity": 55.0,
+      "REACT_TEMP_IN": 388.7,
+      "CONVERSION": 91.4,
+      "SELECTIVITY": 88.1
+    }
+  ],
+  "projections": [
+    {
+      "date": "2026-06-23",
+      "projected_activity": 53.2,
+      "status": "warning"
+    },
+    {
+      "date": "2026-07-23",
+      "projected_activity": 51.3,
+      "status": "warning"
+    },
+    {
+      "date": "2026-08-23",
+      "projected_activity": 49.4,
+      "status": "warning"
+    },
+    {
+      "date": "2026-09-22",
+      "projected_activity": 47.7,
+      "status": "alarm"
+    },
+    {
+      "date": "2026-10-23",
+      "projected_activity": 45.9,
+      "status": "alarm"
+    },
+    {
+      "date": "2026-11-22",
+      "projected_activity": 44.3,
+      "status": "alarm"
+    },
+    {
+      "date": "2026-12-23",
+      "projected_activity": 42.7,
+      "status": "alarm"
+    },
+    {
+      "date": "2027-01-22",
+      "projected_activity": 41.2,
+      "status": "alarm"
+    }
+  ],
+  "optimal_replacement_window": {
+    "start": "2026-08-01",
+    "end": "2026-09-30",
+    "rationale": "活性 55 預計在 2026-08 左右，此時更換可避免品質惡化，且不過早浪費剩餘活性"
+  }
+}

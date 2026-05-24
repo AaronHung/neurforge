@@ -1,0 +1,139 @@
+[
+  {
+    "case_id": "CASE-001",
+    "equipment_type": "reciprocating_compressor",
+    "fault_type": "二級活塞桿磨損/斷裂",
+    "severity": "高",
+    "lead_time_weeks": "3-6 週",
+    "signature_tags": [
+      "TI2_OUTLET",
+      "II_CURRENT",
+      "PI2_OUTLET",
+      "TI_PACKING2"
+    ],
+    "pattern": {
+      "TI2_OUTLET": "緩慢上升 +3~+8°C，歷時 3~5 週",
+      "II_CURRENT": "上升 +5~+12A（氣缸內洩增加，壓縮效率下降）",
+      "PI2_OUTLET": "下降 -0.3~-0.8 kg/cm²（二級壓縮比降低）",
+      "TI_PACKING2": "上升 +5~+15°C（活塞桿摩擦熱增加）",
+      "FI_FLOW": "輕微下降，後期加速"
+    },
+    "historical_events": [
+      {
+        "date": "2024-12-30",
+        "equipment": "COMP-102R-B",
+        "action": "二級活塞桿檢修更換"
+      },
+      {
+        "date": "2025-03-12",
+        "equipment": "COMP-102R-A",
+        "action": "二級活塞桿檢修更換"
+      },
+      {
+        "date": "2024-07-23",
+        "equipment": "COMP-102R-A",
+        "action": "壓縮機全面檢修"
+      }
+    ],
+    "root_cause": "活塞桿表面硬度下降、偏心磨損，導致活塞環失去密封性，氣缸內氣體洩漏",
+    "recommended_action": "安排停機檢修，更換二級活塞桿、騎環（Rider Ring）與填料（Packing）",
+    "urgency_rule": "HPI < 65 且 TI2_OUTLET 持續上升超過 4 週 → 建議 2 週內安排停機"
+  },
+  {
+    "case_id": "CASE-002",
+    "equipment_type": "reciprocating_compressor",
+    "fault_type": "騎環（Rider Ring）破損",
+    "severity": "高",
+    "lead_time_weeks": "1-3 週",
+    "signature_tags": [
+      "FI_FLOW",
+      "II_CURRENT",
+      "TI2_OUTLET"
+    ],
+    "pattern": {
+      "FI_FLOW": "突然下降 -10~-25%（氣體洩漏嚴重）",
+      "II_CURRENT": "電流波動加大，平均上升",
+      "TI2_OUTLET": "快速上升 +8~+20°C"
+    },
+    "historical_events": [
+      {
+        "date": "2024-08-27",
+        "equipment": "COMP-102R-B",
+        "action": "壓縮機檢修拆裝"
+      },
+      {
+        "date": "2025-05-20",
+        "equipment": "COMP-102R-S",
+        "action": "1&2級活塞環與閥座檢修"
+      }
+    ],
+    "root_cause": "騎環長期磨耗達到設計壽命，或因異物進入造成提前破損",
+    "recommended_action": "立即安排停機，更換騎環、活塞環，檢查閥座",
+    "urgency_rule": "FI_FLOW 在 48h 內下降 > 15% → 緊急停機"
+  },
+  {
+    "case_id": "CASE-003",
+    "equipment_type": "reciprocating_compressor",
+    "fault_type": "出口閥座洩漏",
+    "severity": "中",
+    "lead_time_weeks": "2-8 週",
+    "signature_tags": [
+      "PI1_OUTLET",
+      "FI_FLOW",
+      "TI1_OUTLET"
+    ],
+    "pattern": {
+      "PI1_OUTLET": "一級出口壓力微降 -0.1~-0.4 kg/cm²",
+      "FI_FLOW": "緩慢下降 -5~-15%",
+      "TI1_OUTLET": "輕微上升"
+    },
+    "historical_events": [
+      {
+        "date": "2024-05-13",
+        "equipment": "COMP-102R-B",
+        "action": "閥座洩漏拆裝"
+      },
+      {
+        "date": "2025-06-19",
+        "equipment": "COMP-102R-B",
+        "action": "一級進出口閥加鎖工作"
+      },
+      {
+        "date": "2025-06-20",
+        "equipment": "COMP-102R-B",
+        "action": "一級出口閥更換"
+      }
+    ],
+    "root_cause": "閥座密封面因高壓衝擊疲勞，出現微裂紋或侵蝕坑洞",
+    "recommended_action": "計劃性停機更換出口閥，可安排在下次定期保養時執行",
+    "urgency_rule": "PI1_OUTLET 持續下降超過 4 週且下降 > 0.3 kg/cm² → 列入月保養計畫"
+  },
+  {
+    "case_id": "CASE-004",
+    "equipment_type": "centrifugal_compressor",
+    "fault_type": "LP 壓縮機葉輪震動（軸承磨損）",
+    "severity": "高",
+    "lead_time_weeks": "4-10 週",
+    "signature_tags": [
+      "XI_VIB_E",
+      "XI_VIB_C",
+      "STX_SPEED"
+    ],
+    "pattern": {
+      "XI_VIB_E": "LP 段徑向振動從 ~0.95 mil 緩升至 > 1.4 mil",
+      "XI_VIB_C": "伴隨上升，幅度較小",
+      "STX_SPEED": "轉速波動加大（正常 ±30 RPM，異常 ±80 RPM）"
+    },
+    "historical_events": [
+      {
+        "date": "2016-06-27",
+        "equipment": "空壓機膨脹機",
+        "action": "第一段高振動葉輪斷裂損壞",
+        "note": "PRiSM 於 2016-05-05 提前 52 天預測出異常，主要測點 YIX10748（X向振動）、YIY10728（Y向振動）"
+      }
+    ],
+    "root_cause": "葉片表面孔蝕（腐蝕因素）→ 應力集中 → 疲勞裂紋 → 斷裂",
+    "recommended_action": "振動超過 1.4 mil 時立即降負載，安排渦輪葉輪拆檢，確認葉片完整性",
+    "urgency_rule": "XI_VIB 任一測點超過 1.4 mil p-p → 立即通知轉機組"
+  }
+]

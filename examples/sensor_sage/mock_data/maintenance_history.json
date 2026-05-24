@@ -1,0 +1,114 @@
+[
+  {
+    "date": "2026-03-13",
+    "equipment": "COMP-102R-A",
+    "type": "計劃性檢修",
+    "content": "二級活塞桿檢修",
+    "prism_tracked": true,
+    "downtime_days": 2
+  },
+  {
+    "date": "2025-12-31",
+    "equipment": "COMP-102R-B",
+    "type": "計劃性檢修",
+    "content": "二級活塞桿回裝檢修",
+    "prism_tracked": true,
+    "downtime_days": 1
+  },
+  {
+    "date": "2025-12-30",
+    "equipment": "COMP-102R-B",
+    "type": "計劃性檢修",
+    "content": "二級活塞桿檢修",
+    "prism_tracked": true,
+    "downtime_days": 1
+  },
+  {
+    "date": "2025-12-25",
+    "equipment": "COMP-102R-S",
+    "type": "計劃性檢修",
+    "content": "一&二級活塞桿檢修",
+    "prism_tracked": true,
+    "downtime_days": 2
+  },
+  {
+    "date": "2025-05-20",
+    "equipment": "COMP-102R-S",
+    "type": "故障維修",
+    "content": "1&2級活塞環與閥座檢修",
+    "prism_tracked": true,
+    "downtime_days": 2
+  },
+  {
+    "date": "2025-05-13",
+    "equipment": "COMP-102R-B",
+    "type": "故障維修",
+    "content": "閥座洩漏拆裝",
+    "prism_tracked": true,
+    "downtime_days": 1
+  },
+  {
+    "date": "2025-04-11",
+    "equipment": "COMP-102R-A",
+    "type": "計劃性檢修",
+    "content": "二級活塞桿檢修",
+    "prism_tracked": true,
+    "downtime_days": 1
+  },
+  {
+    "date": "2025-03-12",
+    "equipment": "COMP-102R-A",
+    "type": "計劃性檢修",
+    "content": "二級活塞桿檢修",
+    "prism_tracked": true,
+    "downtime_days": 1
+  },
+  {
+    "date": "2024-12-31",
+    "equipment": "COMP-102R-B",
+    "type": "計劃性檢修",
+    "content": "二級活塞桿回裝",
+    "prism_tracked": true,
+    "downtime_days": 1
+  },
+  {
+    "date": "2024-12-30",
+    "equipment": "COMP-102R-B",
+    "type": "計劃性檢修",
+    "content": "二級活塞桿檢修",
+    "prism_tracked": true,
+    "downtime_days": 1
+  },
+  {
+    "date": "2024-08-28",
+    "equipment": "COMP-102R-B",
+    "type": "故障維修",
+    "content": "壓縮機檢修拆裝（騎環磨損）",
+    "prism_tracked": true,
+    "downtime_days": 2
+  },
+  {
+    "date": "2024-07-24",
+    "equipment": "COMP-102R-A",
+    "type": "計劃性檢修",
+    "content": "壓縮機檢修回裝",
+    "prism_tracked": true,
+    "downtime_days": 1
+  },
+  {
+    "date": "2024-07-23",
+    "equipment": "COMP-102R-A",
+    "type": "計劃性檢修",
+    "content": "壓縮機檢修拆裝",
+    "prism_tracked": true,
+    "downtime_days": 1
+  },
+  {
+    "date": "2024-05-13",
+    "equipment": "COMP-102R-B",
+    "type": "故障維修",
+    "content": "閥座洩漏拆裝",
+    "prism_tracked": true,
+    "downtime_days": 1
+  }
+]
