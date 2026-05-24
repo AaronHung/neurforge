@@ -19,7 +19,7 @@ model:
     max_tokens: 8000
 ```
 
-> For more context, see [this issue](https://github.com/iiotfab/neurforge/issues/59).
+> For more context, see [this issue](https://github.com/AaronHung/neurforge/issues/59).
 
 ### How can I resolve LLM request timeouts?
 
@@ -63,4 +63,4 @@ AZURE_API_BASE=https://<YOUR-RESOURCE-NAME>.azure.com/
 AZURE_API_KEY=<AZURE_OPENAI_API_KEY>
 ```
 
-> For more context, ref [this issue](https://github.com/iiotfab/neurforge/issues/85)
+> For more context, ref [this issue](https://github.com/AaronHung/neurforge/issues/85)

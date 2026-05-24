@@ -4,7 +4,7 @@ This guide shows you how to customize agent configurations using [Hydra](https:/
 
 ## Configuration Examples
 
-All example configuration files are available at [`docs/configs/`](https://github.com/iiotfab/neurforge/tree/main/docs/configs/):
+All example configuration files are available at [`docs/configs/`](https://github.com/AaronHung/neurforge/tree/main/docs/configs/):
 
 ### 1. `agent_simple.yaml` - Full Configuration
 
@@ -59,7 +59,7 @@ Configuration for Model Context Protocol (MCP) toolkits. Example shows:
 - Connection parameters (URL, headers, timeout)
 - Environment variable interpolation for secrets like `${oc.env:GITHUB_TOKEN}`
 
-See [`configs/tools/mcp/`](https://github.com/iiotfab/neurforge/tree/main/configs/tools/mcp) for more MCP examples.
+See [`configs/tools/mcp/`](https://github.com/AaronHung/neurforge/tree/main/configs/tools/mcp) for more MCP examples.
 
 ## Quick Start
 
@@ -83,5 +83,5 @@ config = ConfigLoader.load_agent_config("my_agent")
 ## References
 
 - [Hydra Documentation](https://hydra.cc/docs/intro/)
-- [Agent Config Structure](https://github.com/iiotfab/neurforge/blob/main/utu/config/agent_config.py)
-- [Builtin Toolkits](https://tencentcloudadp.github.io/neurforge/tools/)
+- [Agent Config Structure](https://github.com/AaronHung/neurforge/blob/main/utu/config/agent_config.py)
+- [Builtin Toolkits](https://aaronhung.github.io/neurforge/tools/)

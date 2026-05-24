@@ -1,6 +1,6 @@
 # Beginner's Quickstart Guide 🚀
 
-This is a detailed guide designed for beginners to walk through the setup and usage of the Youtu-agent framework. Even if you're new to AI Agent development, you'll be able to successfully run Youtu-agent.
+This is a detailed guide designed for beginners to walk through the setup and usage of the NeurForge framework. Even if you're new to AI Agent development, you'll be able to successfully run NeurForge.
 
 ## 📖 Prerequisites
 
@@ -24,7 +24,7 @@ Open a terminal (command line) and execute the following commands:
 
 ```sh
 # Clone the project locally
-git clone https://github.com/iiotfab/neurforge.git
+git clone https://github.com/AaronHung/neurforge.git
 
 # Enter the project directory
 cd neurforge
@@ -79,14 +79,14 @@ source .venv/bin/activate
 # .venv\Scripts\activate
 ```
 
-**Beginner Tip:** After activating the virtual environment, you'll see `(Youtu-agent)` identifier before your command line prompt as follow:
+**Beginner Tip:** After activating the virtual environment, you'll see `(neurforge)` identifier before your command line prompt as follow:
 
 ```sh
 # Linux/macOS
-(Youtu-agent) your-username:~/path/to/neurforge$
+(neurforge) your-username:~/path/to/neurforge$
 
 # Windows
-# (Youtu-agent) path\to\Youtu-agent>
+# (neurforge) path\to\neurforge>
 ```
 
 ### Step 4: Install Project Dependencies
@@ -175,7 +175,7 @@ Now you can try asking some questions:
 
 **Beginner Tip:** 
 - Type `quit`, `exit` or `q` to exit the conversation
-- If you encounter errors, check if your `UV` environment is activated and `UTU_LLM_*` API Key is configured correctly
+- If you encounter errors, check if your `UV` environment is activated and `NEURFORGE_LLM_*` API Key is configured correctly
 
 ### Test 2: Run Orchestra Example
 
@@ -341,7 +341,7 @@ Try asking some other questions in the script, such as:
 
 ## 📚 Next Steps
 
-Congratulations! You've successfully run Youtu-agent. Next, you can:
+Congratulations! You've successfully run NeurForge. Next, you can:
 
 1. **Learn Configuration:** Read the complete [Configuration Documentation](./config.md) to learn how to customize agents and understand all available configuration options
 2. **Add Tools:** Read the [Tools Documentation](./tools.md) to learn how to add new features to agents
@@ -354,8 +354,8 @@ Congratulations! You've successfully run Youtu-agent. Next, you can:
 
 If you encounter issues while using the project, you can:
 
-1. Check the [Complete Documentation](https://tencentcloudadp.github.io/neurforge/)
-2. Ask questions in [GitHub Issues](https://github.com/iiotfab/neurforge/issues)
-3. View the project's [Example Code](https://github.com/iiotfab/neurforge/tree/main/examples)
+1. Check the [Complete Documentation](https://aaronhung.github.io/neurforge/)
+2. Ask questions in [GitHub Issues](https://github.com/AaronHung/neurforge/issues)
+3. View the project's [Example Code](https://github.com/AaronHung/neurforge/tree/main/examples)
 
 Happy coding! 🎉

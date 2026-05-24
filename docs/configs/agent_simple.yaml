@@ -44,14 +44,14 @@ context_manager:
 
 # -------------------------------------------------------------------------------------------
 # environment configs, e.g., e2b for code execution. Leave it blank if you don't need it
-# Doc: https://tencentcloudadp.github.io/neurforge/env/
+# Doc: https://aaronhung.github.io/neurforge/env/
 env:
   name: base # e2b
   config: {}
 
 # -------------------------------------------------------------------------------------------
 # toolkits configs, see full configs in ./toolkit_builtin.yaml
-# Doc: https://tencentcloudadp.github.io/neurforge/tools/
+# Doc: https://aaronhung.github.io/neurforge/tools/
 toolkits:
   name: search
   mode: builtin

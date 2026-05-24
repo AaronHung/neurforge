@@ -10,7 +10,7 @@ Before running NeurForge, you need to configure the necessary environment variab
 cp .env.example .env
 ```
 
-Then, edit the `.env` file to fill in the required API Keys and other configurations. For a more comprehensive list of options, please refer to the [`.env.full`](https://github.com/iiotfab/neurforge/blob/main/.env.full) file, which contains all available environment variables and their detailed descriptions.
+Then, edit the `.env` file to fill in the required API Keys and other configurations. For a more comprehensive list of options, please refer to the [`.env.full`](https://github.com/AaronHung/neurforge/blob/main/.env.full) file, which contains all available environment variables and their detailed descriptions.
 
 ## LLM API Keys
 

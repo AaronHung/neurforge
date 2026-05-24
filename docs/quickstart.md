@@ -8,7 +8,7 @@ First, clone the repository and set up the Python environment.
 
 ```sh
 # Clone the project repository
-git clone https://github.com/iiotfab/neurforge.git
+git clone https://github.com/AaronHung/neurforge.git
 cd neurforge
 
 # We use `uv` to manage the virtual environment and dependencies

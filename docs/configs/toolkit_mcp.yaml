@@ -6,7 +6,7 @@
 # Exampled configs:
 #   - stdio: configs/tools/mcp/memory.yaml
 #   - streamable_http / sse: configs/tools/mcp/github.yaml
-# Doc: https://tencentcloudadp.github.io/neurforge/tools/
+# Doc: https://aaronhung.github.io/neurforge/tools/
 #   Reference config data structure: utu/config/agent_config.py
 # ============================================================================================
 

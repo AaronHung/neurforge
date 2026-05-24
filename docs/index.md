@@ -39,7 +39,7 @@
     NeurForge: A simple yet powerful agent framework that delivers with open-source models
     </div>
     <div class="banner-logo">
-    <img src="assets/youtu_lab.png" alt="Youtu Lab Logo">
+    <img src="assets/logo-square.png" alt="NeurForge Logo">
     </div>
 </div>
 </div>

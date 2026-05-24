@@ -7,7 +7,7 @@ This guide walks you through the complete process of evaluating an agent in Neur
 
 Before you begin, ensure that:
 
-1. **Environment is set up**: You've completed the [Getting Started](https://tencentcloudadp.github.io/neurforge/quickstart/) setup
+1. **Environment is set up**: You've completed the [Getting Started](https://aaronhung.github.io/neurforge/quickstart/) setup
 2. **Database is configured**: The `UTU_DB_URL` environment variable is set in your `.env` file (defaults to `sqlite:///test.db`)
 3. **API keys are configured**: `NEURFORGE_LLM_API_KEY` and other required keys are set in `.env`
 
@@ -274,7 +274,7 @@ python scripts/run_eval.py \
   --concurrency 5
 ```
 
-See the [Evaluation Documentation](https://tencentcloudadp.github.io/neurforge/eval) for more details on benchmarks.
+See the [Evaluation Documentation](https://aaronhung.github.io/neurforge/eval) for more details on benchmarks.
 
 ### Configuring Judge Models
 

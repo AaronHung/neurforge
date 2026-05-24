@@ -469,6 +469,6 @@ If you find this work useful, please consider citing:
   year={2025},
   publisher = {GitHub},
   journal = {GitHub repository},
-  howpublished = {\url{https://github.com/iiotfab/neurforge}},
+  howpublished = {\url{https://github.com/AaronHung/neurforge}},
 }
 ```

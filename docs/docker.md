@@ -1,6 +1,6 @@
 # Quick Start with Docker
 
-This guide walks you through deploying Youtu-agent using Docker containers. It covers the essential steps to get your first agent running with an interactive frontend interface.
+This guide walks you through deploying NeurForge using Docker containers. It covers the essential steps to get your first agent running with an interactive frontend interface.
 
 
 ## Prerequisites
@@ -13,7 +13,7 @@ This guide walks you through deploying Youtu-agent using Docker containers. It c
 
 ### Step 1. Build Docker Image
 
-Build the Youtu-agent Docker image:
+Build the NeurForge Docker image:
 
 ```bash
 docker build -t neurforge .
