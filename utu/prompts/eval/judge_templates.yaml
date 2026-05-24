@@ -1,0 +1,77 @@
+# NOTE: template should include keys {question, response, correct_answer}
+# https://github.com/openai/simple-evals/blob/main/browsecomp_eval.py
+default: |
+  Judge whether the following [response] to [question] is correct or not based on the precise and unambiguous [correct_answer] below.
+
+  [question]: {question}
+
+  [response]: {response}
+
+  Your judgement must be in the format and criteria specified below:
+
+  extracted_final_answer: The final exact answer extracted from the [response]. Put the extracted answer as 'None' if there is no exact, final answer to extract from the response.
+
+  [correct_answer]: {correct_answer}
+
+  reasoning: Explain why the extracted_final_answer is correct or incorrect based on [correct_answer], focusing only on if there are meaningful differences between [correct_answer] and the extracted_final_answer. Do not comment on any background to the problem, do not attempt to solve the problem, do not argue for any answer different than [correct_answer], focus only on whether the answers match.
+
+  correct: Answer 'yes' if extracted_final_answer matches the [correct_answer] given above, or is within a small margin of error for numerical problems. Answer 'no' otherwise, i.e. if there if there is any inconsistency, ambiguity, non-equivalency, or if the extracted answer is incorrect.
+
+  confidence: The extracted confidence score between 0|\%| and 100|\%| from [response]. Put 100 if there is no confidence score available.
+
+# https://github.com/PALIN2018/BrowseComp-ZH/blob/main/prompt.py
+BrowseComp_ZH: |
+  根據以下精確且明確的[response]，判斷以下對[question]的[correct_answer]是否正確。
+
+  [question]:  {question}
+
+  [response]:  {response}
+
+  您的判斷必須符合以下指定的格式和標準：
+
+  extracted_final_answer: 從[response]中提取的最終準確答案。如果無法從答案中提取出準確的最終答案，則將提取的答案填寫為"None"。
+
+  [correct_answer]: {correct_answer}
+
+  reasoning: 根據[correct_answer]解釋提取的最終答案正確或錯誤的原因， 僅關注[correct_answer]和提取的最終答案之間是否存在有意義的差異。請勿評論問題的任何背景，請勿嘗試解決問題，請勿爭論任何與[correct_answer]不同的答案，僅關注答案是否匹配。
+
+  correct: 如果提取的最終答案與上面給出的[correct_answer]相符，或者在數值問題的誤差範圍內，則回答"yes"。否則，例如，如果存在任何不一致、歧義、不等同，或者提取的答案不正確，則回答"no"。
+
+  confidence: 從[response]中提取的置信度分數，介於0% 到100% 之間。如果沒有可用的置信度分數，則填寫100%。
+
+# https://github.com/Alibaba-NLP/WebAgent/blob/main/WebWalker/src/evaluate.py
+# https://github.com/langchain-ai/langchain/blob/master/libs/langchain/langchain/evaluation/qa/eval_prompt.py#L59
+WebWalkerQA: |
+  You are a teacher grading a quiz.
+  You are given a question, the context the question is about, and the student's answer. You are asked to score the student's answer as either CORRECT or INCORRECT, based on the context.
+  Write out in a step by step manner your reasoning to be sure that your conclusion is correct. Avoid simply stating the correct answer at the outset.
+
+  Example Format:
+  QUESTION: question here
+  CONTEXT: context the question is about here
+  STUDENT ANSWER: student's answer here
+  EXPLANATION: step by step reasoning here
+  GRADE: CORRECT or INCORRECT here
+
+  Grade the student answers based ONLY on their factual accuracy. Ignore differences in punctuation and phrasing between the student answer and true answer. It is OK if the student answer contains more information than the true answer, as long as it does not contain any conflicting statements. Begin! 
+
+  QUESTION: {question}
+  CONTEXT: {correct_answer}
+  STUDENT ANSWER: {response}
+
+XBench: |
+  你是一個通用人工智慧助手。根據下面給出的[正確答案], 判斷以下對[原問題]的[回答]的回答是否正確。
+
+  [原問題]: {question}
+
+  [正確答案]: {correct_answer}
+
+  [回答]:{response}
+
+  你的判斷必須按照以下格式和標準進行:
+
+  最終答案: 從[回答]中提取出的最終準確答案。如果[回答]中沒有明確的最終答案, 則填寫'無'。
+
+  解釋: 根據[正確]解釋為什麼[最終答案]是正確的或錯誤的。只關注[最終答案]與[正確答案]之間是否存在實質性差異, 不要評論題目的背景, 不要嘗試重新解題, 不要為任何不同於[正確答案]的答案辯護, 只專注於判斷答案是否一致。
+
+  結論: 如果[最終答案]與上方給出的[正確答案]一致, 或者在數值題目中處於可接受的微小誤差範圍內, 則填寫'正確'; 否則（即存在任何不一致、歧義、不等價或提取出的答案錯誤的情況）填寫'錯誤'。

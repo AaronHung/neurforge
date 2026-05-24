@@ -1,0 +1,38 @@
+# NOTE: template should include keys {question}
+
+default: |
+  {question}
+
+# https://github.com/openai/simple-evals/blob/main/browsecomp_eval.py
+BrowseComp: |
+  {question}
+
+  Your response should be in the following format:
+  Explanation: {{your explanation for your final answer}}
+  Exact Answer: {{your succinct, final answer}}
+  Confidence: {{your confidence score between 0% and 100% for your answer}}
+
+# https://github.com/PALIN2018/BrowseComp-ZH/blob/main/prompt.py
+BrowseComp_ZH: |
+  {question}
+
+  如果你回覆的問題需要藉助外部資源，請根據你自身的知識儲備給出具體答案，而不是拒答後讓使用者自行查詢。
+  你的回覆應遵循以下格式：
+  Explanation: {你對最終答案的解釋}
+  Exact Answer: {你簡潔的最終答案}
+  Confidence: {你對答案的置信度得分在 0% 到 100% 之間}
+
+GAIA: |
+  It is paramount that you complete this task and provide a correct answer.
+  Give it all you can: I know for a fact that you have access to all the relevant tools to solve it. Failure or 'I cannot answer' will not be tolerated, success will be rewarded.
+  Here is the task:
+  {question}
+
+XBench: |
+  你是一個通用人工智慧助手。我將向你提出一個學術問題, 請儘可能簡潔地給出解題思路, 並用以下模版作為回答的結尾:
+
+  最終答案:[你的答案]
+
+  不要在最終答案周圍新增任何多餘的符號, 不要使用換行（在同一行中完成回答）對於本題, 你的答案必須是儘可能簡潔的數值, 短語, 或者數學表示式; 如果答案有多個, 使用逗號將它們隔開。
+
+  [問題]: {question}

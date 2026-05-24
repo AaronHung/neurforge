@@ -1,0 +1,62 @@
+{
+  "websocket": {
+    "connectionClosed": "WebSocket 連線已斷開，正在嘗試重新連線..."
+  },
+  "sidebar": {
+    "newChat": "新對話",
+    "agentConfigs": "智慧體配置",
+    "currentConfig": "當前配置",
+    "subAgents": "子智慧體",
+    "selectConfig": "選擇配置",
+    "addConfig": "新增配置",
+    "close": "關閉",
+    "history": "聊天歷史",
+    "noHistory": "暫無聊天記錄",
+    "noConfigs": "沒有可用的配置",
+    "refreshConfigs": "重新整理配置",
+    "searchConfigs": "搜尋配置...",
+    "clearSearch": "清除搜尋",
+    "agentHistoryTitle": "Agent 歷史記錄",
+    "noHistoryShort": "暫無歷史",
+    "currentConfigTitle": "當前配置",
+    "subAgentsTitle": "子智慧體",
+    "addNewConfig": "新增新配置",
+    "availableConfigsTitle": "可用配置",
+    "generatedConfigTooltip": "自動生成配置",
+    "exampleConfigTooltip": "示例配置",
+    "noConfigsShort": "沒有可用的配置",
+    "noMatchingConfigs": "未找到匹配的配置",
+    "expand": "點選展開",
+    "collapse": "點選摺疊"
+  },
+  "app": {
+    "welcome": "你好！我是你的AI助手，有什麼可以幫你的嗎？",
+    "send": "傳送",
+    "message": "訊息",
+    "sending": "傳送中...",
+    "inputPlaceholder": "輸入訊息...",
+    "waiting": "等待響應中...",
+    "connecting": "連線中...",
+    "connected": "已連線",
+    "disconnected": "已斷開連線",
+    "error": "連線錯誤",
+    "notConnected": "未連線到伺服器，請檢查您的連線。",
+    "agentGenerationPrompt": "我將幫您建立一個新的智慧體。請提供您需要的詳細資訊。",
+    "settingsButtonTitle": "設定",
+    "settingsModalTitle": "設定",
+    "websocketUrlLabel": "WebSocket 地址",
+    "cancel": "取消",
+    "save": "儲存",
+    "tryAsking": "試試這樣問：",
+    "aiThinking": "AI 正在思考...",
+    "sendMessage": "傳送訊息",
+    "languageLabel": "語言",
+    "themeLabel": "主題",
+    "themeLight": "淺色",
+    "themeDark": "深色"
+  },
+  "language": {
+    "en": "English",
+    "zh-TW": "繁體中文"
+  }
+}
