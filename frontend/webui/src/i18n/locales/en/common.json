@@ -34,7 +34,7 @@
     "send": "Send",
     "message": "Message",
     "sending": "Sending...",
-    "inputPlaceholder": "Type your message here...",
+    "inputPlaceholder": "Type a message... (⌘↵ to send)",
     "waiting": "Waiting for response...",
     "connecting": "Connecting...",
     "connected": "Connected",

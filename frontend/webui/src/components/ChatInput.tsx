@@ -69,7 +69,7 @@ const ChatInput: FC<ChatInputProps> = ({
   };
 
   const handleKeyDown = (e: KeyboardEvent<HTMLInputElement>) => {
-    if (e.key === 'Enter' && !e.shiftKey && !isModelResponding) {
+    if (e.key === 'Enter' && (e.metaKey || e.ctrlKey) && !isModelResponding) {
       e.preventDefault();
       sendWithRelated();
     }
