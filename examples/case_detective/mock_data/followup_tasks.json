@@ -36,7 +36,7 @@
     "description": "計算 2026/02 SLA 違約補償金額（依合約第 12 條），擬補償 NT$35,000，需總監批准後開立支票",
     "assigned_to": "企業客服主管",
     "priority": "critical",
-    "notes": "C-10006（黃俊傑）為 VIP 企業客戶，建議主管親自致電說明並道歉"
+    "notes": "C-10006（劉遠德）為 VIP 企業客戶，建議主管親自致電說明並道歉"
   },
   {
     "task_id": "TASK-2026-0502-01",
@@ -59,7 +59,7 @@
     "due_date": "2025-11-24",
     "status": "overdue",
     "task_type": "network_investigation",
-    "description": "調查 C-10002（林志豪）台北大安區 1Gbps 方案速度長期不足（200-250 Mbps）的根本原因，提供解決方案",
+    "description": "調查 C-10002（粘嘉棋）台北大安區 1Gbps 方案速度長期不足（200-250 Mbps）的根本原因，提供解決方案",
     "assigned_to": "網路技術二組",
     "priority": "high",
     "notes": "客戶已提供多次測速截圖，問題持續超過 3 週，需儘速處理避免升級投訴"

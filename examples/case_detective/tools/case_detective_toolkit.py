@@ -41,7 +41,7 @@ class CaseDetectiveToolkit(AsyncBaseToolkit):
         """以客戶姓名搜尋客戶資料（支援部分比對）。
 
         Args:
-            name: 客戶姓名或部分姓名，例如 "陳怡君" 或 "陳"
+            name: 客戶姓名或部分姓名，例如 "洪欣瑋" 或 "洪"
         """
         data = _load(_DATA / "customer_profiles.json")
         matches = [c for c in data if name in c["name"]]

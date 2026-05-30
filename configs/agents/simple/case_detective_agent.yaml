@@ -4,7 +4,7 @@ defaults:
   - /tools/case_detective@toolkits.case_detective
   - _self_
 
-example_query: "客戶陳怡君最近有什麼申訴案件？目前有哪些待處理的追蹤任務？"
+example_query: "客戶洪欣瑋最近有什麼申訴案件？目前有哪些待處理的追蹤任務？"
 
 agent:
   name: CaseDetectiveAgent

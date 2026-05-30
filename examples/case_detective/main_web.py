@@ -18,7 +18,7 @@ if __name__ == "__main__":
 
     data_dir = pathlib.Path(__file__).parent / "data"
     data_dir.mkdir(exist_ok=True)
-    question = "客戶陳怡君最近有什麼申訴案件？目前有哪些待處理的追蹤任務？"
+    question = "客戶洪欣瑋最近有什麼申訴案件？目前有哪些待處理的追蹤任務？"
 
     webui = WebUIAgents(default_config=DEFAULT_CONFIG, example_query=question)
     print(f"Server started at http://{args.ip}:{args.port}/")
