@@ -8,6 +8,8 @@ defaults:
 
 type: orchestrator
 
+example_query: "用一張 SVG 資訊卡，介紹「番茄工作法（Pomodoro Technique）」的核心步驟與三個好處。"
+
 orchestrator_config:
   name: SVGGeneratorAgent
   add_chitchat_subagent: false

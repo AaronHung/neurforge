@@ -4,6 +4,8 @@ defaults:
   - /tools/industrial_qa@toolkits.industrial_qa
   - _self_
 
+example_query: "亞東水泥 EQ-001 攪拌機近期有哪些工單與異常紀錄？目前有哪些 SOP 需要執行？"
+
 agent:
   name: IndustrialQAAgent
   instructions: |-

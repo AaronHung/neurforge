@@ -11,6 +11,7 @@ from pathlib import Path
 import agents as ag
 import tornado.web
 import tornado.websocket
+import yaml
 
 from neurforge.agents import OrchestratorAgent
 from neurforge.agents.orchestra import OrchestraStreamEvent
@@ -45,6 +46,29 @@ from .common import (
 
 CONFIG_PATH = DIR_ROOT / "configs" / "agents"
 WORKSPACE_ROOT = "/tmp/utu_webui_workspace"
+
+
+def _read_example_query(config_file: str) -> str:
+    """Read an optional top-level `example_query` from an agent config yaml.
+
+    Returns "" if the config has no example query (which clears the suggestion
+    in the UI when switching agents).
+    """
+    try:
+        path = Path(CONFIG_PATH) / config_file
+        if path.suffix not in (".yaml", ".yml"):
+            path = path.with_suffix(".yaml")
+        if not path.is_file():
+            return ""
+        with open(path, "r", encoding="utf-8") as f:
+            data = yaml.safe_load(f)
+        if isinstance(data, dict):
+            query = data.get("example_query")
+            if isinstance(query, str):
+                return query
+    except Exception:  # pylint: disable=broad-except
+        pass
+    return ""
 
 
 class Session:
@@ -288,6 +312,12 @@ class WebSocketHandler(tornado.websocket.WebSocketHandler):
                     sub_agents=content["sub_agents"],
                 ),
             )
+        )
+        # Update the suggested example query to match the newly selected agent
+        # (empty string clears the previous suggestion).
+        example_query = _read_example_query(switch_agent_request.config_file)
+        await self.send_event(
+            Event(type="example", data=ExampleContent(type="example", query=example_query))
         )
 
     async def _handle_query(self, query: UserQuery):

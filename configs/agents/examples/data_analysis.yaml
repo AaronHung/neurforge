@@ -10,6 +10,8 @@ defaults:
 
 type: orchestrator
 
+example_query: "請分析我上傳的 CSV 資料，提取有價值的洞察，並做成視覺化圖表。"
+
 orchestrator_config:
   # examples_path: planner_examples_data.json
   name: DataAnalysisAgent

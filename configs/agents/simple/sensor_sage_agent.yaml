@@ -4,6 +4,8 @@ defaults:
   - /tools/sensor_sage@toolkits.sensor_sage
   - _self_
 
+example_query: "目前哪台設備狀態最需要關注？請給我最新的心跳掃描摘要。"
+
 agent:
   name: SensorSageAgent
   instructions: |-

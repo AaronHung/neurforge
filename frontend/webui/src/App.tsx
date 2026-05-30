@@ -185,9 +185,9 @@ const App: React.FC = () => {
     if (event.type === 'example') {
       const data = event.data as ExampleContent;
       const query = data.query;
-      if (query) {
-        setExampleQuery([query]);
-      }
+      setExampleQuery(query ? [query] : []);
+      // Re-show the suggestion when the agent (and its example) changes.
+      setHideExampleQuery(false);
       return;
     }
 

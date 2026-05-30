@@ -92,6 +92,29 @@ function getFilename(path: string): string {
     .join(' ');
 }
 
+function getFolder(path: string): string {
+  const parts = path.split('/');
+  return parts.length > 1 ? parts[0] : '';
+}
+
+// Within one category group, two configs sharing a basename (e.g. orchestra/base.yaml
+// and orchestrator/base.yaml) would render identically. Disambiguate those by appending
+// the folder name, e.g. "Base (orchestra)" / "Base (orchestrator)".
+function buildLabels(items: string[]): Record<string, string> {
+  const base: Record<string, string> = {};
+  const counts: Record<string, number> = {};
+  for (const c of items) {
+    const label = getFilename(c);
+    base[c] = label;
+    counts[label] = (counts[label] || 0) + 1;
+  }
+  const out: Record<string, string> = {};
+  for (const c of items) {
+    out[c] = counts[base[c]] > 1 ? `${base[c]} (${getFolder(c)})` : base[c];
+  }
+  return out;
+}
+
 // ── Tooltip ────────────────────────────────────────────────────────────────
 
 const Tooltip = ({ content, children }: { content: string; children: React.ReactNode }) => {
@@ -302,6 +325,7 @@ const SideBar: React.FC<SideBarProps> = ({
                     const items = grouped[cat];
                     if (items.length === 0) return null;
                     const { label, Icon, badgeClass, badge, labelClass, itemClass } = CATEGORY_META[cat];
+                    const itemLabels = buildLabels(items);
                     return (
                       <div key={cat} className="sb-category-group">
                         <div className={labelClass} style={{ paddingTop: 10, paddingBottom: 4 }}>
@@ -315,7 +339,7 @@ const SideBar: React.FC<SideBarProps> = ({
                               onClick={() => onConfigSelect(config)}
                             >
                               <Settings2 size={12} strokeWidth={1.5} style={{ flexShrink: 0, opacity: 0.45 }} />
-                              <span className="sb-item-label">{getFilename(config)}</span>
+                              <span className="sb-item-label">{itemLabels[config]}</span>
                               <span className={badgeClass}>{badge}</span>
                             </div>
                           </Tooltip>
