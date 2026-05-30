@@ -124,7 +124,7 @@ build-backend = "hatchling.build"
 allow-direct-references = true
 
 [tool.hatch.build.targets.wheel]
-packages = ["utu"]
+packages = ["utu", "neurforge"]
 # exclude = ["utu/ui"]
 # only-include = ["utu/utils"]
 
@@ -162,7 +162,7 @@ select = [
     "C4", # flake8-comprehensions
     "UP", # pyupgrade
 ]
-isort = { combine-as-imports = true, known-first-party = ["utu"] }
+isort = { combine-as-imports = true, known-first-party = ["utu", "neurforge"] }
 
 [tool.ruff.lint.pydocstyle]
 convention = "google"
