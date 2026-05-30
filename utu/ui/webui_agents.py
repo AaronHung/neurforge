@@ -39,6 +39,7 @@ from .common import (
     handle_orchestra_events,
     handle_orchestrator_events,
     handle_raw_stream_events,
+    handle_tool_call_images,
     handle_tool_call_output,
 )
 
@@ -87,6 +88,20 @@ class WebSocketHandler(tornado.websocket.WebSocketHandler):
         session = Session()
         self.session = session
         return session
+
+    def _setup_agent_workspace(self):
+        """Point toolkits (python_executor, BashTool, ...) at the per-session workspace.
+
+        Without this the python_executor falls back to an opaque /tmp/utu/... directory,
+        so generated files/plots are hard to find and not co-located with uploads.
+        """
+        if self.session is None or self.agent is None:
+            return
+        if isinstance(self.agent, SimpleAgent) and hasattr(self.agent, "setup_workspace"):
+            try:
+                self.agent.setup_workspace(self.session.workspace)
+            except Exception as e:  # pylint: disable=broad-except
+                logging.warning(f"Failed to setup agent workspace: {e}")
 
     def delete_session(self):
         session = self.session
@@ -147,6 +162,7 @@ class WebSocketHandler(tornado.websocket.WebSocketHandler):
         self.answer_queue = asyncio.Queue()
 
         self.create_session()
+        self._setup_agent_workspace()
 
         content = self._get_current_agent_content()
         await self.send_event(Event(type="init", data=InitContent(**content)))
@@ -190,6 +206,9 @@ class WebSocketHandler(tornado.websocket.WebSocketHandler):
                 event_to_send = await handle_raw_stream_events(event)
             elif isinstance(event, ag.RunItemStreamEvent):
                 event_to_send = await handle_tool_call_output(event)
+                image_event = await handle_tool_call_images(event)
+                if image_event:
+                    await self.send_event(image_event)
             elif isinstance(event, ag.AgentUpdatedStreamEvent):
                 event_to_send = await handle_new_agent(event)
             elif isinstance(event, OrchestraStreamEvent):
@@ -256,6 +275,7 @@ class WebSocketHandler(tornado.websocket.WebSocketHandler):
                 value.config["workspace_root"] = self.session.workspace
 
         await self.instantiate_agent(config)
+        self._setup_agent_workspace()
         content = self._get_current_agent_content()
         await self.send_event(
             Event(

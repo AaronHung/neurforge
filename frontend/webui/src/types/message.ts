@@ -9,9 +9,9 @@ export interface ToolCallMessage {
 
 export interface Message {
   id: number;
-  content: string | ToolCallMessage | PlanItem;
+  content: string | ToolCallMessage | PlanItem | string[];
   sender: 'user' | 'assistant' | 'system';
-  type?: 'text' | 'reason' | 'tool_call' | 'worker' | 'report' | 'error' | 'plan' | 'new_agent';
+  type?: 'text' | 'reason' | 'tool_call' | 'worker' | 'report' | 'error' | 'plan' | 'new_agent' | 'image';
   inprogress?: boolean;
   timestamp: Date;
   requireConfirm?: boolean;

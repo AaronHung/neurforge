@@ -13,6 +13,7 @@ import { useTranslation } from 'react-i18next';
 import type {
   Event,
   TextDeltaContent,
+  ImageContent,
   ExampleContent,
   PlanItem,
   WorkerItem,
@@ -301,6 +302,22 @@ const App: React.FC = () => {
 
         return prev
       });
+    }
+    // handle image event (e.g. matplotlib figures produced by a tool call)
+    else if (event.type === 'image') {
+      const data = event.data as ImageContent;
+      if (data.images && data.images.length > 0) {
+        const message: Message = {
+          id: Date.now(),
+          content: data.images,
+          sender: 'assistant',
+          timestamp: new Date(),
+          type: 'image',
+          inprogress: false,
+          requireConfirm: event.requireConfirm,
+        };
+        setMessages(prev => [...prev, message]);
+      }
     }
     // handle new agent event
     else if (event.type === 'new') {

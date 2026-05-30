@@ -3,7 +3,6 @@
 """
 
 import asyncio
-import base64
 import contextlib
 import glob
 import io
@@ -125,24 +124,26 @@ def execute_python_code_sync(code: str, workdir: str, shell=None):
 
         output = io.StringIO()
         error_output = io.StringIO()
+        image_files = []
 
         with contextlib.redirect_stdout(output), contextlib.redirect_stderr(error_output):
             shell.run_cell(code_clean)
 
-            if plt.get_fignums():
-                img_buffer = io.BytesIO()
-                plt.savefig(img_buffer, format="png")
-                img_base64 = base64.b64encode(img_buffer.getvalue()).decode("utf-8")
-                plt.close()
-
+            # Capture every still-open matplotlib figure so the web UI can render them
+            # inline. We only record file paths here; the UI layer reads the files and
+            # base64-encodes them, keeping the (potentially large) image data out of the
+            # LLM tool-result string.
+            fignums = plt.get_fignums()
+            for num in fignums:
                 image_name = "output_image.png"
                 counter = 1
                 while os.path.exists(image_name):
                     image_name = f"output_image_{counter}.png"
                     counter += 1
-
-                with open(image_name, "wb") as f:
-                    f.write(base64.b64decode(img_base64))
+                plt.figure(num).savefig(image_name, format="png", bbox_inches="tight")
+                image_files.append(os.path.join(workdir, image_name))
+            if fignums:
+                plt.close("all")
 
         stdout_result = output.getvalue()
         stderr_result = error_output.getvalue()
@@ -179,6 +180,7 @@ def execute_python_code_sync(code: str, workdir: str, shell=None):
             "message": message,
             "status": True,
             "files": new_files,
+            "images": image_files,
             "error": stderr_result.strip(),
         }
     except Exception as e:  # pylint: disable=broad-except

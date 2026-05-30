@@ -405,6 +405,24 @@ const MessageComponent: React.FC<MessageComponentProps> = ({
       );
     }
     
+    // Image message (e.g. matplotlib figures captured from a tool call)
+    if (message.type === 'image') {
+      const images = Array.isArray(message.content) ? message.content : [String(message.content)];
+      return (
+        <div className="image-message">
+          {images.map((src, index) => (
+            <img
+              key={index}
+              src={src}
+              alt={`Generated figure ${index + 1}`}
+              className="generated-image"
+              style={{ maxWidth: '100%', borderRadius: '8px', display: 'block', marginTop: index > 0 ? '0.5rem' : 0 }}
+            />
+          ))}
+        </div>
+      );
+    }
+
     // Other special type message
     if (message.type && message.type !== 'text') {
       return (

@@ -6,6 +6,12 @@ export interface TextDeltaContent {
   inprogress?: boolean;
 }
 
+export interface ImageContent {
+  type: 'image';
+  images: string[];
+  callid?: string;
+}
+
 export interface ExampleContent {
   query: string;
 }
@@ -93,7 +99,7 @@ export interface ErrorContent {
 }
 
 export interface Event {
-  type: 'raw' | 'orchestra' | 'orchestrator' | 'finish' | 'example' | 'new' | 'init' | 'list_agents' | 'switch_agent' | 'gen_agent' | 'ask' | 'generated_agent_config' | 'error';
-  data: TextDeltaContent | OrchestraContent | OrchestratorContent | ExampleContent | NewAgentContent | InitContent | ListAgentsContent | SwitchAgentContent | AskContent | GeneratedAgentContent | ErrorContent | null;
+  type: 'raw' | 'image' | 'orchestra' | 'orchestrator' | 'finish' | 'example' | 'new' | 'init' | 'list_agents' | 'switch_agent' | 'gen_agent' | 'ask' | 'generated_agent_config' | 'error';
+  data: TextDeltaContent | ImageContent | OrchestraContent | OrchestratorContent | ExampleContent | NewAgentContent | InitContent | ListAgentsContent | SwitchAgentContent | AskContent | GeneratedAgentContent | ErrorContent | null;
   requireConfirm?: boolean;
 }

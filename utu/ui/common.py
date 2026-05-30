@@ -1,3 +1,6 @@
+import base64
+import mimetypes
+import os
 from typing import Literal
 
 import agents as ag
@@ -33,6 +36,14 @@ class TextDeltaContent(BaseModel):
     inprogress: bool = False
     callid: str | None = None
     argument: str | None = None
+
+
+class ImageContent(BaseModel):
+    """Images produced by a tool call (e.g. matplotlib figures), as data URIs."""
+
+    type: Literal["image"] = "image"
+    images: list[str]
+    callid: str | None = None
 
 
 class PlanItem(BaseModel):
@@ -129,6 +140,7 @@ class OrchestratorContent(BaseModel):
 class Event(BaseModel):
     type: Literal[
         "raw",
+        "image",
         "init",
         "orchestra",
         "orchestrator",
@@ -144,6 +156,7 @@ class Event(BaseModel):
     ]
     data: (
         TextDeltaContent
+        | ImageContent
         | OrchestraContent
         | OrchestratorContent
         | GeneratedAgentContent
@@ -287,6 +300,57 @@ async def handle_tool_call_output(event: ag.RunItemStreamEvent) -> Event | None:
         )
         return event_to_send
     return None
+
+
+_IMAGE_EXTENSIONS = (".png", ".jpg", ".jpeg", ".gif", ".webp", ".svg")
+
+
+def _encode_image_as_data_uri(path: str) -> str | None:
+    try:
+        if not os.path.isfile(path):
+            return None
+        mime = mimetypes.guess_type(path)[0] or "image/png"
+        with open(path, "rb") as f:
+            encoded = base64.b64encode(f.read()).decode("utf-8")
+        return f"data:{mime};base64,{encoded}"
+    except Exception:  # pylint: disable=broad-except
+        return None
+
+
+async def handle_tool_call_images(event: ag.RunItemStreamEvent) -> Event | None:
+    """Read image files produced by a tool call and emit them as data URIs.
+
+    The tool only returns file paths (keeping large image data out of the LLM
+    context); here we read those files and base64-encode them for the web UI.
+    """
+    item = event.item
+    if item.type != "tool_call_output_item":
+        return None
+    output = item.output
+    if not isinstance(output, dict):
+        return None
+
+    # Prefer explicitly captured figures; fall back to any image files written.
+    paths = list(output.get("images") or [])
+    if not paths:
+        paths = [f for f in (output.get("files") or []) if str(f).lower().endswith(_IMAGE_EXTENSIONS)]
+
+    data_uris: list[str] = []
+    seen: set[str] = set()
+    for path in paths:
+        abs_path = os.path.abspath(str(path))
+        if abs_path in seen:
+            continue
+        seen.add(abs_path)
+        data_uri = _encode_image_as_data_uri(str(path))
+        if data_uri:
+            data_uris.append(data_uri)
+
+    if not data_uris:
+        return None
+
+    callid = item.raw_item["call_id"] if isinstance(item.raw_item, dict) else getattr(item.raw_item, "call_id", None)
+    return Event(type="image", data=ImageContent(type="image", images=data_uris, callid=callid))
 
 
 async def handle_new_agent(event: ag.AgentUpdatedStreamEvent) -> Event | None:
