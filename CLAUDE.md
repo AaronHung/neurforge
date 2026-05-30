@@ -1,8 +1,9 @@
 # NeurForge — Project Context for Claude Code
 
-> **Current milestone: `v0.1.0-baseline` — tagged 2026-05-25. Fully functional.**
-> Phase 1-A ✅ complete. Phase 2-A ✅ complete (3 industrial agents). See §9 for full plan.
-> To return to this stable point anytime: `git checkout v0.1.0-baseline`
+> **Current milestone: `demo-v0.1` — tagged 2026-05-31 on `main`. Fully functional demo baseline.**
+> Phase 1-A ✅ · Phase 2-A ✅ (3 industrial agents) · Phase 3 🟡 (`neurforge` forwarding shim live).
+> To return to this stable point anytime: `git checkout demo-v0.1`
+> Previous baseline still available: `git checkout v0.1.0-baseline`. See §9 for full plan, §12 for latest status.
 
 ---
 
@@ -386,3 +387,31 @@ uv pip install frontend/webui/build/neurforge_agent_ui-0.3.0-py3-none-any.whl --
 uv run --env-file .env python examples/svg_generator/main_web.py
 # 開 http://127.0.0.1:8848/index.html 確認
 ```
+
+---
+
+## 12. 目前狀態與沉澱期計畫（2026-05-31）
+
+### 已切線：`demo-v0.1` 穩定基線
+- `main`、`origin/main`、tag `demo-v0.1` 三者同指 commit `407461b`（已 push 到 GitHub）。
+- 這條線把 `refactor/namespace-to-neurforge`（13 commits）fast-forward 進 `main`，內容包含：
+  - **Namespace（Phase 3 部分）**：`neurforge` forwarding shim、內部 import 改寫、UI wheel `utu_agent_ui → neurforge_agent_ui`。
+  - **Demo 打磨**：web UI 圖片（matplotlib）inline 渲染、sidebar 同名去歧義 +
+    切 agent 同步 example query、`python_executor` workspace 修正。
+  - **case_detective 改名**：10 個客戶名 + 3 個承包商公司名換成公司熟悉名字（含 docs 試跑紀錄一致化）。
+  - **教材文件**：`docs/pgm-docs/*`、`docs/pgm-spec/*`。
+- ⚠️ smoke test 尚未跑（使用者已知並接受）；若出問題，`git checkout demo-v0.1` 即為可用版本。
+
+### 保留的分支
+- `refactor/namespace-to-neurforge`（本地 + origin）刻意留著當紀錄，**暫不清理**。
+
+### 沉澱期（預計約 1 個月，暫不大改 code）
+使用者接下來重心：**測試、準備 training**；之後請 AI **徹底讀懂 codebase**（不急著改）。
+
+### 下一次高風險工作的開法（務必照此）
+實體移除 `utu/` 時，從基線開**新分支**，不要接舊分支：
+```bash
+git checkout main && git checkout -b refactor/remove-utu
+```
+DEFERRED 待辦（§9 Phase 3 尾段）：`utu/utils/path.py` 的 `DIR_ROOT/"utu"/"prompts"`、`/"data"`
+路徑、`mkdocs.yml`、反向 shim。前提：測試覆蓋率足夠。`main` 全程停在 demo-v0.1 基線。
