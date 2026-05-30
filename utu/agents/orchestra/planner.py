@@ -6,16 +6,18 @@ from agents import RunResultStreaming
 
 from ...agents.llm_agent import LLMAgent
 from ...config import AgentConfig
-from ...utils import FileUtils
+from ...utils import FileUtils, get_logger
 from .common import AgentInfo, CreatePlanResult, OrchestraStreamEvent, OrchestraTaskRecorder, Subtask
+
+logger = get_logger(__name__)
 
 
 class OutputParser:
+    # Map full-width / "smart" quotes to ASCII so JSON parsing tolerates LLM output noise.
+    _QUOTE_NORMALIZE = str.maketrans({"\u201c": '"', "\u201d": '"', "\uff02": '"', "\u201f": '"'})
+
     def __init__(self):
         self.analysis_pattern = r"<analysis>(.*?)</analysis>"
-        self.plan_pattern = r"<plan>\s*\[(.*?)\]\s*</plan>"
-        # self.next_step_pattern = r'<next_step>\s*<agent>\s*(.*?)\s*</agent>\s*<task>\s*(.*?)\s*</task>\s*</next_step>'
-        # self.task_finished_pattern = r'<task_finished>\s*</task_finished>'
 
     def parse(self, output_text: str) -> CreatePlanResult:
         analysis = self._extract_analysis(output_text)
@@ -29,18 +31,66 @@ class OutputParser:
         return ""
 
     def _extract_plan(self, text: str) -> list[Subtask]:
-        match = re.search(self.plan_pattern, text, re.DOTALL)
-        if not match:
+        """Parse the task list from planner output, tolerant to formatting noise.
+
+        Handles: optional <plan> tags, markdown ```json fences, extra whitespace
+        (e.g. `{ "agent_name"`), key order, missing `completed`, and smart quotes.
+        """
+        block = self._extract_plan_block(text)
+        if block is None:
             return []
-        plan_content = match.group(1).strip()
-        tasks = []
-        task_pattern = r'\{"agent_name":\s*"([^"]+)",\s*"task":\s*"([^"]+)",\s*"completed":\s*(true|false)\s*\}'
-        task_matches = re.findall(task_pattern, plan_content, re.IGNORECASE)
-        for agent_name, task_desc, completed_str in task_matches:
-            completed = completed_str.lower() == "true"
-            tasks.append(Subtask(agent_name=agent_name, task=task_desc, completed=completed))
-        # check validity
-        assert len(tasks) > 0, "No tasks parsed from plan"
+        block = block.translate(self._QUOTE_NORMALIZE)
+        # 1) preferred: parse as JSON (whitespace / key-order / extra-field tolerant)
+        tasks = self._tasks_from_json(block)
+        if not tasks:
+            # 2) fallback: whitespace-tolerant regex (`completed` optional)
+            tasks = self._tasks_from_regex(block)
+        if not tasks:
+            logger.error(f"No tasks parsed from plan. Raw planner output:\n{text}")
+            raise ValueError(
+                "No tasks parsed from plan: the planner output did not contain a parseable "
+                f"<plan> task list. Raw planner output:\n{text}"
+            )
+        return tasks
+
+    @staticmethod
+    def _extract_plan_block(text: str) -> str | None:
+        match = re.search(r"<plan>(.*?)</plan>", text, re.DOTALL)
+        candidate = match.group(1) if match else text
+        candidate = re.sub(r"```(?:json)?", "", candidate)  # strip optional code fences
+        match = re.search(r"\[.*\]", candidate, re.DOTALL)  # the JSON array of tasks
+        return match.group(0) if match else None
+
+    @staticmethod
+    def _tasks_from_json(block: str) -> list[Subtask]:
+        try:
+            data = json.loads(block)
+        except (json.JSONDecodeError, TypeError):
+            return []
+        if not isinstance(data, list):
+            return []
+        tasks: list[Subtask] = []
+        for item in data:
+            if not isinstance(item, dict):
+                continue
+            name = item.get("agent_name") or item.get("name")
+            task = item.get("task")
+            if not (name and task):
+                continue
+            completed = bool(item["completed"]) if "completed" in item else None
+            tasks.append(Subtask(agent_name=str(name).strip(), task=str(task).strip(), completed=completed))
+        return tasks
+
+    @staticmethod
+    def _tasks_from_regex(block: str) -> list[Subtask]:
+        task_pattern = (
+            r'\{\s*"(?:agent_name|name)"\s*:\s*"([^"]+)"\s*,\s*"task"\s*:\s*"([^"]+)"'
+            r'(?:\s*,\s*"completed"\s*:\s*(true|false))?'
+        )
+        tasks: list[Subtask] = []
+        for agent_name, task_desc, completed_str in re.findall(task_pattern, block, re.IGNORECASE | re.DOTALL):
+            completed = completed_str.lower() == "true" if completed_str else None
+            tasks.append(Subtask(agent_name=agent_name.strip(), task=task_desc.strip(), completed=completed))
         return tasks
 
 

@@ -77,21 +77,74 @@ class ChainPlanner:
         recorder.trajectories.append(AgentsUtils.get_trajectory_from_agent_result(res, "orchestrator"))
         return plan
 
+    # Map full-width / "smart" quotes to ASCII so JSON parsing tolerates LLM output noise.
+    _QUOTE_NORMALIZE = str.maketrans({"\u201c": '"', "\u201d": '"', "\uff02": '"', "\u201f": '"'})
+
     def _parse(self, text: str, recorder: Recorder) -> Plan:
         match = re.search(r"<analysis>(.*?)</analysis>", text, re.DOTALL)
         analysis = match.group(1).strip() if match else ""
 
-        match = re.search(r"<plan>\s*\[(.*?)\]\s*</plan>", text, re.DOTALL)
-        plan_content = match.group(1).strip()
-        tasks: list[Task] = []
-        task_pattern = r'\{"name":\s*"([^"]+)",\s*"task":\s*"([^"]+)"\s*\}'
-        task_matches = re.findall(task_pattern, plan_content, re.IGNORECASE)
-        for agent_name, task_desc in task_matches:
-            tasks.append(Task(agent_name=agent_name, task=task_desc))
-        # check validity
-        assert len(tasks) > 0, "No tasks parsed from plan"
+        tasks = self._parse_tasks(text)
+        if not tasks:
+            logger.error(f"No tasks parsed from plan. Raw planner output:\n{text}")
+            raise ValueError(
+                "No tasks parsed from plan: the planner output did not contain a parseable "
+                f"<plan> task list. Raw planner output:\n{text}"
+            )
         tasks[-1].is_last_task = True  # FIXME: polish this
         return Plan(input=recorder.input, analysis=analysis, tasks=tasks)
+
+    def _parse_tasks(self, text: str) -> list[Task]:
+        """Parse the task list from planner output, tolerant to formatting noise.
+
+        Handles: optional <plan> tags, markdown ```json fences, extra whitespace
+        (e.g. `{ "name"`), key order, extra fields, and full-width/smart quotes.
+        """
+        block = self._extract_plan_block(text)
+        if block is None:
+            return []
+        block = block.translate(self._QUOTE_NORMALIZE)
+        # 1) preferred: parse as JSON (whitespace / key-order / extra-field tolerant)
+        tasks = self._tasks_from_json(block)
+        if tasks:
+            return tasks
+        # 2) fallback: whitespace-tolerant regex (also accepts `agent_name` key)
+        return self._tasks_from_regex(block)
+
+    @staticmethod
+    def _extract_plan_block(text: str) -> str | None:
+        # prefer an explicit <plan>...</plan> block; otherwise scan the whole text
+        match = re.search(r"<plan>(.*?)</plan>", text, re.DOTALL)
+        candidate = match.group(1) if match else text
+        candidate = re.sub(r"```(?:json)?", "", candidate)  # strip optional code fences
+        match = re.search(r"\[.*\]", candidate, re.DOTALL)  # the JSON array of tasks
+        return match.group(0) if match else None
+
+    @staticmethod
+    def _tasks_from_json(block: str) -> list[Task]:
+        try:
+            data = json.loads(block)
+        except (json.JSONDecodeError, TypeError):
+            return []
+        if not isinstance(data, list):
+            return []
+        tasks: list[Task] = []
+        for item in data:
+            if not isinstance(item, dict):
+                continue
+            name = item.get("name") or item.get("agent_name")
+            task = item.get("task")
+            if name and task:
+                tasks.append(Task(agent_name=str(name).strip(), task=str(task).strip()))
+        return tasks
+
+    @staticmethod
+    def _tasks_from_regex(block: str) -> list[Task]:
+        task_pattern = r'\{\s*"(?:name|agent_name)"\s*:\s*"([^"]+)"\s*,\s*"task"\s*:\s*"([^"]+)"'
+        tasks: list[Task] = []
+        for agent_name, task_desc in re.findall(task_pattern, block, re.IGNORECASE | re.DOTALL):
+            tasks.append(Task(agent_name=agent_name.strip(), task=task_desc.strip()))
+        return tasks
 
     async def get_next_task(self, recorder: Recorder) -> Task | None:
         """Get the next task to be executed."""
