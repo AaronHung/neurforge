@@ -3,10 +3,10 @@ from typing import Literal
 import agents as ag
 from pydantic import BaseModel
 
-from utu.agents.orchestra import OrchestraStreamEvent
-from utu.agents.orchestrator import OrchestratorStreamEvent
-from utu.meta.simple_agent_generator import SimpleAgentGeneratedEvent
-from utu.utils.log import get_logger
+from neurforge.agents.orchestra import OrchestraStreamEvent
+from neurforge.agents.orchestrator import OrchestratorStreamEvent
+from neurforge.meta.simple_agent_generator import SimpleAgentGeneratedEvent
+from neurforge.utils.log import get_logger
 
 
 class UnknowEventError(Exception):

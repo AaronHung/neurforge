@@ -2,7 +2,7 @@ from math_verify.errors import TimeoutException
 from math_verify.metric import math_metric
 from math_verify.parser import ExprExtractionConfig, LatexExtractionConfig
 
-from utu.db import EvaluationSample
+from neurforge.db import EvaluationSample
 
 
 def verify_func(sample: EvaluationSample, timeout_score: float = 0, **kwargs) -> dict:

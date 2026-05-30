@@ -1,6 +1,6 @@
 import argparse
 
-from utu.utils import EnvUtils
+from neurforge.utils import EnvUtils
 
 
 class ExampleConfig:

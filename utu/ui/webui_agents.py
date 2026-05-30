@@ -12,15 +12,15 @@ import agents as ag
 import tornado.web
 import tornado.websocket
 
-from utu.agents import OrchestratorAgent
-from utu.agents.orchestra import OrchestraStreamEvent
-from utu.agents.orchestra_agent import OrchestraAgent
-from utu.agents.orchestrator import OrchestratorStreamEvent
-from utu.agents.simple_agent import SimpleAgent
-from utu.config import AgentConfig
-from utu.config.loader import ConfigLoader
-from utu.meta.simple_agent_generator import SimpleAgentGeneratedEvent, SimpleAgentGenerator
-from utu.utils import DIR_ROOT, EnvUtils
+from neurforge.agents import OrchestratorAgent
+from neurforge.agents.orchestra import OrchestraStreamEvent
+from neurforge.agents.orchestra_agent import OrchestraAgent
+from neurforge.agents.orchestrator import OrchestratorStreamEvent
+from neurforge.agents.simple_agent import SimpleAgent
+from neurforge.config import AgentConfig
+from neurforge.config.loader import ConfigLoader
+from neurforge.meta.simple_agent_generator import SimpleAgentGeneratedEvent, SimpleAgentGenerator
+from neurforge.utils import DIR_ROOT, EnvUtils
 
 from .common import (
     AskContent,

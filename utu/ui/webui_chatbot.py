@@ -9,11 +9,11 @@ import agents as ag
 import tornado.web
 import tornado.websocket
 
-from utu.agents import OrchestratorAgent, SimpleAgent
-from utu.agents.orchestra import OrchestraStreamEvent
-from utu.agents.orchestra_agent import OrchestraAgent
-from utu.agents.orchestrator import OrchestratorStreamEvent
-from utu.utils import EnvUtils
+from neurforge.agents import OrchestratorAgent, SimpleAgent
+from neurforge.agents.orchestra import OrchestraStreamEvent
+from neurforge.agents.orchestra_agent import OrchestraAgent
+from neurforge.agents.orchestrator import OrchestratorStreamEvent
+from neurforge.utils import EnvUtils
 
 from .common import (
     Event,

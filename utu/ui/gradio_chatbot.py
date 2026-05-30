@@ -6,8 +6,8 @@ import warnings
 import agents as ag
 import gradio as gr
 
-from utu.agents import OrchestraAgent, SimpleAgent
-from utu.agents.orchestra import OrchestraStreamEvent
+from neurforge.agents import OrchestraAgent, SimpleAgent
+from neurforge.agents.orchestra import OrchestraStreamEvent
 
 # Add a visible deprecation warning that will be shown when the module is imported
 warnings.simplefilter("always", DeprecationWarning)  # Ensure deprecation warnings are shown

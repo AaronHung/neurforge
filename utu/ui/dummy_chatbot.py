@@ -4,9 +4,9 @@ import time
 
 import agents as ag
 
-from utu.agents.orchestra import OrchestraStreamEvent
-from utu.agents.orchestra_agent import OrchestraAgent
-from utu.agents.simple_agent import SimpleAgent
+from neurforge.agents.orchestra import OrchestraStreamEvent
+from neurforge.agents.orchestra_agent import OrchestraAgent
+from neurforge.agents.simple_agent import SimpleAgent
 
 from .common import (
     Event,

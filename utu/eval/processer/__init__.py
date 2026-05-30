@@ -1,5 +1,5 @@
-from utu.config import EvalConfig
-from utu.utils import get_logger
+from neurforge.config import EvalConfig
+from neurforge.utils import get_logger
 
 from .base_llm_processor import BaseLLMJudgeProcesser as BaseLLMJudgeProcesser
 from .base_match_processor import BaseMatchProcesser as BaseMatchProcesser

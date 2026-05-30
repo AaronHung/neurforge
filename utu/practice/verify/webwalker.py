@@ -1,7 +1,7 @@
 import re
 
-from utu.db import EvaluationSample
-from utu.utils import FileUtils, SimplifiedAsyncOpenAI
+from neurforge.db import EvaluationSample
+from neurforge.utils import FileUtils, SimplifiedAsyncOpenAI
 
 
 async def verify_func(sample: EvaluationSample, timeout_score: float = 0, **kwargs) -> dict:
