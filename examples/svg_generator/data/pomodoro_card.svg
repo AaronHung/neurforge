@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1200" height="800" viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:#fce4ec;stop-opacity:1" />
+            <stop offset="100%" style="stop-color:#e3f2fd;stop-opacity:1" />
+        </linearGradient>
+        <filter id="softShadow" x="-2%" y="-2%" width="104%" height="104%">
+            <feDropShadow dx="0" dy="8" stdDeviation="16" flood-color="rgba(106, 27, 154, 0.08)" />
+        </filter>
+        <filter id="subtleShadow" x="-2%" y="-2%" width="104%" height="104%">
+            <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="rgba(81, 45, 168, 0.1)" />
+        </filter>
+        <linearGradient id="tomatoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:#e53935;stop-opacity:1" />
+            <stop offset="100%" style="stop-color:#d81b60;stop-opacity:1" />
+        </linearGradient>
+    </defs>
+
+    <!-- Background -->
+    <rect width="1200" height="800" fill="url(#bgGradient)"/>
+    
+    <!-- Decorative circles -->
+    <circle cx="150" cy="150" r="60" fill="#ff80ab" opacity="0.15"/>
+    <circle cx="1050" cy="650" r="80" fill="#80deea" opacity="0.15"/>
+    <circle cx="900" cy="200" r="40" fill="#ce93d8" opacity="0.12"/>
+    <circle cx="300" cy="700" r="50" fill="#90caf9" opacity="0.12"/>
+    
+    <!-- Main Content Card -->
+    <g filter="url(#softShadow)">
+        <rect x="100" y="60" width="1000" height="680" rx="24" fill="#ffffff"/>
+        <rect x="100" y="60" width="1000" height="96" rx="24" rx="24" fill="#7b1fa2"/>
+    </g>
+    
+    <!-- Main Title -->
+    <text x="600" y="130" text-anchor="middle" font-family="'Segoe UI', 'Microsoft JhengHei', sans-serif" font-weight="700" font-size="48" fill="#ffffff">
+        番茄工作法
+    </text>
+    <text x="600" y="185" text-anchor="middle" font-family="'Segoe UI', 'Microsoft JhengHei', sans-serif" font-weight="400" font-size="26" fill="#ffffff">
+        Pomodoro Technique
+    </text>
+    
+    <!-- Tomato Timer Icon -->
+    <g transform="translate(220, 240)">
+        <ellipse cx="0" cy="0" rx="48" ry="58" fill="url(#tomatoGradient)"/>
+        <ellipse cx="0" cy="-45" rx="12" ry="8" fill="#2e7d32"/>
+        <ellipse cx="0" cy="-40" rx="6" ry="4" fill="#81c784"/>
+        <path d="M -20 0 Q 0 -15, 20 0" stroke="#ffccbc" stroke-width="6" fill="none" stroke-linecap="round"/>
+    </g>
+    
+    <!-- Core Steps Section -->
+    <g filter="url(#subtleShadow)">
+        <rect x="300" y="220" width="440" height="340" rx="20" fill="#f3e5f5"/>
+    </g>
+    
+    <text x="520" y="260" text-anchor="middle" font-family="'Segoe UI', 'Microsoft JhengHei', sans-serif" font-weight="700" font-size="32" fill="#4a148c">
+        核心步驟
+    </text>
+    
+    <!-- Steps List -->
+    <g font-family="'Segoe UI', 'Microsoft JhengHei', sans-serif" font-size="22" fill="#333333">
+        <g>
+            <circle cx="340" cy="310" r="6" fill="#7b1fa2"/>
+            <text x="360" y="316" font-weight="600">1. 選擇任務</text>
+            <text x="360" y="346" font-size="18" fill="#666">列出今日待辦事項，預估番茄鐘數量</text>
+        </g>
+        <g>
+            <circle cx="340" cy="390" r="6" fill="#7b1fa2"/>
+            <text x="360" y="396" font-weight="600">2. 設定計時器</text>
+            <text x="360" y="426" font-size="18" fill="#666">設定25分鐘番茄鐘，專注單一任務</text>
+        </g>
+        <g>
+            <circle cx="340" cy="470" r="6" fill="#7b1fa2"/>
+            <text x="360" y="476" font-weight="600">3. 強制休息</text>
+            <text x="360" y="506" font-size="18" fill="#666">計時結束後休息5分鐘</text>
+        </g>
+        <g>
+            <circle cx="340" cy="550" r="6" fill="#7b1fa2"/>
+            <text x="360" y="556" font-weight="600">4. 完成循環</text>
+            <text x="360" y="586" font-size="18" fill="#666">每4個番茄鐘後長休息15-30分鐘</text>
+        </g>
+    </g>
+    
+    <!-- Time Structure Visualization -->
+    <g transform="translate(340, 500)">
+        <rect x="0" y="-20" width="180" height="20" rx="4" fill="#ab47bc"/>
+        <rect x="190" y="-20" width="40" height="20" rx="4" fill="#4fc3f7"/>
+        <rect x="240" y="-20" width="180" height="20" rx="4" fill="#ab47bc"/>
+        <rect x="430" y="-20" width="40" height="20" rx="4" fill="#4fc3f7"/>
+        
+        <text x="90" y="-5" text-anchor="middle" font-family="'Segoe UI', sans-serif" font-size="12" fill="#fff">25分鐘</text>
+        <text x="210" y="-5" text-anchor="middle" font-family="'Segoe UI', sans-serif" font-size="12" fill="#fff">5分鐘</text>
+        <text x="330" y="-5" text-anchor="middle" font-family="'Segoe UI', sans-serif" font-size="12" fill="#fff">25分鐘</text>
+        <text x="450" y="-5" text-anchor="middle" font-family="'Segoe UI', sans-serif" font-size="12" fill="#fff">5分鐘</text>
+    </g>
+    
+    <!-- Benefits Section -->
+    <g filter="url(#subtleShadow)">
+        <rect x="760" y="220" width="300" height="340" rx="20" fill="#e8f5e9"/>
+    </g>
+    
+    <text x="910" y="260" text-anchor="middle" font-family="'Segoe UI', 'Microsoft JhengHei', sans-serif" font-weight="700" font-size="32" fill="#1b5e20">
+        三大好處
+    </text>
+    
+    <!-- Benefits List -->
+    <g font-family="'Segoe UI', 'Microsoft JhengHei', sans-serif" font-size="20" fill="#333333">
+        <g transform="translate(780, 310)">
+            <circle cx="0" cy="0" r="24" fill="#4caf50" opacity="0.2"/>
+            <text x="30" y="6" font-weight="600">提升專注度</text>
+            <text x="30" y="36" font-size="16" fill="#666" style="letter-spacing:0.5px">訓練大腦深度工作，一次只專注一項任務</text>
+        </g>
+        
+        <g transform="translate(780, 410)">
+            <circle cx="0" cy="0" r="24" fill="#2196f3" opacity="0.2"/>
+            <text x="30" y="6" font-weight="600">減少心理疲勞</text>
+            <text x="30" y="36" font-size="16" fill="#666" style="letter-spacing:0.5px">定期休息讓大腦恢復，避免過度疲勞</text>
+        </g>
+        
+        <g transform="translate(780, 510)">
+            <circle cx="0" cy="0" r="24" fill="#9c27b0" opacity="0.2"/>
+            <text x="30" y="6" font-weight="600">優化專案規劃</text>
+            <text x="30" y="36" font-size="16" fill="#666" style="letter-spacing:0.5px">準確估算任務時間，設定合理截止日期</text>
+        </g>
+    </g>
+    
+    <!-- Key Principle -->
+    <g transform="translate(600, 620)">
+        <rect x="-280" y="0" width="560" height="60" rx="30" fill="#ffecb3"/>
+        <text x="0" y="38" text-anchor="middle" font-family="'Segoe UI', 'Microsoft JhengHei', sans-serif" font-weight="600" font-size="22" fill="#5d4037">
+            🍅 核心原則：一個番茄鐘（25分鐘）是不可分割的最小單位
+        </text>
+    </g>
+    
+    <!-- Footer Note -->
+    <text x="600" y="760" text-anchor="middle" font-family="'Segoe UI', 'Microsoft JhengHei', sans-serif" font-size="16" fill="#666666">
+        由 Francesco Cirillo 於1980年代創立，使用番茄形廚房定時器提升工作效率
+    </text>
+    
+    <!-- Decorative lines -->
+    <line x1="300" y1="220" x2="300" y2="560" stroke="#7b1fa2" stroke-width="2" stroke-dasharray="5,5" opacity="0.3"/>
+    <line x1="760" y1="220" x2="760" y2="560" stroke="#1b5e20" stroke-width="2" stroke-dasharray="5,5" opacity="0.3"/>
+</svg>

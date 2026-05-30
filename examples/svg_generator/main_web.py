@@ -18,7 +18,7 @@ if __name__ == "__main__":
 
     data_dir = pathlib.Path(__file__).parent / "data"
     data_dir.mkdir(exist_ok=True)
-    question = "2025 年台灣智慧製造導入 AI Agent 的三個關鍵應用場景與效益"
+    question = "用一張 SVG 資訊卡，介紹「番茄工作法（Pomodoro Technique）」的核心步驟與三個好處。"
 
     webui = WebUIAgents(default_config=DEFAULT_CONFIG, example_query=question)
     print(f"Server started at http://{args.ip}:{args.port}/")

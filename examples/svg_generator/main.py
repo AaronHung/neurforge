@@ -13,7 +13,7 @@ async def main():
     config = ConfigLoader.load_agent_config("examples/svg_generator")
     runner = OrchestratorAgent(config)
 
-    question = "薈智創新 NeurForge 的 AI Agent 可以幫企業安全地自動化哪些工作流程？"
+    question = "用一張 SVG 資訊卡，介紹「番茄工作法（Pomodoro Technique）」的核心步驟與三個好處。"
 
     res = runner.run_streamed(question)
     await AgentsUtils.print_stream_events(res.stream_events())
