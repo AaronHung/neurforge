@@ -18,8 +18,8 @@ from pathlib import Path
 from agents import trace
 from agents.models.chatcmpl_converter import Converter
 
-from utu.agents import SimpleAgent
-from utu.utils import AgentsUtils, ChatCompletionConverter
+from neurforge.agents import SimpleAgent
+from neurforge.utils import AgentsUtils, ChatCompletionConverter
 
 MOCK_QUERIES = [
     "What is the latest news about SpaceX Starship in 2026?",

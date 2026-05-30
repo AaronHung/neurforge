@@ -4,8 +4,8 @@ CLI usage:
 """
 import asyncio
 
-from utu.agents import SimpleAgent
-from utu.config import ConfigLoader
+from neurforge.agents import SimpleAgent
+from neurforge.config import ConfigLoader
 
 
 async def main():

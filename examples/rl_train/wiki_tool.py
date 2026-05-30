@@ -1,7 +1,7 @@
 # ruff: noqa: E501
 import requests
 
-from utu.tools import AsyncBaseToolkit, register_tool
+from neurforge.tools import AsyncBaseToolkit, register_tool
 
 
 class WikiToolkit(AsyncBaseToolkit):

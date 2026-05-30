@@ -23,9 +23,9 @@ from typing import Literal, Any, ClassVar
 from pathlib import Path
 from colorama import Fore
 
-from utu.config import ToolkitConfig
-from utu.tools import AsyncBaseToolkit
-from utu.utils import get_logger
+from neurforge.config import ToolkitConfig
+from neurforge.tools import AsyncBaseToolkit
+from neurforge.utils import get_logger
 
 logger = get_logger(__name__)
 

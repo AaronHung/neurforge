@@ -6,8 +6,8 @@ import json
 from pathlib import Path
 from typing import Any
 
-from utu.tools.base import AsyncBaseToolkit
-from utu.tools.utils import register_tool
+from neurforge.tools.base import AsyncBaseToolkit
+from neurforge.tools.utils import register_tool
 
 _DATA = Path(__file__).parent.parent / "mock_data"
 

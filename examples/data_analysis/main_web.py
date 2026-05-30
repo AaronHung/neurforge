@@ -3,8 +3,8 @@
 import argparse
 import pathlib
 
-from utu.ui.webui_agents import WebUIAgents
-from utu.utils.env import EnvUtils
+from neurforge.ui.webui_agents import WebUIAgents
+from neurforge.utils.env import EnvUtils
 
 DEFAULT_CONFIG = "simple/base.yaml"
 DEFAULT_IP = EnvUtils.get_env("UTU_WEBUI_IP", "127.0.0.1")

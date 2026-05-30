@@ -76,7 +76,7 @@ See [`configs/tools/mcp/`](https://github.com/AaronHung/neurforge/tree/main/conf
 python scripts/cli_chat.py --config my_agent
 
 # Or programmatically
-from utu.config import ConfigLoader
+from neurforge.config import ConfigLoader
 config = ConfigLoader.load_agent_config("my_agent")
 ```
 

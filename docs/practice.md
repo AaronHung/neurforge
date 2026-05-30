@@ -137,7 +137,7 @@ Verification functions are the core of the reward calculation system, providing 
 Create verification functions in `utu/practice/verify/`:
 
 ```python
-from utu.db import EvaluationSample
+from neurforge.db import EvaluationSample
 
 def verify_func(sample: EvaluationSample, timeout_score: float = 0, **kwargs) -> dict:
     """
@@ -183,7 +183,7 @@ Example for simple string matching:
 
 ```python
 # utu/practice/verify/str_match.py
-from utu.db import EvaluationSample
+from neurforge.db import EvaluationSample
 
 def string_match_verify(sample: EvaluationSample, timeout_score: float = 0, **kwargs) -> dict:
     """Simple string matching verification."""

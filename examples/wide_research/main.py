@@ -11,10 +11,10 @@ import traceback
 
 from agents import function_tool
 
-from utu.agents import SimpleAgent
-from utu.config import ConfigLoader
-from utu.tools import SearchToolkit
-from utu.utils import AgentsUtils, FileUtils, schema_to_basemodel
+from neurforge.agents import SimpleAgent
+from neurforge.config import ConfigLoader
+from neurforge.tools import SearchToolkit
+from neurforge.utils import AgentsUtils, FileUtils, schema_to_basemodel
 
 PROMPTS = FileUtils.load_yaml(pathlib.Path(__file__).parent / "prompts.yaml")
 SEARCH_TOOLKIT = SearchToolkit(ConfigLoader.load_toolkit_config("search"))

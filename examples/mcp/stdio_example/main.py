@@ -9,7 +9,7 @@ Usage:
 
 import asyncio
 
-from utu.agents import SimpleAgent
+from neurforge.agents import SimpleAgent
 
 # from https://en.wikipedia.org/wiki/Anthropic
 DOC = """Anthropic PBC is an American artificial intelligence (AI) startup company founded in 2021.

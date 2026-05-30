@@ -18,8 +18,8 @@ from collections.abc import Callable
 
 import pandas as pd
 
-from utu.tools import AsyncBaseToolkit
-from utu.utils import get_logger
+from neurforge.tools import AsyncBaseToolkit
+from neurforge.utils import get_logger
 
 logger = get_logger(__name__)
 

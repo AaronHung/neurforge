@@ -11,9 +11,9 @@ from typing import Any
 
 import httpx
 
-from utu.config import ToolkitConfig
-from utu.utils import get_logger
-from utu.tools.base import AsyncBaseToolkit
+from neurforge.config import ToolkitConfig
+from neurforge.utils import get_logger
+from neurforge.tools.base import AsyncBaseToolkit
 
 logger = get_logger(__name__)
 

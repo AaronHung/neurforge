@@ -1,9 +1,9 @@
 import asyncio
 import pathlib
 
-from utu.agents import SimpleAgent
-from utu.config import ConfigLoader
-from utu.utils import AgentsUtils, FileUtils
+from neurforge.agents import SimpleAgent
+from neurforge.config import ConfigLoader
+from neurforge.utils import AgentsUtils, FileUtils
 
 EXAMPLE_QUERY = (
     "整理一下當前資料夾下面的所有檔案，按照 學號-姓名 的格式重新命名。"

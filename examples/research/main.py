@@ -8,10 +8,10 @@ from pydantic import BaseModel
 from rich.console import Console
 
 from examples.research.printer import Printer
-from utu.agents import SimpleAgent
-from utu.config import ConfigLoader
-from utu.tools import SearchToolkit
-from utu.utils import FileUtils
+from neurforge.agents import SimpleAgent
+from neurforge.config import ConfigLoader
+from neurforge.tools import SearchToolkit
+from neurforge.utils import FileUtils
 
 PROMPTS = FileUtils.load_yaml(pathlib.Path(__file__).parent / "prompts.yaml")
 

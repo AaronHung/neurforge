@@ -78,8 +78,8 @@ Agent 自動執行：
 
 ```python
 # 一個完整的 Toolkit 骨架
-from utu.tools.base import AsyncBaseToolkit
-from utu.tools.utils import register_tool
+from neurforge.tools.base import AsyncBaseToolkit
+from neurforge.tools.utils import register_tool
 
 class MyFactoryToolkit(AsyncBaseToolkit):
     def __init__(self, config=None):

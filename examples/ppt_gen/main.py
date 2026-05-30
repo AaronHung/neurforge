@@ -9,8 +9,8 @@ import yaml
 from fill_template import extract_json, fill_template_with_yaml_config
 from gen_schema import build_schema
 
-from utu.agents import SimpleAgent
-from utu.config import ConfigLoader
+from neurforge.agents import SimpleAgent
+from neurforge.config import ConfigLoader
 
 JSON_SCHEMA_TEMPLATE = """
 ## JSON Schema

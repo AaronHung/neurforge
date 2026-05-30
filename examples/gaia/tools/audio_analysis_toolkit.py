@@ -22,9 +22,9 @@ from urllib.parse import urlparse
 import requests
 from pydub.utils import mediainfo
 
-from utu.config import ToolkitConfig
-from utu.tools import AsyncBaseToolkit
-from utu.utils import EnvUtils, SimplifiedAsyncOpenAI, get_logger
+from neurforge.config import ToolkitConfig
+from neurforge.tools import AsyncBaseToolkit
+from neurforge.utils import EnvUtils, SimplifiedAsyncOpenAI, get_logger
 
 logger = get_logger(__name__)
 

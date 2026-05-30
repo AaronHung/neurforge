@@ -5,9 +5,9 @@ CLI usage: python scripts/cli_chat.py --config examples/paper_collector
 import asyncio
 import pathlib
 
-from utu.agents import OrchestratorAgent
-from utu.config import ConfigLoader
-from utu.utils import AgentsUtils, FileUtils
+from neurforge.agents import OrchestratorAgent
+from neurforge.config import ConfigLoader
+from neurforge.utils import AgentsUtils, FileUtils
 
 
 async def main():

@@ -5,9 +5,9 @@ Note the LLM model should support image input, e.g., gpt-4o or glm-4.5v
 
 import asyncio
 
-from utu.agents import get_agent
-from utu.config import ConfigLoader
-from utu.utils import AgentsUtils, PrintUtils
+from neurforge.agents import get_agent
+from neurforge.config import ConfigLoader
+from neurforge.utils import AgentsUtils, PrintUtils
 
 
 async def main():

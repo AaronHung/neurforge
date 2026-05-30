@@ -28,10 +28,10 @@ from examples.gaia.tools.excel_toolkit import ExcelToolkit
 from examples.gaia.tools.image_analysis_toolkit import ImageAnalysisToolkit
 from examples.gaia.tools.audio_analysis_toolkit import AudioAnalysisToolkit
 
-from utu.config import ToolkitConfig, ConfigLoader
-from utu.tools import AsyncBaseToolkit
-from utu.tools.search.jina_crawl import JinaCrawl
-from utu.utils import get_logger, SimplifiedAsyncOpenAI, FileUtils
+from neurforge.config import ToolkitConfig, ConfigLoader
+from neurforge.tools import AsyncBaseToolkit
+from neurforge.tools.search.jina_crawl import JinaCrawl
+from neurforge.utils import get_logger, SimplifiedAsyncOpenAI, FileUtils
 
 logger = get_logger(__name__)
 PROMPTS = FileUtils.load_prompts(pathlib.Path(__file__).parent / "document_processing_prompts.yaml")

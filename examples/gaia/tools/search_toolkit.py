@@ -20,11 +20,11 @@ import pathlib
 from collections.abc import Callable
 from typing import Any
 
-from utu.config import ToolkitConfig
-from utu.tools import AsyncBaseToolkit
-from utu.tools.search.google_search import GoogleSearch
-from utu.tools.search.jina_crawl import JinaCrawl
-from utu.utils import FileUtils, SimplifiedAsyncOpenAI, get_logger
+from neurforge.config import ToolkitConfig
+from neurforge.tools import AsyncBaseToolkit
+from neurforge.tools.search.google_search import GoogleSearch
+from neurforge.tools.search.jina_crawl import JinaCrawl
+from neurforge.utils import FileUtils, SimplifiedAsyncOpenAI, get_logger
 
 logger = get_logger(__name__)
 PROMPTS = FileUtils.load_prompts(pathlib.Path(__file__).parent / "search_prompts.yaml")

@@ -6,7 +6,7 @@ from examples.gaia.tools.document_processing_toolkit import DocumentProcessingTo
 from examples.gaia.tools.excel_toolkit import ExcelToolkit
 from examples.gaia.tools.image_analysis_toolkit import ImageAnalysisToolkit
 from examples.gaia.tools.search_toolkit import SearchToolkit
-from utu.config import ConfigLoader
+from neurforge.config import ConfigLoader
 
 
 async def test_excel_toolkit():

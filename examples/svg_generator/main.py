@@ -4,9 +4,9 @@ CLI usage: python scripts/cli_chat.py --config examples/svg_generator
 
 import asyncio
 
-from utu.agents import OrchestratorAgent
-from utu.config import ConfigLoader
-from utu.utils import AgentsUtils
+from neurforge.agents import OrchestratorAgent
+from neurforge.config import ConfigLoader
+from neurforge.utils import AgentsUtils
 
 
 async def main():

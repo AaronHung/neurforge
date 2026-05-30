@@ -2,8 +2,8 @@
 
 import asyncio
 
-from utu.agents import SimpleAgent, WorkforceAgent
-from utu.config import ConfigLoader
+from neurforge.agents import SimpleAgent, WorkforceAgent
+from neurforge.config import ConfigLoader
 
 
 async def test_reasoning_coding_agent():

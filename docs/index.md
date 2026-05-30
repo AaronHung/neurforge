@@ -1,4 +1,3 @@
-
 <style>
 .banner {
     display: flex;
@@ -30,6 +29,7 @@
 }
 </style>
 
+
 <div class="banner">
 <div class="banner-left">
     <img src="assets/images/mascot_docs.png" alt="Mascot">
@@ -50,7 +50,7 @@ NeurForge is a powerful and modular framework for building, running, and evaluat
 
 The framework's design is centered on a clear separation of concerns, enabling robust and scalable agent development.
 
-Note: NeurForge is abbreviated as `utu` in the code.
+Note: NeurForge is abbreviated as `neurforge` in the code.
 
 ## Core Architecture
 
@@ -99,5 +99,4 @@ A comprehensive framework for benchmarking agent performance. It provides a stan
 ## Getting Started
 
 For a step-by-step guide on how to install dependencies, set up your environment, and run your first agent, please see our [**Quickstart Guide**](./quickstart.md).
-
 

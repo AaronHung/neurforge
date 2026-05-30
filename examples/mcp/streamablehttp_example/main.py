@@ -11,7 +11,7 @@ Usage:
 
 import asyncio
 
-from utu.agents import SimpleAgent
+from neurforge.agents import SimpleAgent
 
 
 async def main():

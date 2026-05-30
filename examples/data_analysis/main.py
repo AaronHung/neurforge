@@ -6,9 +6,9 @@ import asyncio
 import pathlib
 import re
 
-from utu.agents import OrchestratorAgent
-from utu.config import ConfigLoader
-from utu.utils import AgentsUtils, FileUtils
+from neurforge.agents import OrchestratorAgent
+from neurforge.config import ConfigLoader
+from neurforge.utils import AgentsUtils, FileUtils
 
 
 async def main():
