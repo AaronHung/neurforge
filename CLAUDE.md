@@ -97,7 +97,7 @@ See §9 for full plan. Summary:
 | 2-C | Orchestration (human-in-loop, retry, durable) | 🔲 After baseline |
 | 2-D | Observability backend options | 🔲 After baseline |
 | 2-E | UI: Tornado → FastAPI + SSE | 🔲 Medium term |
-| 3 | Python package rename: utu → neurforge | 🔲 Last, high risk |
+| 3 | Python namespace: utu → neurforge | 🟡 In progress — `neurforge` forwarding shim live (imports migrated); physical folder move still deferred |
 
 ---
 
@@ -266,9 +266,17 @@ git push
 
 ---
 
-### Phase 3：Python Package Rename（最後才做，高風險）
+### Phase 3：Python Namespace utu → neurforge（進行中）
 
-`utu` → `neurforge`。前提：Phase 1+2 穩定、測試覆蓋率夠高。
+採「forwarding shim」策略並存遷移（SOP：`docs/NEURFORGE_namespace_migration_cursor.md`）：
+
+- ✅ `neurforge/__init__.py` forwarding shim（轉發到 `utu`，零複製、行為不變）
+- ✅ examples / docs 改用 `neurforge.*`；`utu/` 內部絕對 import 也改 `neurforge.*`
+- ✅ 前端 wheel `utu_agent_ui` → `neurforge_agent_ui`（需重建 wheel + 重發 GitHub release）
+- 🔲 DEFERRED（最後、高風險）：實體把 `utu/` 搬成 `neurforge/`，處理 `utu/utils/path.py` 的
+  `DIR_ROOT/"utu"/"prompts"`、`/"data"` 路徑、`mkdocs.yml`、反向 shim。前提：測試覆蓋率夠高。
+
+import 命名原則：`neurforge`（import == distribution == env == 品牌，避免雙名混淆）。
 
 ---
 

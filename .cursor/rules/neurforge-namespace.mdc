@@ -1,0 +1,30 @@
+---
+description: utu -> neurforge namespace migration conventions
+alwaysApply: true
+---
+
+# Namespace: `neurforge` (not `utu`)
+
+The product import namespace is **`neurforge`** (import == distribution == env prefix == brand).
+`neurforge` is currently a forwarding shim (`neurforge/__init__.py`) that re-exports the
+legacy `utu` package, so `neurforge.X` and `utu.X` resolve to the SAME module object.
+
+## Rules
+
+- New code MUST import from `neurforge.*` (e.g. `from neurforge.tools.base import AsyncBaseToolkit`).
+- There is NO Python stdlib named `utu`; ignore any such concern.
+- Do NOT delete or physically move the `utu/` package yet (deferred, high-risk phase).
+- Do NOT change `neurforge/__init__.py` (the forwarding shim) without good reason.
+
+## Do NOT touch (false-positive `utu` substrings)
+
+- `youtu` / `youtube` / `youtu_agent` (URLs, prompt text, upstream attribution)
+- config name `utu-base`; env vars `UTU_*` / `NEURFORGE_*`
+- logger name `"utu"`, `utu.log`, `/tmp/utu/...`, `__utu_turn_counter`, `utu_input_filter`
+- filesystem paths `DIR_ROOT / "utu" / "prompts"` and `.../"data"` (data still lives in `utu/`)
+- LICENSE / NOTICE / upstream attribution
+
+## Frontend UI wheel
+
+The UI wheel is now `neurforge_agent_ui` (was `utu_agent_ui`); reference it as
+`resources.files("neurforge_agent_ui.static")`. Rebuild via `frontend/webui/build.sh`.
