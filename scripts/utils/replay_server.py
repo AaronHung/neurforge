@@ -78,7 +78,7 @@ class ReplayWebUIChatbot:
         with open(events_file, "rb") as f:
             self.events = pickle.load(f)
         # hack
-        with resources.as_file(resources.files("utu_agent_ui.static").joinpath("index.html")) as static_dir:
+        with resources.as_file(resources.files("neurforge_agent_ui.static").joinpath("index.html")) as static_dir:
             self.static_path = str(static_dir).replace("index.html", "")
 
     def make_app(self) -> tornado.web.Application:

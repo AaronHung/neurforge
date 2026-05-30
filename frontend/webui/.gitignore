@@ -24,7 +24,7 @@ dist-ssr
 *.sw?
 *.pyc
 
-utu_agent_ui.egg-info
+neurforge_agent_ui.egg-info
 build/
 
 _*.sh

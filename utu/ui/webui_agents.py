@@ -391,7 +391,7 @@ class WebUIAgents:
             os.makedirs(self.workspace)
         self.download_path = os.path.join(self.workspace, "download")
         # hack
-        with resources.as_file(resources.files("utu_agent_ui.static").joinpath("index.html")) as static_dir:
+        with resources.as_file(resources.files("neurforge_agent_ui.static").joinpath("index.html")) as static_dir:
             self.static_path = str(static_dir).replace("index.html", "")
         self.example_query = example_query
 

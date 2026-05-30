@@ -697,7 +697,7 @@ cd frontend/webui
 npm run build          # TypeScript 編譯 + Vite bundle → dist/
 bash build.sh          # 把 dist/ 打包進 Python wheel
 cd ../..
-uv pip install frontend/webui/build/utu_agent_ui-0.3.0-py3-none-any.whl --reinstall
+uv pip install frontend/webui/build/neurforge_agent_ui-0.3.0-py3-none-any.whl --reinstall
 ```
 
 Wheel 版本固定在 `0.3.0`（繼承自 upstream），未來重寫可自由定版。

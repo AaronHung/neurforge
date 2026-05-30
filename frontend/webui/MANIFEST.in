@@ -1,1 +1,1 @@
-recursive-include utu_agent_ui/static *
+recursive-include neurforge_agent_ui/static *

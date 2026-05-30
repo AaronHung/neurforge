@@ -197,7 +197,7 @@ Once all pass → `git add -A && git commit -m "feat: NeurForge baseline rebrand
 cd /Users/aaron/xk8/00_ag_v01_2/youtu-agent/frontend/webui
 npm run build && bash build.sh
 cd /Users/aaron/xk8/00_ag_v01_2/youtu-agent
-uv pip install frontend/webui/build/utu_agent_ui-0.3.0-py3-none-any.whl --reinstall
+uv pip install frontend/webui/build/neurforge_agent_ui-0.3.0-py3-none-any.whl --reinstall
 uv run --env-file .env python examples/svg_generator/main_web.py
 # 開 http://127.0.0.1:8848 確認
 ```
@@ -374,7 +374,7 @@ cd frontend/webui
 npm run build
 bash build.sh
 cd ../..
-uv pip install frontend/webui/build/utu_agent_ui-0.3.0-py3-none-any.whl --reinstall
+uv pip install frontend/webui/build/neurforge_agent_ui-0.3.0-py3-none-any.whl --reinstall
 uv run --env-file .env python examples/svg_generator/main_web.py
 # 開 http://127.0.0.1:8848/index.html 確認
 ```

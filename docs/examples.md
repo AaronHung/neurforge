@@ -15,5 +15,5 @@ Check out examples in the `examples` directory.
 
 In each example directory, you can run the `main.py` files to start the examples in command line. For some examples, you can also run the `main_web.py` files to start the examples with WebUI. Refer to corresponding `README.md` files in the example directories for more details.
 
-> Note: To use the WebUI, you need to install the `utu_agent_ui` package. Refer to [Installation](frontend.md#installation) for more details.
+> Note: To use the WebUI, you need to install the `neurforge_agent_ui` package. Refer to [Installation](frontend.md#installation) for more details.
 

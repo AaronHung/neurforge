@@ -1,6 +1,6 @@
-# utu_agent_ui
+# neurforge_agent_ui
 
-Static frontend pages for utu-agent `WebUIChatbot`
+Static frontend pages for NeurForge `WebUIChatbot`
 
 ## Installation
 
@@ -23,10 +23,10 @@ You will get a wheel file in the `build` directory.
 3. Install the wheel file
 
 ```bash
-# install `utu_agent_ui` in the parent directory
+# install `neurforge_agent_ui` in the parent directory
 cd ../../..
 source .venv/bin/activate
-uv pip install ./utu/ui/frontend/build/utu_agent_ui-0.1.5-py3-none-any.whl
+uv pip install ./utu/ui/frontend/build/neurforge_agent_ui-0.1.5-py3-none-any.whl
 ```
 
 Now the `WebUIChatbot` should work.

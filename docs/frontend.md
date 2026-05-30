@@ -4,9 +4,9 @@ We provide a simple WebUI for visualizing the conversation.
 
 ## Basic Usage
 
-> It is required to install the `utu_agent_ui` package before using the WebUI. Refer to [Installation](#installation) for more details.
+> It is required to install the `neurforge_agent_ui` package before using the WebUI. Refer to [Installation](#installation) for more details.
 
-After installing `utu_agent_ui`, The `WebUIAgents` class (from `utu.ui.webui_agents`) should work. Here is a simple usage example:
+After installing `neurforge_agent_ui`, The `WebUIAgents` class (from `utu.ui.webui_agents`) should work. Here is a simple usage example:
 
 ```python
 from utu.ui.webui_agents import WebUIAgents
@@ -74,14 +74,14 @@ chatbot.launch(port=8848, ip="127.0.0.1")
 
 ## Installation
 
-We ship the static web pages in the `utu_agent_ui` package, which can be installed by either `pip install`ing the prebuilt wheel file or compiling from source.
+We ship the static web pages in the `neurforge_agent_ui` package, which can be installed by either `pip install`ing the prebuilt wheel file or compiling from source.
 
 ### Installing the Prebuilt `*.whl` file
 
-Download prebuilt wheel file (`utu_agent_ui-0.3.0-py3-none-any.whl`) from [releases](https://github.com/AaronHung/neurforge/releases) and run the following command:
+Download prebuilt wheel file (`neurforge_agent_ui-0.3.0-py3-none-any.whl`) from [releases](https://github.com/AaronHung/neurforge/releases) and run the following command:
 
 ```bash
-uv pip install utu_agent_ui-0.3.0-py3-none-any.whl
+uv pip install neurforge_agent_ui-0.3.0-py3-none-any.whl
 ```
 
 ### Compiling from Source
@@ -102,7 +102,7 @@ The wheel file will be in the `build` directory. Refer to [Installing the Prebui
 
 The `WebUIAgents` class is basically a tornado based WebSocket server, which translate the model responses to JSON events and send them through a WebSocket connection to the frontend.
 
-The frontend (in `utu/ui/frontend`, or installed as `utu_agent_ui` package) is a React application, which visualizes the events, and provides a simple UI for users to interact with the agent.
+The frontend (in `utu/ui/frontend`, or installed as `neurforge_agent_ui` package) is a React application, which visualizes the events, and provides a simple UI for users to interact with the agent.
 
 You can customize the port and IP of `WebUIAgents` by setting the `UTU_WEBUI_PORT` and `UTU_WEBUI_IP` environment variables (default: `127.0.0.1:8848`). The default WebSocket URL is `ws://localhost:8848/ws`, and you can find and modify this setting in the right top corner of the frontend page.
 
