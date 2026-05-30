@@ -284,7 +284,7 @@ uv run --env-file .env python examples/svg_generator/main_web.py
 - 最終輸出：
 
 ```text
-## 📊 案件分析報告：客戶 C-10001（陳怡君）
+## 📊 案件分析報告：客戶 C-10001（洪欣瑋）
 
 ### 🔍 根本原因分析
 
